@@ -1,0 +1,17 @@
+{
+  "context": [
+    "Are you looking for an apartment?",
+    "Yes, I am interested in finding a one-bedroom apartment near Washington Square.",
+    "I think I have just a right apartment for you."
+  ],
+  "reference": "That is awesome! Could you please show it to me?",
+  "output": "Could you please tell me something more about it?",
+  "score": [
+    3,
+    4
+  ],
+  "usr": {
+    "Baxkiller": 12,
+    "CCC": 22
+  }
+}
