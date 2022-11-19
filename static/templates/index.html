@@ -1,54 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <script src="/static/js/dataLoad.js"></script>
-    <script src="/static/js/dataSave.js"></script>
+    <meta charset="utf-8" />
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>    <title>Data Selection</title>
-    <link href="/static/css/toShow.css" rel="stylesheet">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="static/css/login.css"/>
 </head>
 <body>
-<div class="container">
-    <div class="half-screen" id="left-half">
-        <h2 style="padding-left: 10px">Example</h2>
-        <div class="context-show"></div>
-        <div class="reference" id="reference"></div>
-        <div class="score given-score"></div>
-    </div>
-
-    <div class="half-screen" id="right-half">
-        <h2 style="padding-left: 10px">Your Work</h2>
-        <div class="context-show"></div>
-        <div class="reference" id="output"></div>
-        <div class="score">
-            <form class="get-score" name="form1">
-                <input type="text" name="user" style="width: 30%;height: 100%" placeholder="Your Name">
-                <input type="text" name="score" style="width: 30%;height: 100%" placeholder="Your Score" onkeydown="if(event.keyCode==13) {getScore()}">
-                <input type="button" value="提交" style="width: 20%;height: 100%" onclick="getScore()">
-            </form>
-        </div>
-        <div class="choose-index">
-            <form name="form2" class="page-change">
-                <input type="button" value="上一页" class="page-change-button" onclick="prePage()">
-                <input type="button" value="下一页" class="page-change-button" onclick="nxtPage()">
-                <br>
-                <input type="text" value="1" class="page-change-button" name="iIndex">
-                <input type="button" value="跳转" class="page-change-button" onclick="changeIndex()">
-            </form>
-        </div>
-    </div>
+<div id="login">
+    <div id="backwhite"></div>
+    <h1>Welcome!</h1>
+    <form>
+        <input type="text" required="required" placeholder="用户名" id="userID" />
+        <input type="password" required="required" placeholder="密码" id="pwd" autocomplete="off"/>
+        <button class="but" type="button" onclick="signIn()">Sign In</button>
+        <table class="qitaxuanxiang">
+            <tr>
+                <td>
+                    <a id="forget_password" onclick="alert('请联系任务发布者进行密码重置')">忘记密码</a>
+                </td>
+                <td>
+                    <a id="register"  onclick="alert('请联系任务发布者注册')">没有帐户?</a>
+                </td>
+            </tr>
+        </table>
+    </form>
 </div>
-    <script>
+<script>
+    function signIn() {
+        let userID=document.getElementById("userID").value;
+        let pwd=document.getElementById("pwd").value;
+
         $.ajax({
-            url :"static/data/test.json",
-            type:"GET",
+            type:'POST',
+            url :"/checkSignIn",
             dataType:"json",
+            data:{
+                uid:userID,
+                pwd:pwd
+            },
             success:
-            function(data){
-                initialize(data);
+                function(d){
+                    if(d.result ==="YES") {
+                        window.location.href="/labelPage.html"
+                        document.cookie=""+userID;
+                    }
+                    else {
+                        alert("请再次检查用户名和密码是否正确!")
+                    }
+                },
+            error:function (msg) {
+                alert("Cann't trans data!")
+                console.log(msg)
             }
         })
-
-    </script>
+    }
+</script>
 </body>
 </html>

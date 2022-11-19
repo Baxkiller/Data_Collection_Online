@@ -1,0 +1,5 @@
+{
+  "timeOut": 120,
+  "labelPerData": 1,
+  "checkExpired": 30
+}

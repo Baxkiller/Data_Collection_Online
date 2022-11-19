@@ -1,85 +1,42 @@
-var index=0;
-data=null;
-
-function trans2Php(d,path){
-    // 保存数据
+// 提交分数
+function submitScore(uid,score,idx) {
+    clearTimer()
     $.ajax({
         type: "POST",
-        url: "/save_data",
-        data: {"value":JSON.stringify(d),"path":path},
+        url: "/submitScore",
+        data: {"uid":uid,"score":score,"index":idx},
         dataType:"json",
         success:function(msg){
-            console.log("success")
+            console.log("success");
+            if(msg.status === 400){
+                alert(msg.msg);
+                window.open("about:blank","_self").close()
+            }
+            return 1;
         },
         error: function(msg){
-            console.log("error")
+            console.log("error");
+            return 0;
         }
     });
 }
 
-function getScore() {
-    let score=Number(form1.score.value);
-    let usrName=form1.user.value;
+// 请求提交数据
+// 包括提交分数,重新请求数据
+// 设定时间计时器
+function submitRequest() {
+    let score=document.getElementById('score').value;
+    let userName=document.cookie;
+    document.getElementById('score').value="";
 
-    form1.score.value="";
-
-    if(usrName=="" || score === "")
-    {
-        alert("请输入标注人姓名 和 当前评分");
+    if( score === "") {
+        alert("请输入当前评分后再提交");
         return;
     }
 
-    let fileName="static/data/"+index+".json"
-    if(index<data.length-1)
-    {
-        $.ajax({
-            url:fileName,// 文件的URL路径
-            type:"get",// 可以使用其他请求方式：post/head
-            cache:"false",
-            timeout:5,// 超时时间设置，单位毫秒
-            success:function(d){
-                d["usr"][usrName]=score;
-                trans2Php(d,fileName);
-            },
-            error:function(){// 如果不存在 直接创建一个新的文件
-                console.log("creating File!")
-                let tmp=data[index]
-                tmp["usr"]={}
-                tmp["usr"][usrName]=score;
-                trans2Php(tmp,fileName);
-            }
-        })
-        
-        // 更新页面
-        index=index+1;
-        setIndex();
-        displayData(data[index]);
-
-    }
-}
-
-function prePage() {
-    if(index!==0)
-    {
-        index=index-1;
-        setIndex();
-        displayData(data[index]);
-    }
-}
-
-function nxtPage() {
-    if(index<data.length-1)
-    {
-        index=index+1;
-        setIndex();
-        displayData(data[index]);
-    }
-}
-
-function changeIndex() {
-    i=Number(form2.iIndex.value);
-    index=i;
-    displayData(data[index])
+    submitScore(userName,score,index);
+    dataLoad(1);
+    setTimer()
 }
 
 function setIndex()
@@ -87,8 +44,26 @@ function setIndex()
     form2.iIndex.value=index;
 }
 
-function initialize(d) {
-    data=d;
-    setIndex();
-    displayData(data[index]);
-}
+// function prePage() {
+//     // if(index!==0)
+//     // {
+//     //     index=index-1;
+//     //     setIndex();
+//     //     displayData(data[index]);
+//     // }
+// }
+//
+// function nxtPage() {
+//     // if(index<data.length-1)
+//     // {
+//     //     index=index+1;
+//     //     setIndex();
+//     //     displayData(data[index]);
+//     // }
+// }
+//
+// function changeIndex() {
+//     // i=Number(form2.iIndex.value);
+//     // index=i;
+//     // displayData(data[index])
+// }

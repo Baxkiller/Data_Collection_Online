@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="/static/js/dataLoad.js"></script>
+    <script src="/static/js/dataSave.js"></script>
+    <script src="/static/js/dataShow.js"></script>
+    <script src="/static/js/timer.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>    <title>Data Selection</title>
+    <link href="/static/css/toShow.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="half-screen" id="left-half">
+        <h2 style="padding-left: 10px">Example</h2>
+        <div class="context-show"></div>
+        <div class="reference" id="reference"></div>
+        <div class="score given-score"></div>
+    </div>
+
+    <div class="half-screen" id="right-half">
+        <h2 style="padding-left: 10px">Your Work</h2>
+        <div class="context-show"></div>
+        <div class="reference" id="output"></div>
+        <div class="score">
+            <form class="get-score" name="form1">
+                <input type="text" id="uname" style="width: 30%;height: 100%" readonly="readonly">
+                <input type="text" id="score" style="width: 30%;height: 100%" placeholder="Your Score" onkeydown="if(event.keyCode==13) {getScore()}">
+                <input type="button" value="提交" style="width: 20%;height: 100%" onclick="submitRequest()">
+            </form>
+        </div>
+        <div class="choose-index">
+            <form name="form2" class="page-change">
+<!--                <input type="button" value="上一页" class="page-change-button" onclick="prePage()">-->
+<!--                <input type="button" value="下一页" class="page-change-button" onclick="nxtPage()">-->
+                <br>
+                <input type="text" value="1" class="page-change-button" name="iIndex" readonly="readonly">
+<!--                <input type="button" value="跳转" class="page-change-button" onclick="changeIndex()">-->
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    // 最初进入网页即申请请求数据
+    dataLoad(0)
+    uname=document.cookie;
+    document.getElementById("uname").value=uname
+    setTimer()
+
+</script>
+</body>
+</html>

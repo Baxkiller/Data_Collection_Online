@@ -1,0 +1,107 @@
+﻿html{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:sans-serif;
+}
+
+body{
+    width: 1500px;
+    height: 773px;
+    font-family:sans-serif;
+    margin:0;
+    background-color: #2D2D3F;
+    background-size: 2000px;
+    z-index:-2;
+}
+
+#login{
+    position:absolute;
+    top:10%;
+    left:50%;
+    margin:-150px 0 0 -150px;
+    width:300px;
+    height:300px;
+    z-index:1;
+}
+
+#backwhite {
+    border-radius: 25px;
+    width: 400px;
+    height: 330px;
+    position: relative;
+    background-color: lavender;
+    opacity: 0.6;
+    top: 100%;
+    left: -15%;
+    right:auto;
+    z-index: -1;
+}
+
+#login h1{
+    color:#fff;
+    text-shadow:0 0 10px;
+    letter-spacing:1px;
+    text-align:center;
+}
+
+h1{
+    font-size:2em;
+    margin:0.67em 0;
+}
+
+input {
+    width: 278px;
+    height: 18px;
+    margin-bottom: 10px;
+    outline: none;
+    padding: 10px;
+    font-size: 13px;
+    color: #fff;
+    text-shadow: 1px 1px 1px;
+    border-top: 1px solid #312E3D;
+    border-left: 1px solid #312E3D;
+    border-right: 1px solid #312E3D;
+    border-bottom: 1px solid #56536A;
+    border-radius: 4px;
+    background-color: #2D2D3F;
+}
+
+.but {
+    width: 300px;
+    min-height: 20px;
+    display: block;
+    background-color: #4a77d4;
+    border: 1px solid #3762bc;
+    color: #fff;
+    padding: 9px 14px;
+    font-size: 15px;
+    line-height: normal;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.qitaxuanxiang{
+    margin-top: 20px;
+}
+
+#forget_password{
+    font-family: "Adobe 宋体 Std L";
+    font-size: 13px;
+    color: beige;
+    text-decoration-line: none;
+    letter-spacing: 1px;
+    align:left;
+    margin-left: 20px;
+}
+
+#register{
+    font-family: "Adobe 宋体 Std L";
+    font-size: 13px;
+    color: beige;
+    text-decoration: none;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    text-align: left;
+    margin-left: 140px;
+}
