@@ -136,7 +136,7 @@ def checkExpired():
             freeData(k, v['index'], 0)
         if v['index'] == -1:
             noTaskCnt += 1
-    if len(availableDataIndex) and noTaskCnt == len(userTimeStamp):
+    if len(availableDataIndex) and noTaskCnt == len(userTimeStamp) and noTaskCnt>0:
         exitWithSave()
 
 
