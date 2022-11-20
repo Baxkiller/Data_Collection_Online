@@ -10,7 +10,7 @@ function submitScore(uid,score,idx) {
             console.log("success");
             if(msg.status === 400){
                 alert(msg.msg);
-                window.open("about:blank","_self").close()
+                reDirected()
             }
             return 1;
         },

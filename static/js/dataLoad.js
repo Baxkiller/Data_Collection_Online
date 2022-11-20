@@ -26,12 +26,12 @@ function dataLoad(mode) {
                 if(data.index === -1)
                 {
                     alert("当前无数据可标注!请联系任务发布者或稍后再试...")
-                    window.open("about:blank","_self").close()
+                    reDirected()
                 }
                 else if(data.index === -2)
                 {
                     alert(data.msg)
-                    window.open("about:blank","_self").close()
+                    reDirected()
                 }
                 update(data.d,data.index)
             }
