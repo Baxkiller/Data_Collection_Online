@@ -1,2 +1,68 @@
 # Data_Collection_Online
-Given your data to be labeled,and label the data through this website.Based on FLASK.
+线上数据收集网站项目，致力于以简单的方式完成**对话系统领域**数据的标注问题。
+
+### 用户需提供内容
+
+- `./static/data/data.json`
+
+  所有待标注数据
+
+- `./static/userData/login.json`
+
+  所有标记员的账户信息和密码信息
+
+- `./static/userData/setting.json`
+
+  系统运行的相关设定
+
+
+
+### 本系统提供内容
+
+- 随机为用户分发数据
+
+  保证每个用户分配到的数据完全随机，且不会分配到相同的数据
+
+- 同步问题
+
+  从前端和后端共同解决了同步问题，当用户一定时间内没有标注数据即释放（收回分发的）数据
+
+- 一站式管理，运行程序即完成
+
+  用户只需设定好内容，运行程序，当所有数据都被标注完成后将自动退出程序。
+
+
+
+### 参数设定
+
+详见`./static/userData/setting.json`
+
+- `timeOut`
+
+  释放数据时间界限，超过该界限即释放数据。
+
+  以秒为单位。
+
+- `labelPerData`
+
+  给定的每个数据允许被标记几次。
+
+- `checkExpired`
+
+  时间单位，每过`checkExpired`秒即在后端进行一次检查。检查时间内如果数据到期，数据仍保持不被释放。检查过后数据被释放。
+
+
+
+### 标记数据
+
+已经被标注完成的数据存放在`./static/data/*.json`
+
+代表第`*`号被标注的数据，其内包含原第`*`号数据以及被分配到该数据的用户及其打分。
+
+
+
+### 待完成/完善
+
+- [ ] :arrow_backward: 用户返回修改之前标注过的数据
+- [ ] :christmas_tree: 界面装饰优化
+
