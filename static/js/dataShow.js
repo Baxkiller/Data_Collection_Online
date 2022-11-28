@@ -1,73 +1,105 @@
-function showContext(data) {
-    let par=document.getElementsByClassName("context-show");
-    for(let i=0;i<par.length;i++)
-    {
-        let childs=par[i].childNodes;
-        if (childs.length===0) continue;
-        for(let j=childs.length-1;j>=0;j--)
-            par[i].removeChild(childs[j]);
-    }
+// 显示人说的话
+// 生成内容是innerHTML的内容
+function showUser(sentence) {
+    return "<div class=\"from-div\"> <img src=\"/static/img/user.png\" class=\"face_photo_left\"> <p class=\"from-them\">" + sentence + "</p> </div>"
+}
 
-    for (let i=0;i<data.length;i++)
-    {
-        for(let j=0;j<par.length;j++)
-        {
-            let contextDiv=document.createElement("div");
-            if(i%2===0)
-                contextDiv.className="people people_A";
-            else
-                contextDiv.className="people people_B";
+// 显示电脑说的内容
+// 生成内容是innerHTML的内容
+function showComputer(sentence) {
+    return "<div class=\"from-div\"> <img src=\"/static/img/robot.png\" class=\"face_photo_right\"> <p class=\"from-me\">" + sentence + "</p> </div>"
+}
 
-            let text=document.createTextNode(data[i])
-            contextDiv.appendChild(text)
-            par[j].appendChild(contextDiv)
+// 得到的数据格式形如["",""]
+function showDialog(sentences) {
+    let extend_dialog=""
+    for(let i=0;i<sentences.length;i++)
+    {   // 第一句保证由人来讲
+        if(i%2===0){
+            extend_dialog=extend_dialog+showUser(sentences[i])
+        }else{
+            extend_dialog=extend_dialog+showComputer(sentences[i])
         }
     }
+    return extend_dialog
 }
 
-function showReference(reference,output) {
-
-    let referDiv=document.getElementsByClassName("reference")
-    for(let i=0;i<referDiv.length;i++)
-    {
-        let childs=referDiv[i].childNodes;
-        if (childs.length===0) continue;
-        for(let j=childs.length-1;j>=0;j--)
-            referDiv[i].removeChild(childs[j])
-    }
-
-    // let referText=document.createTextNode(reference)
-    // let outputText=document.createTextNode(output)
-    let referText=document.createElement("p")
-    let outputText=document.createElement("p")
-    referText.innerText=reference
-    outputText.innerText=output
-
-    referDiv[0].appendChild(referText)
-    referDiv[1].appendChild(outputText)
+function showReferOutput(reference,output) {
+    let extend_dialog=showComputer(reference)
+    extend_dialog=extend_dialog+showComputer(output)
+    return extend_dialog
 }
 
-function showScore(score) {
-
-    let givenScore=document.getElementsByClassName("given-score")
-
-    for(let i=0;i<givenScore.length;i++)
-    {
-        let childs=givenScore[i].childNodes;
-        if (childs.length===0) continue;
-        for(let j=childs.length-1;j>=0;j--)
-            givenScore[i].removeChild(childs[j])
-    }
-
-    let text=document.createElement("p")
-    text.innerText="score : "+score[0]
-    givenScore[0].appendChild(text)
-}
-
-// 当前问题是请求数据,然后看数据的反馈效果
 
 function displayData(data) {
-    showContext(data["context"])
-    showReference(data["reference"],data["output"])
-    showScore(data["score"])
+    let tmp_dialog=showDialog(data["context"])
+    tmp_dialog=tmp_dialog+showReferOutput(data["reference"],data["output"])
+    let message_box=document.getElementById("message_box")
+    message_box.innerHTML=tmp_dialog
+}
+
+// 一共的四个问题,尝试展现第i个问题
+function show_question(question_index)
+{
+    if(question_index > 0 && question_index <5)
+    {
+        question=document.getElementById("question"+question_index)
+        question.style.display=""
+        buttonStateChange(question_index)
+    }
+}
+
+function hide_question(question_index) {
+    if(question_index >0 && question_index < 5)
+    {
+        let question=document.getElementById("question"+question_index)
+        question.style.display="none"
+    }
+}
+
+function buttonStateChange(question_index)
+{
+    let preBtn=document.getElementById("previous_button")
+    let nxtBtn=document.getElementById("next_button")
+    let submitBtn=document.getElementById("submit_inline")
+
+    if(question_index === 1) {
+        preBtn.style.display="none"
+        submitBtn.style.display = "none";
+        nxtBtn.style.display="block"
+    }
+    else if(question_index === 4) {
+        nxtBtn.style.display="none"
+        preBtn.style.display="block"
+        submitBtn.style.display="block";
+    }
+    else{
+        submitBtn.style.display="none";
+        nxtBtn.style.display="block"
+        preBtn.style.display="block"
+    }
+}
+
+function previous_question() {
+    hide_question(questionID)
+    questionID=questionID-1
+    show_question(questionID)
+}
+
+function next_question() {
+    hide_question(questionID)
+    questionID=questionID+1
+    show_question(questionID)
+}
+
+function setCnt()
+{
+    document.getElementById("labelCnt").value=recordCnt
+}
+
+function freshQuestion(){
+    for(let i=1;i<5;i++) {
+        let question_name="q"+i
+        $("input[name=" + question_name + "]:checked").removeAttr('checked');
+    }
 }

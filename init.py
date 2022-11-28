@@ -211,7 +211,11 @@ def requestData():
     saveULI()
 
     print("USER {} get DATA {}".format(uid, data_index))
-    return json.dumps({"d": getTrueData(data_index), "index": data_index})
+    return json.dumps({
+        "d": getTrueData(data_index),
+        "index": data_index,
+        "cnt": len(userLabelInfo[uid]["labeled"])
+    })
 
 
 # 请示释放当前资源
@@ -229,7 +233,7 @@ def requestFree():
 def submitScore():
     data = request.form
     uid = data.get('uid')
-    score = data.get('score')
+    score = json.loads(data.get('score'))
     index = eval(data.get('index'))
 
     if checkUser(uid) == -1:
@@ -262,6 +266,11 @@ def checkSignIn():
 @app.route('/labelPage.html')
 def renderLabelPage():
     return render_template("labelPage.html")
+
+
+@app.route('/Label.html')
+def renderLabel():
+    return render_template("Label.html")
 
 
 @app.route('/')

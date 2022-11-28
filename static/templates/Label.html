@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Label Data</title>
+<!--    <link rel="icon" href=".././img/favicon.ico">-->
+<!--    <link rel="stylesheet" href=".././css/style.css">-->
+<!--    <link rel="stylesheet" href=".././css/lq-score.css">-->
+<!--    <script src=".././js/dataLoad.js"></script>-->
+<!--    <script src=".././js/dataShow.js"></script>-->
+
+    <link rel="icon" href="static/img/favicon.ico">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/lq-score.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="static/js/dataLoad.js"></script>
+    <script src="static/js/dataShow.js"></script>
+    <script src="static/js/dataSave.js"></script>
+    <script src="static/js/timer.js"></script>
+
+<body>
+<div class="knowledge" id="knowledge_full">
+    <div id="top_bar" style="margin-bottom: .5rem">
+        &nbsp;&nbsp;
+        用户名：
+        <input type="text" id="username" style="width:85px;border-style: none" readonly="readonly">
+        &nbsp;&nbsp;
+        已标注数：
+        <input type="text" id="labelCnt" style="width:85px;border-style: none" readonly="readonly">
+        &nbsp;&nbsp;
+        <button onclick="reDirected()" id="start_label" class="match">退出登录</button>
+    </div>
+    <div class="knowledge_box" id="instruction">
+        <div class="hint" id="hint">
+            <div class="instruction_icon">
+                <svg t="1669108599990" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                     xmlns="http://www.w3.org/2000/svg" p-id="1519" width="30" height="30">
+                    <path d="M634.9 770.3l-4.4 28H393.6l-4.4-28h245.7zM512 931c-30.4 0-55.9-21.6-62-50.2h124c-6.1 28.6-31.6 50.2-62 50.2z m103.5-79.3h-207c-3.4 0-6.4-2.2-7.4-5.5l-2.9-18.9H626l-3 18.9c-1 3.3-4 5.5-7.5 5.5zM384.7 741.3l-8.1-51.9-0.1-0.6c-7.4-30.4-22.6-58.6-43.8-81.7-42.5-46.2-65.9-106.1-65.9-168.7 0-135.1 109.9-245.1 245-245.3h0.3c134 0 244 108.9 245.3 242.9 0.6 62.7-22.5 122.6-65 168.6-21.5 23.2-36.8 51.7-44.3 82.4l-0.1 0.6-8.4 53.6H384.7z"
+                          fill="#FFFFFF" p-id="1520"></path>
+                    <path d="M357 741.1l-8-51.9-0.1-0.6c-7.4-30.4-22.4-58.6-43.5-81.7-42.2-46.2-65.4-106.1-65.4-168.7 0-135.1 109-245.1 243.1-245.3h0.3c133 0 242.1 108.9 243.3 242.9 0.6 62.7-22.3 122.6-64.5 168.6-21.3 23.2-36.5 51.7-43.9 82.4l-0.1 0.6-8.3 53.6H357z"
+                          fill="#F7DF8A" p-id="1521"></path>
+                    <path d="M605.8 770.8l-4.3 28H370.4l-4.3-28h239.7zM587 852.2H384.9c-3.3 0-6.3-2.2-7.2-5.5l-2.9-18.9h222.3l-2.9 18.9c-1 3.3-3.9 5.5-7.2 5.5z"
+                          fill="#E87A66" p-id="1522"></path>
+                    <path d="M484.9 931c-29 0-53.4-21.6-59.2-50.2H544c-5.8 28.6-30.1 50.2-59.1 50.2z" fill="#65D5EF"
+                          p-id="1523"></path>
+                    <path d="M512 164.1h-0.3c-73.2 0.1-142 28.6-193.7 80.4-51.7 51.8-80.2 120.6-80.2 193.9 0 35.2 6.6 69.7 19.7 102.6 12.7 31.8 30.8 60.7 53.8 85.7 17.8 19.3 30.5 42.9 36.8 68.4l24.5 157 0.1 0.6c4 16.5 18.7 28 35.7 28h12c6.4 44.7 45 79.2 91.5 79.2s85.1-34.5 91.5-79.2h12c17 0 31.7-11.5 35.7-28l0.1-0.6 5.6-35.7c0.2-0.9 0.4-1.8 0.4-2.7l18.9-120.4c6.4-25.7 19.3-49.6 37.3-69.1 47.5-51.5 73.3-118.5 72.7-188.6-0.7-72.6-29.6-140.9-81.5-192.2-51.6-51.1-120.1-79.3-192.6-79.3z m122.9 606.2l-4.4 28H393.6l-4.4-28h245.7zM512 931c-30.4 0-55.9-21.6-62-50.2h124c-6.1 28.6-31.6 50.2-62 50.2z m103.5-79.3h-207c-3.4 0-6.4-2.2-7.4-5.5l-2.9-18.9H626l-3 18.9c-1 3.3-4 5.5-7.5 5.5z m76.8-247c-21.5 23.2-36.8 51.7-44.3 82.4l-0.1 0.6-8.4 53.6h-113V570.8c0-8-6.5-14.5-14.5-14.5s-14.5 6.5-14.5 14.5v170.5H384.7l-8.1-51.9-0.1-0.6c-7.4-30.4-22.6-58.6-43.8-81.7-42.5-46.2-65.9-106.1-65.9-168.7 0-135.1 109.9-245.1 245-245.3h0.3c134 0 244 108.9 245.3 242.9 0.4 62.8-22.6 122.6-65.1 168.7z"
+                          fill="#274359" p-id="1524"></path>
+                    <path d="M512 467c-8 0-14.5 6.5-14.5 14.5v29.7c0 8 6.5 14.5 14.5 14.5s14.5-6.5 14.5-14.5v-29.7c0-8-6.5-14.5-14.5-14.5zM511.4 146.9c8 0 14.5-6.5 14.5-14.5V78.5c0-8-6.5-14.5-14.5-14.5s-14.5 6.5-14.5 14.5v53.8c0 8.1 6.5 14.6 14.5 14.6zM281.4 234.1c2.8 2.8 6.5 4.3 10.3 4.3 3.7 0 7.4-1.4 10.3-4.3 5.7-5.7 5.7-14.9 0-20.5l-38.1-38.1c-5.7-5.7-14.9-5.7-20.5 0-5.7 5.7-5.7 14.9 0 20.5l38 38.1zM201 429.4h-53.8c-8 0-14.5 6.5-14.5 14.5s6.5 14.5 14.5 14.5H201c8 0 14.5-6.5 14.5-14.5 0.1-8-6.4-14.5-14.5-14.5zM282.3 653.4l-38.1 38.1c-5.7 5.7-5.7 14.9 0 20.5 2.8 2.8 6.5 4.3 10.3 4.3 3.7 0 7.4-1.4 10.3-4.3l38.1-38.1c5.7-5.7 5.7-14.9 0-20.5-5.8-5.7-14.9-5.7-20.6 0zM742.6 652.5c-5.7-5.7-14.9-5.7-20.5 0-5.7 5.7-5.7 14.9 0 20.5l38.1 38.1c2.8 2.8 6.5 4.3 10.3 4.3s7.4-1.4 10.3-4.3c5.7-5.7 5.7-14.9 0-20.5l-38.2-38.1zM876.8 428.2H823c-8 0-14.5 6.5-14.5 14.5s6.5 14.5 14.5 14.5h53.8c8 0 14.5-6.5 14.5-14.5s-6.5-14.5-14.5-14.5zM731.4 237.5c3.7 0 7.4-1.4 10.3-4.3l38.1-38.1c5.7-5.7 5.7-14.9 0-20.5-5.7-5.7-14.9-5.7-20.5 0l-38.1 38.1c-5.7 5.7-5.7 14.9 0 20.5 2.8 2.9 6.5 4.3 10.2 4.3z"
+                          fill="#274359" p-id="1525"></path>
+                </svg>
+            </div>
+            <div class="instruction_text">
+                <b>感谢大家参与我们的数据标注工作，本指导书将介绍标注的具体内容和要求，请在正式标注前仔细阅读本指导书。</b>
+            </div>
+        </div>
+        <div class="description" id="description">
+            <div class="instruction_icon">
+                <svg t="1669115697558" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                     xmlns="http://www.w3.org/2000/svg" p-id="3220" width="35" height="35">
+                    <path d="M763.259259 744.296296C903.585185 465.540741 711.111111 219.022222 475.97037 219.022222v68.266667c129.896296 0 243.674074 94.814815 263.585186 226.607407 21.807407 145.066667-78.696296 280.651852-223.762963 302.45926-13.274074 1.896296-26.548148 2.844444-38.874074 2.844444v68.266667c91.022222 0 188.681481-36.977778 274.962962-127.051852 3.792593-4.740741 8.533333-10.42963 11.377778-16.118519z"
+                          fill="#C92334" p-id="3221"></path>
+                    <path d="M475.97037 820.148148c-187.733333 0-342.281481-199.111111-225.659259-422.874074 72.059259-78.696296 151.703704-109.037037 225.659259-109.037037v-68.266667c-16.118519 0-33.185185 0.948148-49.303703 3.792593-182.992593 27.496296-309.096296 197.214815-281.6 380.207407 25.6 164.977778 167.822222 284.444444 330.903703 284.444445v-68.266667z"
+                          fill="#F12A3F" p-id="3222"></path>
+                    <path d="M475.97037 356.503704c141.274074 0 256 150.755556 164.977778 317.629629-54.992593 55.940741-111.881481 76.8-164.977778 76.8v68.266667c13.274074 0 25.6-0.948148 38.874074-2.844444 146.014815-20.859259 246.518519-156.444444 224.711112-301.511112-19.911111-131.792593-133.688889-226.607407-263.585186-226.607407v68.266667z"
+                          fill="#E1EDF7" p-id="3223"></path>
+                    <path d="M251.259259 397.274074c-117.57037 223.762963 36.977778 422.874074 225.65926 422.874074v-68.266667c-140.325926 0-256-149.807407-164.977778-317.629629 51.2-54.992593 110.933333-77.748148 164.977778-77.748148v-68.266667c-74.903704 0-153.6 30.340741-225.65926 109.037037z"
+                          fill="#FEFEFF" p-id="3224"></path>
+                    <path d="M475.97037 667.496296c-80.592593 0-146.962963-86.281481-93.866666-182.992592 32.237037-31.288889 64.474074-43.614815 93.866666-43.614815v-84.385185c-54.992593 0-113.777778 22.755556-164.977777 77.748148-91.022222 166.874074 24.651852 317.62963 164.977777 317.629629v-84.385185z"
+                          fill="#F12A3F" p-id="3225"></path>
+                    <path d="M641.896296 674.133333c91.022222-167.822222-24.651852-318.577778-164.977777-317.629629v84.385185c81.540741 0 148.859259 88.177778 92.918518 185.837037-32.237037 29.392593-63.525926 40.77037-92.918518 40.77037v84.385185c53.096296-0.948148 109.985185-21.807407 164.977777-77.748148z"
+                          fill="#C92334" p-id="3226"></path>
+                    <path d="M475.97037 495.881481c41.718519 0 76.8 45.511111 46.45926 96.711112-17.066667 14.222222-32.237037 19.911111-46.45926 19.911111v54.992592c29.392593 0 60.681481-11.377778 92.918519-40.77037 55.940741-97.659259-11.377778-185.837037-92.918519-185.837037v54.992592zM382.103704 484.503704c-53.096296 96.711111 13.274074 182.992593 93.866666 182.992592v-54.992592c-28.444444 0-53.096296-20.859259-56.888889-49.303704-4.740741-31.288889 17.066667-60.681481 48.355556-65.422222 2.844444 0 5.688889-0.948148 8.533333-0.948148v-54.992593c-30.340741-0.948148-61.62963 10.42963-93.866666 42.666667z"
+                          fill="#FEFEFF" p-id="3227"></path>
+                    <path d="M419.081481 562.251852c4.740741 28.444444 29.392593 49.303704 56.888889 49.303704V495.881481c-36.02963 0-62.577778 32.237037-56.888889 66.370371z"
+                          fill="#F12A3F" p-id="3228"></path>
+                    <path d="M523.377778 592.592593c29.392593-50.251852-4.740741-96.711111-46.459259-96.711112v115.674075c14.222222 0 29.392593-4.740741 46.459259-18.962963z"
+                          fill="#C92334" p-id="3229"></path>
+                    <path d="M772.740741 694.992593l-38.874074-27.496297-35.081482 12.325926 37.925926 25.6zM881.777778 743.348148l-70.162963-48.355555-61.62963 20.859259 68.266667 46.459259zM804.977778 854.281481L734.814815 805.925926l-2.844445-64.474074 68.266667 46.459259zM723.437037 770.844444l-38.874074-27.496296-1.896296-36.029629 37.925926 26.548148z"
+                          fill="#FDB813" p-id="3230"></path>
+                    <path d="M847.644444 801.185185c4.740741-7.585185 2.844444-18.014815-4.74074-22.755555L498.725926 542.340741s-11.377778-8.533333-20.859259 4.74074c-8.533333 12.325926 2.844444 20.859259 2.844444 20.85926l343.22963 237.037037c8.533333 5.688889 18.014815 3.792593 23.703703-3.792593z"
+                          fill="#1E2D4F" p-id="3231"></path>
+                </svg>
+            </div>
+            <div class="instruction_text">
+                <b>标注说明</b>
+                <ul>
+                    <li>
+                        本次标注任务为<b>对话打分标注</b>。
+                    </li>
+                    <li>
+                        你将被分配到若干个对话，每个对话都是在<b>电影推荐</b>的场景下产生的，即，对话的双方分别为寻求电影推荐的seeker和进行电影推荐的recommender，在对话的过程中，recommender会与seeker闲聊、回答seeker的问题、询问seeker的喜好、为seeker推荐电影并给出解释，seeker会对recommender的推荐作出反馈。
+                    </li>
+                    <li>
+                        你的任务是给对话中每个<b>recommender说的话进行标注</b>，回答<b>问题列表</b>中的全部问题。
+                    </li>
+                    <li>
+                        在你标注一个对话时，对话并不会一次性全部展示给你，而是<b>动态地展示对话</b>，每次标注会给你额外展示一个对话轮次，即seeker和recommender的一轮交互，你需要给额外展示的这轮交互中的recommender说的话进行标注，如对话开始会展示recommender说的第一句话，你需要给这句话标注，标注完成后会出现seeker回复的第一句话和recommender说的第二句话，你需要继续给recommender说的第二句话标注，如此进行直至整个对话结束。注意，如果recommender连续说了多句话，那么连续的多句话将被视为一次而非多次交互，你标注的问题将基于recommender所说的多句话。
+                    </li>
+                    <li>
+                        你需要在标注的过程中进行<b>角色扮演</b>，扮演对话中seeker的角色，即假如你是对话中的seeker，你会怎么回答需要标注的问题。一个合格的角色扮演意味着你应该与对话中seeker所展示的<b>喜好</b>一致，喜好指seeker明确指出的对一些关键的属性或信息的评价，如喜欢或讨厌某种类型的电影、导演、演员、情节等，注意，seeker对某个电影的喜好可以一定程度上视作seeker对该电影属性(类型、导演、演员、情节等)的喜好，如喜欢泰坦尼克号意味着seeker有概率喜欢浪漫类型的电影。
+                    </li>
+                    <li>
+                        标注的问题聚焦在评价recommender所提供的<b>解释</b>上。解释指recommender<b>在推荐电影时</b>主动提供的<b>推荐原因</b>或<b>推荐电影的描述</b>，推荐原因即说明recommender为什么给你推荐这个电影，推荐电影的描述包括推荐电影的相关信息、recommender对推荐电影的评价等。
+                    </li>
+                    <li>
+                        在回答第11和第12标注问题时，会出现<b>电影相关信息</b>的搜索框，请输入recommender推荐电影的名字找到其相关信息，确保自己阅读完相关信息后再回答问题。
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="warn_hint" id="warn_hint">
+            <div class="instruction_icon">
+                <svg t="1669122893545" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                     xmlns="http://www.w3.org/2000/svg" p-id="10861" width="30" height="30">
+                    <path d="M468.114286 621.714286c7.314286 21.942857 21.942857 36.571429 43.885714 36.571428s36.571429-14.628571 43.885714-36.571428L585.142857 219.428571c0-43.885714-36.571429-73.142857-73.142857-73.142857-43.885714 0-73.142857 36.571429-73.142857 80.457143l29.257143 394.971429zM512 731.428571c-43.885714 0-73.142857 29.257143-73.142857 73.142858s29.257143 73.142857 73.142857 73.142857 73.142857-29.257143 73.142857-73.142857-29.257143-73.142857-73.142857-73.142858z"
+                          p-id="10862" fill="#d81e06"></path>
+                </svg>
+            </div>
+            <div class="instruction_text">
+                <b>注意事项</b>
+                <p>我们希望你在标注时注意以下几点：</p>
+                <ul>
+                    <li>
+                        只关注recommender的表现，不管对话中的seeker说了什么，你只需要随着对话的逐渐展开扮演好seeker的角色，与seeker所展示的喜好保持一致，以seeker的视角回答相关问题，不应该因为对话中seeker的表现影响了你对recommender的评价
+                    </li>
+                    <li>
+                        请认真标注每一个对话，我们会在标注结束后进行一致性检验，与其他标注人员标注结果存在明显差异的标注对话将视为无效；同时我们希望你标注的分数在不同的对话轮次中具有区分度，避免大量重复分数，如都打2分、3分，我们会在标注结束后进行检查，如果分数过于重复将判定为无效。
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="question_description" id="question_description" style="display: none">
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="instruction">
+        <div id="show_instruction">
+            <p style="margin: .15rem"><b>进入标注系统请先登陆</b>，首次使用系统请自定义用户名与密码，点击“登陆”按钮完成注册。</p>
+            <p style="margin: .15rem">首次标注时，<b>点击“开始标注”按钮开始试标注</b>，试标注会帮助你熟悉整个标注流程，当你的答案与参考答案不一致时会发出提醒，<b>不一致的数量达到三个时会开始新一轮试标</b>，直至你通过试标注才能开始正式标注。
+            </p>
+            <p style="margin: .15rem">在你标注的过程中，<b>左侧会显示你当前标注问题的详细解释</b>，<b>左上方会显示你已经标注的问题数量</b>。</p>
+        </div>
+    </div>
+    <div class="imessage" id="message_box">
+    </div>
+    <div class="question_box" id="question_box">
+        <div class="question" style="display: none" id="question1">
+            <h4>1. aaaaaaaaaaaaaaaaaaaaaaa</h4>
+            <input type="radio" name="q1" id="q11" value="1"><label for="q11">1分：我不知道推荐原因</label><br>
+            <input type="radio" name="q1" id="q12" value="2"><label for="q12">2分：我需要从上下文等额外信息中推理才能确定推荐原因</label><br>
+            <input type="radio" name="q1" id="q13" value="3"><label for="q13">3分：我只看解释就能确定推荐原因 </label><br>
+        </div>
+        <div class="question" style="display: none" id="question2">
+            <h4>2. bbbbbbbbbbbbbbbbbbbbbb</h4>
+            <input type="radio" name="q2" id="q21" value="1"><label for="q21">1分：我不知道推荐原因</label><br>
+            <input type="radio" name="q2" id="q22" value="2"><label for="q22">2分：我需要从上下文等额外信息中推理才能确定推荐原因</label><br>
+            <input type="radio" name="q2" id="q23" value="3"><label for="q23">3分：我只看解释就能确定推荐原因 </label><br>
+        </div>
+        <div class="question" style="display: none" id="question3">
+            <h4>3. 看了解释后，你是否清楚recommender为什么给你推荐这个电影</h4>
+            <input type="radio" name="q3" id="q31" value="1"><label for="q31">1分：我不知道推荐原因</label><br>
+            <input type="radio" name="q3" id="q32" value="2"><label for="q32">2分：我需要从上下文等额外信息中推理才能确定推荐原因</label><br>
+            <input type="radio" name="q3" id="q33" value="3"><label for="q33">3分：我只看解释就能确定推荐原因 </label><br>
+        </div>
+        <div class="question" style="display: none" id="question4">
+            <h4>4. 看了解释后，你是否清楚recommender是基于你的什么喜好给你推荐这个电影的</h4>
+            <input type="radio" name="q4" id="q41" value="1"><label for="q41">1分：我不知道基于的喜好</label><br>
+            <input type="radio" name="q4" id="q42" value="2"><label for="q42">2分：我需要从上下文等额外信息中推理才能确定基于的喜好</label><br>
+            <input type="radio" name="q4" id="q43" value="3"><label for="q43">3分：我只看解释就能确定基于的喜好</label><br>
+        </div>
+        <div class="question-buttons">
+            <input type="button" value="上一题" class="previous_button" id="previous_button" onclick="previous_question()"
+                   style="left: 28%;display: none">
+            <input type="button" value="完成标注" class="submit" id="submit_inline" onclick="submit_label()"
+                   style="left: 40%; display: none">
+            <input type="button" value="下一题" class="next_button" id="next_button" onclick="next_question()"
+                   style="left: 62%;display: none">
+        </div>
+    </div>
+</div>
+
+<script type="application/javascript">
+
+    dataLoad(0);
+    uname=document.cookie;
+    document.getElementById("username").value=uname
+    setTimer()
+
+</script>
+
+<!-- partial -->
+<!--<script type="application/javascript">-->
+<!--    var is_start = true;-->
+<!--    var is_label = false;-->
+<!--    var top_bar = document.getElementById('top_bar')-->
+<!--    var original_top_bar_html = top_bar.innerHTML-->
+
+<!--    var username = ""-->
+<!--    var password = ""-->
+<!--    var question_index = 0-->
+<!--    var dataset = ""-->
+<!--    var dataset_index = -1-->
+<!--    var dataset_split = 0-->
+<!--    var num_utterance = 0-->
+
+<!--    checkS = function (str) {-->
+<!--        // 判断字符串是否为数字和字母组合-->
+<!--        var zg = /^[0-9a-zA-Z]*$/;-->
+<!--        if (!zg.test(str)) {-->
+<!--            return false;-->
+<!--        } else {-->
+<!--            return true;-->
+<!--        }-->
+<!--    }-->
+
+<!--    function open_ws() {-->
+<!--        if (is_start) {-->
+<!--            top_bar.innerHTML = original_top_bar_html-->
+<!--            extend_html = ""-->
+<!--            message_box = document.getElementById('message_box')-->
+<!--            message_box.innerHTML = extend_html-->
+<!--            label_button = document.getElementById('start_label')-->
+<!--            label_button.innerHTML = "开始标注"-->
+<!--            label_button.style.background = "#cb0000"-->
+<!--            if (is_label) {-->
+<!--                start_label()-->
+<!--                is_label = false-->
+<!--            }-->
+<!--        } else {-->
+<!--            username = document.getElementById('username').value;-->
+<!--            password = document.getElementById('password').value;-->
+<!--            if (!checkS(username) || username.length > 10) {-->
+<!--                alert("用户名只能为小于10位的数字和字母的组合！")-->
+<!--                return;-->
+<!--            }-->
+<!--            if (password.length > 20) {-->
+<!--                alert("密码不能超过20位！")-->
+<!--                return;-->
+<!--            }-->
+<!--            data = {-->
+<!--                username: username,-->
+<!--                password: password-->
+<!--            }-->
+<!--            var xhr = new XMLHttpRequest();-->
+<!--            xhr.onreadystatechange = function () {-->
+<!--                if (xhr.readyState === 4) {-->
+<!--                    data = JSON.parse(xhr.response)-->
+<!--                    is_register = data["is_register"]-->
+<!--                    if (is_register) {-->
+<!--                        alert("注册成功，你的用户名为[" + username + "]")-->
+<!--                    }-->
+<!--                    login = data['login']-->
+<!--                    if (!login) {-->
+<!--                        alert("登陆失败，请检查你的用户名或密码！")-->
+<!--                        return;-->
+<!--                    }-->
+<!--                    label_num = data['label_num']-->
+<!--                    username_input = document.getElementById('username')-->
+<!--                    password_input = document.getElementById('password')-->
+<!--                    username_input.style.display = "none"-->
+<!--                    password_input.style.display = "none"-->
+<!--                    top_bar.innerHTML = "用户名： " + username + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + "已标注问题数目： " + String(label_num) + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + '<button onclick="open_ws()" id="login" style="width: 10%;">注销</button>' + '<button onclick="start_label()" id="start_label" class="match">开始标注</button>'-->
+<!--                    is_start = true-->
+<!--                }-->
+<!--            }-->
+<!--            xhr.open("POST", "/user", true);-->
+<!--            xhr.setRequestHeader('Content-Type', 'application/json');-->
+<!--            xhr.send(JSON.stringify(-->
+<!--                data-->
+<!--            ));-->
+<!--        }-->
+<!--    }-->
+
+<!--    function update_dialogue(data) {-->
+<!--        console.log(data)-->
+<!--        available = data['available']-->
+<!--        if (!available) {-->
+<!--            alert('所有数据均已标注，感谢你的参与！')-->
+<!--            clear_message_box()-->
+<!--            clear_question_box()-->
+<!--            clear_options()-->
+<!--            label_button = document.getElementById('start_label')-->
+<!--            label_button.innerHTML = "开始标注"-->
+<!--            label_button.style.background = "#cb0000"-->
+<!--            is_label = false-->
+<!--        } else {-->
+<!--            console.log(666)-->
+<!--            dialogue = data['data']-->
+<!--            if (dataset !== data['dataset'] || dataset_index !== data['index']) {-->
+<!--                num_utterance = 0-->
+<!--            }-->
+<!--            dataset = data['dataset']-->
+<!--            dataset_index = data['index']-->
+<!--            dataset_split = data['split']-->
+<!--            message_box = document.getElementById('message_box')-->
+<!--            extend_html = message_box.innerHTML-->
+<!--            for (var i = num_utterance; i < dialogue.length; i++) {-->
+<!--                if (dialogue[i].indexOf("seeker") !== -1) {-->
+<!--                    uttr = dialogue[i].replace("seeker: ", "")-->
+<!--                    extend_html = extend_html + "<div class=\"from-div\"> <img src=\"/static/images/user.jpg\" class=\"face_photo_right\"> <p class=\"from-me\">" + uttr + "</p> </div>"-->
+<!--                } else {-->
+<!--                    uttr = dialogue[i].replace("recommender: ", "")-->
+<!--                    extend_html = extend_html + "<div class=\"from-div\"> <img src=\"/static/images/robot.jpg\" class=\"face_photo_left\"> <p class=\"from-them\">" + uttr + "</p> </div>"-->
+<!--                }-->
+<!--            }-->
+<!--            message_box.innerHTML = extend_html-->
+<!--            num_utterance = dialogue.length-->
+<!--            show_question_description()-->
+<!--            clear_question_box()-->
+<!--            clear_options()-->
+<!--            question_index = 1-->
+<!--            show_question(question_index)-->
+<!--        }-->
+<!--        label_num = data['num_label']-->
+<!--        top_bar.innerHTML = "用户名： " + username + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + "已标注问题数目： " + String(label_num) + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + '<button onclick="open_ws()" id="login" style="width: 10%;">注销</button>' + '<button onclick="start_label()" id="start_label" class="match">开始标注</button>'-->
+<!--    }-->
+
+<!--    function show_question_description() {-->
+<!--        hint = document.getElementById("hint")-->
+<!--        description = document.getElementById("description")-->
+<!--        warn_hint = document.getElementById("warn_hint")-->
+<!--        question_description = document.getElementById("question_description")-->
+
+<!--        extend_html = "<img src='/static/images/q1.png'>"-->
+<!--        question_description.innerHTML = extend_html-->
+<!--        hint.style.display = "none"-->
+<!--        description.style.display = "none"-->
+<!--        warn_hint.style.display = "none"-->
+<!--        question_description.style.display = ""-->
+<!--    }-->
+
+<!--    function show_question(question_index) {-->
+<!--        p_question_name = "question" + String(question_index)-->
+<!--        p_qustion = document.getElementById(p_question_name)-->
+<!--        p_qustion.style.display = ""-->
+<!--        next_option()-->
+<!--    }-->
+
+<!--    function start_label() {-->
+<!--        if (!is_start) {-->
+<!--            alert("请先登陆！")-->
+<!--            return;-->
+<!--        }-->
+<!--        if (is_label) {-->
+<!--            label_button = document.getElementById('start_label')-->
+<!--            label_button.innerHTML = "开始标注"-->
+<!--            label_button.style.background = "#cb0000"-->
+<!--            clear_message_box()-->
+<!--            clear_question_box()-->
+<!--            clear_options()-->
+<!--            restore_homepage()-->
+<!--            is_label = false-->
+<!--        } else {-->
+<!--            data = {-->
+<!--                username: username-->
+<!--            }-->
+<!--            var xhr = new XMLHttpRequest();-->
+<!--            xhr.onreadystatechange = function () {-->
+<!--                if (xhr.readyState === 4) {-->
+<!--                    data = JSON.parse(xhr.response)-->
+<!--                    available = data['available']-->
+<!--                    if (available) {-->
+<!--                        label_button = document.getElementById('start_label')-->
+<!--                        label_button.innerHTML = "退出标注"-->
+<!--                        label_button.style.background = "green"-->
+<!--                        is_label = true-->
+<!--                    }-->
+<!--                    update_dialogue(data)-->
+<!--                }-->
+<!--            }-->
+<!--            xhr.open("POST", "/data", true);-->
+<!--            xhr.setRequestHeader('Content-Type', 'application/json');-->
+<!--            xhr.send(JSON.stringify(data));-->
+<!--        }-->
+<!--    }-->
+
+<!--    function next_option() {-->
+<!--        submit_button = document.getElementById("submit")-->
+<!--        submit_inline = document.getElementById("submit_inline")-->
+<!--        previous_button = document.getElementById("previous_button")-->
+<!--        next_button_sigle = document.getElementById("next_button_sigle")-->
+<!--        next_button = document.getElementById("next_button")-->
+<!--        if (question_index === 1) {-->
+<!--            submit_button.style.display = "none"-->
+<!--            submit_inline.style.display = "none"-->
+<!--            previous_button.style.display = "none"-->
+<!--            next_button.style.display = "none"-->
+<!--            next_button_sigle.style.display = ""-->
+<!--        } else if (question_index === 13) {-->
+<!--            submit_button.style.display = "none"-->
+<!--            submit_inline.style.display = ""-->
+<!--            previous_button.style.display = ""-->
+<!--            next_button.style.display = "none"-->
+<!--            next_button_sigle.style.display = "none"-->
+<!--        } else {-->
+<!--            submit_button.style.display = "none"-->
+<!--            submit_inline.style.display = "none"-->
+<!--            previous_button.style.display = ""-->
+<!--            next_button.style.display = ""-->
+<!--            next_button_sigle.style.display = "none"-->
+<!--        }-->
+<!--    }-->
+
+<!--    function finish_label() {-->
+<!--        submit_button = document.getElementById("submit")-->
+<!--        submit_inline = document.getElementById("submit_inline")-->
+<!--        previous_button = document.getElementById("previous_button")-->
+<!--        next_button_sigle = document.getElementById("next_button_sigle")-->
+<!--        next_button = document.getElementById("next_button")-->
+<!--        submit_inline.style.display = "none"-->
+<!--        previous_button.style.display = "none"-->
+<!--        next_button_sigle.style.display = "none"-->
+<!--        next_button.style.display = "none"-->
+<!--        submit_button.style.display = ""-->
+<!--    }-->
+
+<!--    function next_question() {-->
+<!--        question_name = "q" + String(question_index)-->
+<!--        answer = $("input[name=" + question_name + "]:checked").val();-->
+<!--        if (answer === undefined) {-->
+<!--            alert("请选择选项！")-->
+<!--        } else {-->
+<!--            p_question_name = "question" + String(question_index)-->
+<!--            p_qustion = document.getElementById(p_question_name)-->
+<!--            p_qustion.style.display = "none"-->
+<!--            question_index = question_index + 1-->
+<!--            p_question_name = "question" + String(question_index)-->
+<!--            p_qustion = document.getElementById(p_question_name)-->
+<!--            p_qustion.style.display = ""-->
+<!--            extend_html = "<img src='/static/images/q" + String(question_index) + ".png'>"-->
+<!--            question_description.innerHTML = extend_html-->
+<!--            next_option()-->
+<!--        }-->
+<!--    }-->
+
+<!--    function clear_options() {-->
+<!--        for (var i = 1; i <= 13; i++) {-->
+<!--            question_name = "q" + String(i)-->
+<!--            var input_value = document.getElementsByName(question_name)-->
+<!--            for (var j = 0; j < input_value.length; j++) {-->
+<!--                input_value[j].checked = false-->
+<!--            }-->
+<!--        }-->
+<!--    }-->
+
+<!--    function clear_question_box() {-->
+<!--        submit_button = document.getElementById("submit")-->
+<!--        submit_inline = document.getElementById("submit_inline")-->
+<!--        previous_button = document.getElementById("previous_button")-->
+<!--        next_button_sigle = document.getElementById("next_button_sigle")-->
+<!--        next_button = document.getElementById("next_button")-->
+<!--        submit_button.style.display = "none"-->
+<!--        submit_inline.style.display = "none"-->
+<!--        previous_button.style.display = "none"-->
+<!--        next_button.style.display = "none"-->
+<!--        next_button_sigle.style.display = "none"-->
+<!--        for (var i = 1; i <= 13; i++) {-->
+<!--            question_name = "question" + String(i)-->
+<!--            question = document.getElementById(question_name)-->
+<!--            question.style.display = "none"-->
+<!--        }-->
+<!--    }-->
+
+<!--    function clear_message_box() {-->
+<!--        num_utterance = 0-->
+<!--        extend_html = ""-->
+<!--        message_box = document.getElementById('message_box')-->
+<!--        message_box.innerHTML = extend_html-->
+<!--    }-->
+
+<!--    function restore_homepage() {-->
+<!--        hint = document.getElementById("hint")-->
+<!--        description = document.getElementById("description")-->
+<!--        warn_hint = document.getElementById("warn_hint")-->
+<!--        question_description = document.getElementById("question_description")-->
+
+<!--        question_description.innerHTML = ""-->
+<!--        hint.style.display = ""-->
+<!--        description.style.display = ""-->
+<!--        warn_hint.style.display = ""-->
+<!--        question_description.style.display = "none"-->
+<!--    }-->
+
+<!--    function previous_question() {-->
+<!--        p_question_name = "question" + String(question_index)-->
+<!--        p_qustion = document.getElementById(p_question_name)-->
+<!--        p_qustion.style.display = "none"-->
+<!--        question_index = question_index - 1-->
+<!--        p_question_name = "question" + String(question_index)-->
+<!--        p_qustion = document.getElementById(p_question_name)-->
+<!--        p_qustion.style.display = ""-->
+<!--        extend_html = "<img src='/static/images/q" + String(question_index) + ".png'>"-->
+<!--        question_description.innerHTML = extend_html-->
+<!--        next_option()-->
+<!--    }-->
+
+<!--    function submit_label() {-->
+<!--        var dic = {}; //定义一个字典-->
+<!--        for (var i = 1; i <= 13; i++) {-->
+<!--            question_name = "q" + String(i)-->
+<!--            var input_value = document.getElementsByName(question_name)-->
+<!--            var is_checked = false-->
+<!--            for (var j = 0; j < input_value.length; j++) {-->
+<!--                if (input_value[j].checked === true) {-->
+<!--                    is_checked = true-->
+<!--                    break-->
+<!--                }-->
+<!--            }-->
+<!--            if (is_checked) {-->
+<!--                value = $("input[name=" + question_name + "]:checked").val();-->
+<!--                dic[question_name] = value-->
+<!--            }-->
+<!--        }-->
+<!--        data = {-->
+<!--            username: username,-->
+<!--            label: dic,-->
+<!--            dataset: dataset,-->
+<!--            index: dataset_index,-->
+<!--            split: dataset_split,-->
+<!--        }-->
+<!--        var xhr = new XMLHttpRequest();-->
+<!--        xhr.onreadystatechange = function () {-->
+<!--            if (xhr.readyState === 4) {-->
+<!--                data = JSON.parse(xhr.response)-->
+<!--                update_dialogue(data)-->
+<!--            }-->
+<!--        }-->
+<!--        xhr.open("POST", "/label", true);-->
+<!--        xhr.setRequestHeader('Content-Type', 'application/json');-->
+<!--        xhr.send(JSON.stringify(data));-->
+<!--    }-->
+
+<!--</script>-->
+
+
+
+<!--        <div class="question" style="display: none" id="question1">-->
+<!--            <h4>1. 在这句话中，recommender是否推荐了前文中未出现的电影?</h4>-->
+<!--            <input type="radio" name="q1" id="q11" value="1" onclick="next_option()"><label for="q11">是</label><br>-->
+<!--            <input type="radio" name="q1" id="q12" value="2" onclick="finish_label()"><label for="q12">否</label><br>-->
+<!--        </div>-->
+<!--        <div class="question" style="display: none" id="question2">-->
+<!--            <h4>2. 在这句话中，recommender是否提供了推荐电影的解释?</h4>-->
+<!--            <input type="radio" name="q2" id="q21" value="1" onclick="next_option()"><label for="q21">是</label><br>-->
+<!--            <input type="radio" name="q2" id="q22" value="2" onclick="finish_label()"><label for="q22">否</label><br>-->
+<!--        </div>-->
+<!--        <div class="question" style="display: none" id="question3">-->
+<!--            <h4>3. 看了解释后，你是否清楚recommender为什么给你推荐这个电影</h4>-->
+<!--            <input type="radio" name="q3" id="q31" value="1"><label for="q31">1分：我不知道推荐原因</label><br>-->
+<!--            <input type="radio" name="q3" id="q32" value="2"><label for="q32">2分：我需要从上下文等额外信息中推理才能确定推荐原因</label><br>-->
+<!--            <input type="radio" name="q3" id="q33" value="3"><label for="q33">3分：我只看解释就能确定推荐原因 </label><br>-->
+<!--        </div>-->
+<!--        <div class="question" style="display: none" id="question4">-->
+<!--            <h4>4. 看了解释后，你是否清楚recommender是基于你的什么喜好给你推荐这个电影的</h4>-->
+<!--            <input type="radio" name="q4" value="1" id="q41"><label for="q41">1分：我不知道基于的喜好</label><br>-->
+<!--            <input type="radio" name="q4" value="2" id="q42"><label for="q42">2分：我需要从上下文等额外信息中推理才能确定基于的喜好</label><br>-->
+<!--            <input type="radio" name="q4" value="3" id="q43"><label for="q43">3分：我只看解释就能确定基于的喜好</label><br>-->
+<!--        </div>-->
+<!--        <div class="question" style="display: none" id="question5">-->
+<!--            <h4>5. 看了解释后，你是否认为解释与前文信息不一致或存在逻辑问题</h4>-->
+<!--            <input type="radio" name="q5" value="1" id="q51"><label for="q51">1分：我认为解释与前文信息不一致</label><br>-->
+<!--            <input type="radio" name="q5" value="2" id="q52"><label for="q52">2分：我认为解释与前文信息一致但存在逻辑问题</label><br>-->
+<!--            <input type="radio" name="q5" value="3" id="q53"><label for="q53">3分：我认为解释与前文信息一致且不存在逻辑问题</label><br>-->
+<!--        </div>-->
+<!--        <div class="question" style="display: none" id="question6">-->
+<!--            <h4>6. 看了解释后，你是否认为解释是合乎语境的</h4>-->
+<!--            <input type="radio" name="q6" value="1" id="q61"><label for="q61">1分：我认为解释与前文不连贯，是不合乎语境的</label><br>-->
+<!--            <input type="radio" name="q6" value="2" id="q62"><label for="q62">2分：我认为解释与前文某些部分不连贯，但整体还是合乎语境的</label><br>-->
+<!--            <input type="radio" name="q6" value="3" id="q63"><label for="q63">3分：我认为解释与前文非常连贯，是合乎语境的</label><br>-->
+<!--        </div>-->
+<!--        <div class="question" style="display: none" id="question7">-->
+<!--            <h4>7. 看了解释后，你是否信任recommender给你的推荐</h4>-->
+<!--            <input type="radio" name="q7" value="1" id="q71"><label for="q71">1分：我不太信任recommender给我的推荐</label><br>-->
+<!--            <input type="radio" name="q7" value="2" id="q72"><label for="q72">2分：我比较信任recommender给我的推荐 </label><br>-->
+<!--            <input type="radio" name="q7" value="3" id="q73"><label for="q73">3分：我十分信任recommender给我的推荐</label><br>-->
+<!--        </div>-->
+<!--        <div class="question" style="display: none" id="question8">-->
+<!--            <h4>8. 看了解释后，你是否想要尝试推荐的电影</h4>-->
+<!--            <input type="radio" name="q8" value="1" id="q81"><label for="q81">1分：我对推荐的电影没有感觉</label><br>-->
+<!--            <input type="radio" name="q8" value="2" id="q82"><label for="q82">2分：我对推荐的电影有点感兴趣</label><br>-->
+<!--            <input type="radio" name="q8" value="3" id="q83"><label for="q83">3分：我对推荐的电影很感兴趣，想要尝试</label><br>-->
+<!--        </div>-->
+<!--        <div class="question" style="display: none" id="question9">-->
+<!--            <h4>9. 看了解释后，你是否能很快地确定自己对推荐的电影感不感兴趣</h4>-->
+<!--            <input type="radio" name="q9" value="1" id="q91"><label for="q91">1分：我难以确定自己对推荐的电影感不感兴趣</label><br>-->
+<!--            <input type="radio" name="q9" value="2" id="q92"><label for="q92">2分：我需要思考一会才能确定自己对推荐的电影感不感兴趣</label><br>-->
+<!--            <input type="radio" name="q9" value="3" id="q93"><label for="q93">3分：我能够快速地确定自己对推荐的电影感不感兴趣</label><br>-->
+<!--        </div>-->
+<!--        <div class="question" style="display: none" id="question10">-->
+<!--            <h4>10. 相比没有解释，你是否认为解释是让你满意的</h4>-->
+<!--            <input type="radio" name="q10" value="1" id="q101"><label for="q101">1分：我认为解释没有提升我获取推荐的体验，不是很满意</label><br>-->
+<!--            <input type="radio" name="q10" value="2" id="q102"><label-->
+<!--                for="q102">2分：我认为解释能一定程度上提升我获取推荐的体验，比较满意</label><br>-->
+<!--            <input type="radio" name="q10" value="3" id="q103"><label for="q103">3分：我认为解释能较大提升我获取推荐的体验，很满意</label><br>-->
+<!--        </div>-->
+<!--        <div class="question" style="display: none" id="question11">-->
+<!--            <h4>11. 在看了推荐电影的相关信息后，你是否认为解释适合当前所推荐的电影</h4>-->
+<!--            <input type="radio" name="q11" value="1" id="q111"><label for="q111">1分：我认为解释与推荐电影信息不一致</label><br>-->
+<!--            <input type="radio" name="q11" value="2" id="q112"><label for="q112">2分：我认为解释与推荐电影信息一致但过于泛泛</label><br>-->
+<!--            <input type="radio" name="q11" value="3" id="q113"><label for="q113">3分：我认为解释与推荐电影信息一致且具有代表性</label><br>-->
+<!--        </div>-->
+<!--        <div class="question" style="display: none" id="question12">-->
+<!--            <h4>12. 比起只看解释，在看了推荐电影的相关信息后，自己对推荐电影的喜好变化大吗</h4>-->
+<!--            <input type="radio" name="q12" value="1" id="q121"><label for="q121">1分：变化很大，我开始对推荐电影感兴趣/不感兴趣了</label><br>-->
+<!--            <input type="radio" name="q12" value="2" id="q122"><label-->
+<!--                for="q122">2分：有一些变化，没有之前对推荐电影那么感兴趣/不感兴趣了</label><br>-->
+<!--            <input type="radio" name="q12" value="3" id="q123"><label for="q123">3分：没有太大变化，我依然对推荐电影感兴趣/不感兴趣</label><br>-->
+<!--        </div>-->
+<!--        <div class="question" style="display: none" id="question13">-->
+<!--            <h4>13. 你对于解释的整体评价是</h4>-->
+<!--            <input type="radio" name="q13" value="1" id="q131"><label for="q131">1分</label>-->
+<!--            <input type="radio" name="q13" value="2" id="q132"><label for="q132">2分</label>-->
+<!--            <input type="radio" name="q13" value="3" id="q133"><label for="q133">3分</label>-->
+<!--            <input type="radio" name="q13" value="4" id="q134"><label for="q134">4分</label>-->
+<!--            <input type="radio" name="q13" value="5" id="q135"><label for="q135">5分</label><br>-->
+<!--        </div>-->
+
+</body>

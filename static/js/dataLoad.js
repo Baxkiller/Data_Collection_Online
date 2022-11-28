@@ -1,17 +1,29 @@
 var index;
 var toShowData;
+var recordCnt;
+var questionID;
 
-function update(d,i) {
+function update(d,i,cnt,qIdx) {
+    let preQuestion=questionID
+
     index=i;
     toShowData=d;
-    setIndex();
+    recordCnt=cnt;
+    questionID=qIdx;
+
+    setCnt();
     displayData(d);
+
+    freshQuestion();
+    hide_question(preQuestion);
+    show_question(qIdx);
 }
 
 // 每次数据请求,但是需要提前给定用户名
 // 返回的数据是data+当前data的数据下标,自动显示并更新index
 // mode代表用户登录后申请/提交后申请
 function dataLoad(mode) {
+
     let uid = document.cookie;
     $.ajax({
         url: "/requestData",
@@ -33,7 +45,7 @@ function dataLoad(mode) {
                     alert(data.msg)
                     reDirected()
                 }
-                update(data.d,data.index)
+                update(data.d,data.index,data.cnt,1)
             }
     })
 
