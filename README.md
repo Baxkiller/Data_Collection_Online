@@ -73,6 +73,7 @@
 
 ### 待完成/完善
 
-- [ ] :arrow_backward: 用户返回修改之前标注过的数据
-- [ ] :christmas_tree: 界面装饰优化
+- [x] :arrow_backward: 用户返回修改之前标注过的数据（修改为选项）
+- [x] :christmas_tree: 界面装饰优化
+- [ ] 新用户登录后的测试标注和一致性检查
 
