@@ -350,8 +350,8 @@ def initialize():
             print("You should put the data in file `./static/data/data/json`! ")
             exit(0)
 
-    with open("./static/data/try_label.json", "r") as f:
-        tryData = json.load(f)
+    # with open("./static/data/try_label.json", "r") as f:
+    #     tryData = json.load(f)
 
     with open("./static/userData/toLabelInfo.json", "r") as f:
         try:
