@@ -1,4 +1,4 @@
-var timeLimit = 1000 * 59 * 3;
+var timeLimit = 1000 * 59 * 10;
 var myTimer = "初始化Timer";
 
 function setTimer() {

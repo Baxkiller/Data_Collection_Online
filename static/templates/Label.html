@@ -84,7 +84,7 @@
             <div class="instruction_text">
                 <b>标注样例</b>
             </div>
-            <img src="/static/img/sample.png" style="width: 100%">
+            <div id="sample_dialog" class="imessage"></div>
             <ul id="hint_q1" style="display: none">
                 <li>
                     评估角度：整体相关性
@@ -212,6 +212,7 @@
     document.getElementById("username").value=uname
     setTimer()
 
+    show_sample();
     $("#table_q1").load("/table_q1.html");
     $("#table_q2").load("/table_q2.html");
     $("#table_q3").load("/table_q3.html");

@@ -1,5 +1,5 @@
 {
-  "timeOut": 120,
-  "labelPerData": 1,
+  "timeOut": 160,
+  "labelPerData": 3,
   "checkExpired": 30
 }

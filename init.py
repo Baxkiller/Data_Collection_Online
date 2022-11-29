@@ -6,8 +6,6 @@
 # @Description: 数据池中全部是当前未标记的数据
 #               不需要担心数据被同一个人二次标注(?!)
 
-
-# -*- coding: utf-8 -*-
 from flask import Flask, jsonify, render_template, request
 from json.decoder import JSONDecodeError
 from flask_apscheduler import APScheduler
@@ -261,6 +259,13 @@ def checkSignIn():
         else:
             print("USER {} trying to sign in...".format(uid))
             return json.dumps({"result": "YES"})
+
+
+@app.route('/requestSample',methods = ['POST', 'GET'])
+def requestSample():
+    with open("./static/data/sample.json","r",encoding = 'UTF-8') as f:
+        sample = json.load(f)
+    return json.dumps({"d": sample})
 
 
 @app.route('/table_q1.html')

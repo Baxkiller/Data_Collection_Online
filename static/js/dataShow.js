@@ -7,7 +7,23 @@ function showUser(sentence) {
 // 显示电脑说的内容
 // 生成内容是innerHTML的内容
 function showComputer(sentence) {
-    return "<div class=\"from-div\"> <img src=\"/static/img/robot.png\" class=\"face_photo_right\"> <p class=\"from-me\">" + sentence + "</p> </div>"
+    return "<div class=\"from-div\"> <img src=\"/static/img/robot1.png\" class=\"face_photo_right\"> <p class=\"from-me\">" + sentence + "</p> </div>"
+}
+
+function showOutput(sentence,mode) {
+    if(mode === 0){
+        return "<div class=\"from-div\"> <img src=\"/static/img/robot2.png\" class=\"face_photo_right\"> <p class=\"from-me\">" + sentence + "</p> </div>"
+    }else {
+        return "<div class=\"from-div\"><p style='font-weight: bold;color: red'>评分:3</p> <img src=\"/static/img/robot2.png\" class=\"face_photo_right\"> <p class=\"from-me\">" + sentence + "</p> </div>"
+    }
+}
+
+function showReference(sentence,mode) {
+    if(mode === 0){
+        return "<div class=\"from-div\"> <img src=\"/static/img/robot1.png\" class=\"face_photo_right\"> <p class=\"from-me\">" + sentence + "</p> </div>"
+    } else {
+        return "<div class=\"from-div\"><p style='font-weight: bold;color: red'>参考评分:3</p> <img src=\"/static/img/robot1.png\" class=\"face_photo_right\"> <p class=\"from-me\">" + sentence + "</p> </div>"
+    }
 }
 
 // 得到的数据格式形如["",""]
@@ -26,16 +42,17 @@ function showDialog(sentences) {
     return extend_dialog
 }
 
-function showReferOutput(reference,output) {
-    let extend_dialog=showComputer(output)
-    extend_dialog=extend_dialog+"<div class='output-dialog dialog'>"+showComputer(reference)+"</div>"
+// 0代表正常输出,1代表含有红色字体
+function showReferOutput(reference,output,mode) {
+    let extend_dialog=showReference(reference,mode)
+    extend_dialog=extend_dialog+"<div class='output-dialog dialog'>"+showOutput(output,mode)+"</div>"
     return extend_dialog
 }
 
 
 function displayData(data) {
     let tmp_dialog=showDialog(data["context"])
-    tmp_dialog=tmp_dialog+showReferOutput(data["reference"],data["output"])
+    tmp_dialog=tmp_dialog+showReferOutput(data["reference"],data["output"],0)
     let message_box=document.getElementById("message_box")
     message_box.innerHTML=tmp_dialog
 }
@@ -114,4 +131,22 @@ function freshQuestion(){
         let question_name="q"+i
         $("input[name=" + question_name + "]:checked").removeAttr('checked');
     }
+}
+
+function show_sample() {
+    // 先读取data
+    $.ajax({
+        url: "/requestSample",
+        type: "GET",
+        dataType: "json",
+        success:
+            function (d) {
+                let data=d.d[0]
+                let sample_box=document.getElementById("sample_dialog")
+                let sample_dialog=showDialog(data["context"])
+                sample_dialog=sample_dialog+showReferOutput(data["reference"],data["output"],1)
+                sample_box.innerHTML=sample_dialog
+            }
+    })
+
 }
