@@ -22,6 +22,7 @@ allDatas = dict()  # 所有的数据
 availableDataIndex = list()
 userTimeStamp = dict()  # 每个用户有一个时间戳
 allUsers = dict()
+tryData = dict()
 
 num_times = 0  # 设定一条数据可以被几个人标记
 timeLimit = 0  # 设定十分钟的时间,超过此事件释放资源
@@ -98,13 +99,14 @@ def randDataIndex(uid):
 
     # 没有数据可用了,已经全部标记完成,或者还剩当前正在标注中的数据了
     # 主动退出整个程序?
-    if cnt == 0:
+    if cnt == 0 or len(userLabelInfo[uid]['labeled']) == len(allDatas):
         # 检查是否有正在标注的人
         for k, v in userTimeStamp.items():
             if v["index"] != -1:
                 return -1
         # 如果都等于-1
         exitWithSave()
+        return -1
 
     if len(userLabelInfo[uid]['labeled']) == 0:
         pos = random.randint(0, cnt - 1)
@@ -164,6 +166,10 @@ def save_data(uid, score, idx):
     return
 
 
+def getTryData():
+    return random.randint(0, len(tryData) - 1)
+
+
 # 用户登陆后请求mode=0/用户提交一个后请求mode=1
 # 更新userLabelInfo(正在标注),availableDataIndex(分配数据),userTimeStamp
 @app.route('/requestData', methods = ['POST'])
@@ -179,9 +185,15 @@ def requestData():
         userLabelInfo[uid] = dict()
         userLabelInfo[uid]['labeling'] = -1
         userLabelInfo[uid]['labeled'] = list()
+        userLabelInfo[uid]['try_labeled'] = list()
 
         userTimeStamp[uid] = dict()
         userTimeStamp[uid] = {"time": 0, "index": -1}
+
+    # if len(userLabelInfo[uid]["try_labeled"]) == 0:
+    #     dataIdx = getTryData()
+    #     userLabelInfo[uid]["try_labeling"] = dataIdx
+    #     return json.dumps({'d':tryData[dataIdx],})
 
     # 数据分配
     data = userLabelInfo.get(uid)
@@ -261,9 +273,9 @@ def checkSignIn():
             return json.dumps({"result": "YES"})
 
 
-@app.route('/requestSample',methods = ['POST', 'GET'])
+@app.route('/requestSample', methods = ['POST', 'GET'])
 def requestSample():
-    with open("./static/data/sample.json","r",encoding = 'UTF-8') as f:
+    with open("./static/data/sample.json", "r", encoding = 'UTF-8') as f:
         sample = json.load(f)
     return json.dumps({"d": sample})
 
@@ -313,6 +325,7 @@ def initialize():
     global num_times
     global checkExpiredTime
     global allUsers
+    global tryData
 
     with open("./static/userData/setting.json", "r") as f:
         try:
@@ -336,6 +349,9 @@ def initialize():
         except JSONDecodeError:
             print("You should put the data in file `./static/data/data/json`! ")
             exit(0)
+
+    with open("./static/data/try_label.json", "r") as f:
+        tryData = json.load(f)
 
     with open("./static/userData/toLabelInfo.json", "r") as f:
         try:

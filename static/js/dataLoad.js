@@ -37,7 +37,7 @@ function dataLoad(mode) {
             function (data) {
                 if(data.index === -1)
                 {
-                    alert("当前无数据可标注!请联系任务发布者或稍后再试...")
+                    alert("您已标注"+data.cnt+"组数据;当前无可用数据;请联系任务发布者或稍后再试...")
                     reDirected()
                 }
                 else if(data.index === -2)

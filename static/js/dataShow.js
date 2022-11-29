@@ -16,7 +16,7 @@ function showOutput(sentence,mode) {
     if(mode === 0){
         return "<div class=\"from-div\"> <img src=\"/static/img/robot1.png\" class=\"face_photo_right\"> <p class=\"from-me\">" + sentence + "</p> </div>"
     }else {
-        return "<div class=\"from-div\"><p style='font-weight: bold;color: red'>评分:3</p> <img src=\"/static/img/robot1.png\" class=\"face_photo_right\"> <p class=\"from-me\">" + sentence + "</p> </div>"
+        return "<div class=\"from-div\"><p id='reference_score' style='font-weight: bold;color: red'>评分:3</p> <img src=\"/static/img/robot1.png\" class=\"face_photo_right\"> <p class=\"from-me\">" + sentence + "</p> </div>"
     }
 }
 
@@ -24,7 +24,7 @@ function showReference(sentence,mode) {
     if(mode === 0){
         return "<div class=\"from-div\"> <img src=\"/static/img/robot2.png\" class=\"face_photo_right\"> <p class=\"from-me\">" + sentence + "</p> </div>"
     } else {
-        return "<div class=\"from-div\"><p id='reference_score' style='font-weight: bold;color: red'>参考评分:3</p> <img src=\"/static/img/robot2.png\" class=\"face_photo_right\"> <p class=\"from-me\">" + sentence + "</p> </div>"
+        return "<div class=\"from-div\"><p style='font-weight: bold;color: red'>参考评分:3</p> <img src=\"/static/img/robot2.png\" class=\"face_photo_right\"> <p class=\"from-me\">" + sentence + "</p> </div>"
     }
 }
 
@@ -69,9 +69,9 @@ function show_question(question_index)
         let table=document.getElementById("table_q"+question_index)
 
         if(question_index === 2) {
-            document.getElementById("reference_score").innerText="参考分数:4"
+            document.getElementById("reference_score").innerText="分数:4"
         } else{
-            document.getElementById("reference_score").innerText="参考分数:3"
+            document.getElementById("reference_score").innerText="分数:3"
         }
 
 
