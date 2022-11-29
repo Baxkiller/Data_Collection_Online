@@ -1,1 +1,0 @@
-{"context": ["Are you looking for an apartment?", "Yes, I am interested in finding a one-bedroom apartment near Washington Square.", "I think I have just a right apartment for you."], "reference": "That is awesome! Could you please show it to me?", "output": "Really! What is the rent they are asking for? Do you know it?", "score": [3, 5], "usr": {"admin": [3, 4, 1, 3]}}
