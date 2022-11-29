@@ -82,31 +82,53 @@
                 </svg>
             </div>
             <div class="instruction_text">
-                <b>标注说明</b>
-                <ul>
-                    <li>
-                        本次标注任务为<b>对话打分标注</b>。
-                    </li>
-                    <li>
-                        你将被分配到若干个对话，每个对话都是在<b>电影推荐</b>的场景下产生的，即，对话的双方分别为寻求电影推荐的seeker和进行电影推荐的recommender，在对话的过程中，recommender会与seeker闲聊、回答seeker的问题、询问seeker的喜好、为seeker推荐电影并给出解释，seeker会对recommender的推荐作出反馈。
-                    </li>
-                    <li>
-                        你的任务是给对话中每个<b>recommender说的话进行标注</b>，回答<b>问题列表</b>中的全部问题。
-                    </li>
-                    <li>
-                        在你标注一个对话时，对话并不会一次性全部展示给你，而是<b>动态地展示对话</b>，每次标注会给你额外展示一个对话轮次，即seeker和recommender的一轮交互，你需要给额外展示的这轮交互中的recommender说的话进行标注，如对话开始会展示recommender说的第一句话，你需要给这句话标注，标注完成后会出现seeker回复的第一句话和recommender说的第二句话，你需要继续给recommender说的第二句话标注，如此进行直至整个对话结束。注意，如果recommender连续说了多句话，那么连续的多句话将被视为一次而非多次交互，你标注的问题将基于recommender所说的多句话。
-                    </li>
-                    <li>
-                        你需要在标注的过程中进行<b>角色扮演</b>，扮演对话中seeker的角色，即假如你是对话中的seeker，你会怎么回答需要标注的问题。一个合格的角色扮演意味着你应该与对话中seeker所展示的<b>喜好</b>一致，喜好指seeker明确指出的对一些关键的属性或信息的评价，如喜欢或讨厌某种类型的电影、导演、演员、情节等，注意，seeker对某个电影的喜好可以一定程度上视作seeker对该电影属性(类型、导演、演员、情节等)的喜好，如喜欢泰坦尼克号意味着seeker有概率喜欢浪漫类型的电影。
-                    </li>
-                    <li>
-                        标注的问题聚焦在评价recommender所提供的<b>解释</b>上。解释指recommender<b>在推荐电影时</b>主动提供的<b>推荐原因</b>或<b>推荐电影的描述</b>，推荐原因即说明recommender为什么给你推荐这个电影，推荐电影的描述包括推荐电影的相关信息、recommender对推荐电影的评价等。
-                    </li>
-                    <li>
-                        在回答第11和第12标注问题时，会出现<b>电影相关信息</b>的搜索框，请输入recommender推荐电影的名字找到其相关信息，确保自己阅读完相关信息后再回答问题。
-                    </li>
-                </ul>
+                <b>标注样例</b>
             </div>
+            <img src="/static/img/sample.png" style="width: 100%">
+            <ul id="hint_q1" style="display: none">
+                <li>
+                    评估角度：整体相关性
+                </li>
+                <li>
+                    分数：3分
+                </li>
+                <li>
+                    解释：上面的对话以国家公园的主题开始，然后切换到天然温泉。语音助手的回复是关于温泉水的，而蓝色用户的回复是关于国家公园的。我们认为这两个都与上述对话有关。因此，如果第一个的相关性得分为3，那么第二个得分为3。
+                </li>
+            </ul>
+            <ul id="hint_q2" style="display: none">
+                <li>
+                    评估角度：与上文的匹配程度
+                </li>
+                <li>
+                    分数：4分
+                </li>
+                <li>
+                    解释：上面的对话以国家公园的主题开始，然后切换到天然温泉。语音助手的回复是关于温泉水的，而蓝色用户的回复是关于国家公园的。由于右侧用户最后一句谈及的是温泉，所以我们认为第二句更适合上面的对话。因此，如果蓝色用户给出的回复对应分数为3，那么语音助手的分数为4。
+                </li>
+            </ul>
+            <ul id="hint_q3" style="display: none">
+                <li>
+                    评估角度：回复中的信息量
+                </li>
+                <li>
+                    分数：3分
+                </li>
+                <li>
+                    解释：上面的对话从国家公园的话题开始，然后转到天然温泉。语音助手的回复是关于温泉水的，而蓝色用户的回复是关于国家公园的。除了对话中涉及的内容外，这两种回复都包含了一定的信息量，且没有太大差异。因此，如果蓝色用户给出的回复对应分数为3，那么语音助手的分数为3。
+                </li>
+            </ul>
+            <ul id="hint_q4" style="display: none">
+                <li>
+                    评估角度：您的满意度
+                </li>
+                <li>
+                    分数：3分
+                </li>
+                <li>
+                    解释：上面的对话以国家公园的主题开始，然后切换到天然温泉。综合考虑前三个评估的角度，对于这两个结果，在满意度上没有明显的倾向性。因此，如果蓝色用户给出的回复对应分数为3，那么语音助手的分数为3。
+                </li>
+            </ul>
         </div>
         <div class="warn_hint" id="warn_hint">
             <div class="instruction_icon">
@@ -117,17 +139,12 @@
                 </svg>
             </div>
             <div class="instruction_text">
-                <b>注意事项</b>
-                <p>我们希望你在标注时注意以下几点：</p>
-                <ul>
-                    <li>
-                        只关注recommender的表现，不管对话中的seeker说了什么，你只需要随着对话的逐渐展开扮演好seeker的角色，与seeker所展示的喜好保持一致，以seeker的视角回答相关问题，不应该因为对话中seeker的表现影响了你对recommender的评价
-                    </li>
-                    <li>
-                        请认真标注每一个对话，我们会在标注结束后进行一致性检验，与其他标注人员标注结果存在明显差异的标注对话将视为无效；同时我们希望你标注的分数在不同的对话轮次中具有区分度，避免大量重复分数，如都打2分、3分，我们会在标注结束后进行检查，如果分数过于重复将判定为无效。
-                    </li>
-                </ul>
+                <b>当前问题评分准则</b>
             </div>
+            <div class="table" id="table_q1" style="display: none"></div>
+            <div class="table" id="table_q2" style="display: none"></div>
+            <div class="table" id="table_q3" style="display: none"></div>
+            <div class="table" id="table_q4" style="display: none"></div>
         </div>
         <div class="question_description" id="question_description" style="display: none">
         </div>
@@ -137,38 +154,45 @@
 <div class="container">
     <div class="instruction">
         <div id="show_instruction">
-            <p style="margin: .15rem"><b>进入标注系统请先登陆</b>，首次使用系统请自定义用户名与密码，点击“登陆”按钮完成注册。</p>
-            <p style="margin: .15rem">首次标注时，<b>点击“开始标注”按钮开始试标注</b>，试标注会帮助你熟悉整个标注流程，当你的答案与参考答案不一致时会发出提醒，<b>不一致的数量达到三个时会开始新一轮试标</b>，直至你通过试标注才能开始正式标注。
-            </p>
-            <p style="margin: .15rem">在你标注的过程中，<b>左侧会显示你当前标注问题的详细解释</b>，<b>左上方会显示你已经标注的问题数量</b>。</p>
+            <p style="margin: .1rem">首次标注默认进行<b>"试标注"</b>，当试标注结果与参考结果匹配值小于一定阈值会开始新一轮试标，直至通过试标注才能开始正式标注。</p>
+            <p style="margin: .1rem">在标注的过程中，<b>左侧会显示标注样例与当前问题的说明</b>，<b>左上方会显示你已经标注的问题数量</b>；<b>左下方会显示你当前标注问题的评分标准</b>。</p>
+            <p style="margin: .1rem">三分钟内未提交结果将自动退出系统。所以请务必在<b>三分钟内点击完成标注按钮，提交评分结果</b>。</p>
         </div>
     </div>
     <div class="imessage" id="message_box">
     </div>
     <div class="question_box" id="question_box">
         <div class="question" style="display: none" id="question1">
-            <h4>1. aaaaaaaaaaaaaaaaaaaaaaa</h4>
-            <input type="radio" name="q1" id="q11" value="1"><label for="q11">1分：我不知道推荐原因</label><br>
-            <input type="radio" name="q1" id="q12" value="2"><label for="q12">2分：我需要从上下文等额外信息中推理才能确定推荐原因</label><br>
-            <input type="radio" name="q1" id="q13" value="3"><label for="q13">3分：我只看解释就能确定推荐原因 </label><br>
+            <h4>1. 与对话上文整体的相关性</h4>
+            <input type="radio" name="q1" id="q11" value="1"><label for="q11">1分</label>
+            <input type="radio" name="q1" id="q12" value="2"><label for="q12">2分</label>
+            <input type="radio" name="q1" id="q13" value="3"><label for="q13">3分</label>
+            <input type="radio" name="q1" id="q14" value="4"><label for="q14">4分</label>
+            <input type="radio" name="q1" id="q15" value="5"><label for="q15">5分</label>
         </div>
         <div class="question" style="display: none" id="question2">
-            <h4>2. bbbbbbbbbbbbbbbbbbbbbb</h4>
-            <input type="radio" name="q2" id="q21" value="1"><label for="q21">1分：我不知道推荐原因</label><br>
-            <input type="radio" name="q2" id="q22" value="2"><label for="q22">2分：我需要从上下文等额外信息中推理才能确定推荐原因</label><br>
-            <input type="radio" name="q2" id="q23" value="3"><label for="q23">3分：我只看解释就能确定推荐原因 </label><br>
+            <h4>2. 与最近一次提问的匹配程度</h4>
+            <input type="radio" name="q2" id="q21" value="1"><label for="q11">1分</label>
+            <input type="radio" name="q2" id="q22" value="2"><label for="q12">2分</label>
+            <input type="radio" name="q2" id="q23" value="3"><label for="q13">3分</label>
+            <input type="radio" name="q2" id="q24" value="4"><label for="q14">4分</label>
+            <input type="radio" name="q2" id="q25" value="5"><label for="q15">5分</label>
         </div>
         <div class="question" style="display: none" id="question3">
-            <h4>3. 看了解释后，你是否清楚recommender为什么给你推荐这个电影</h4>
-            <input type="radio" name="q3" id="q31" value="1"><label for="q31">1分：我不知道推荐原因</label><br>
-            <input type="radio" name="q3" id="q32" value="2"><label for="q32">2分：我需要从上下文等额外信息中推理才能确定推荐原因</label><br>
-            <input type="radio" name="q3" id="q33" value="3"><label for="q33">3分：我只看解释就能确定推荐原因 </label><br>
+            <h4>3. 信息量丰富程度</h4>
+            <input type="radio" name="q3" id="q31" value="1"><label for="q11">1分</label>
+            <input type="radio" name="q3" id="q32" value="2"><label for="q12">2分</label>
+            <input type="radio" name="q3" id="q33" value="3"><label for="q13">3分</label>
+            <input type="radio" name="q3" id="q34" value="4"><label for="q14">4分</label>
+            <input type="radio" name="q3" id="q35" value="5"><label for="q15">5分</label>
         </div>
         <div class="question" style="display: none" id="question4">
-            <h4>4. 看了解释后，你是否清楚recommender是基于你的什么喜好给你推荐这个电影的</h4>
-            <input type="radio" name="q4" id="q41" value="1"><label for="q41">1分：我不知道基于的喜好</label><br>
-            <input type="radio" name="q4" id="q42" value="2"><label for="q42">2分：我需要从上下文等额外信息中推理才能确定基于的喜好</label><br>
-            <input type="radio" name="q4" id="q43" value="3"><label for="q43">3分：我只看解释就能确定基于的喜好</label><br>
+            <h4>4. 您的整体满意度</h4>
+            <input type="radio" name="q4" id="q41" value="1"><label for="q11">1分</label>
+            <input type="radio" name="q4" id="q42" value="2"><label for="q12">2分</label>
+            <input type="radio" name="q4" id="q43" value="3"><label for="q13">3分</label>
+            <input type="radio" name="q4" id="q44" value="4"><label for="q14">4分</label>
+            <input type="radio" name="q4" id="q45" value="5"><label for="q15">5分</label>
         </div>
         <div class="question-buttons">
             <input type="button" value="上一题" class="previous_button" id="previous_button" onclick="previous_question()"
@@ -188,433 +212,10 @@
     document.getElementById("username").value=uname
     setTimer()
 
+    $("#table_q1").load("/table_q1.html");
+    $("#table_q2").load("/table_q2.html");
+    $("#table_q3").load("/table_q3.html");
+    $("#table_q4").load("/table_q4.html");
+
 </script>
-
-<!-- partial -->
-<!--<script type="application/javascript">-->
-<!--    var is_start = true;-->
-<!--    var is_label = false;-->
-<!--    var top_bar = document.getElementById('top_bar')-->
-<!--    var original_top_bar_html = top_bar.innerHTML-->
-
-<!--    var username = ""-->
-<!--    var password = ""-->
-<!--    var question_index = 0-->
-<!--    var dataset = ""-->
-<!--    var dataset_index = -1-->
-<!--    var dataset_split = 0-->
-<!--    var num_utterance = 0-->
-
-<!--    checkS = function (str) {-->
-<!--        // 判断字符串是否为数字和字母组合-->
-<!--        var zg = /^[0-9a-zA-Z]*$/;-->
-<!--        if (!zg.test(str)) {-->
-<!--            return false;-->
-<!--        } else {-->
-<!--            return true;-->
-<!--        }-->
-<!--    }-->
-
-<!--    function open_ws() {-->
-<!--        if (is_start) {-->
-<!--            top_bar.innerHTML = original_top_bar_html-->
-<!--            extend_html = ""-->
-<!--            message_box = document.getElementById('message_box')-->
-<!--            message_box.innerHTML = extend_html-->
-<!--            label_button = document.getElementById('start_label')-->
-<!--            label_button.innerHTML = "开始标注"-->
-<!--            label_button.style.background = "#cb0000"-->
-<!--            if (is_label) {-->
-<!--                start_label()-->
-<!--                is_label = false-->
-<!--            }-->
-<!--        } else {-->
-<!--            username = document.getElementById('username').value;-->
-<!--            password = document.getElementById('password').value;-->
-<!--            if (!checkS(username) || username.length > 10) {-->
-<!--                alert("用户名只能为小于10位的数字和字母的组合！")-->
-<!--                return;-->
-<!--            }-->
-<!--            if (password.length > 20) {-->
-<!--                alert("密码不能超过20位！")-->
-<!--                return;-->
-<!--            }-->
-<!--            data = {-->
-<!--                username: username,-->
-<!--                password: password-->
-<!--            }-->
-<!--            var xhr = new XMLHttpRequest();-->
-<!--            xhr.onreadystatechange = function () {-->
-<!--                if (xhr.readyState === 4) {-->
-<!--                    data = JSON.parse(xhr.response)-->
-<!--                    is_register = data["is_register"]-->
-<!--                    if (is_register) {-->
-<!--                        alert("注册成功，你的用户名为[" + username + "]")-->
-<!--                    }-->
-<!--                    login = data['login']-->
-<!--                    if (!login) {-->
-<!--                        alert("登陆失败，请检查你的用户名或密码！")-->
-<!--                        return;-->
-<!--                    }-->
-<!--                    label_num = data['label_num']-->
-<!--                    username_input = document.getElementById('username')-->
-<!--                    password_input = document.getElementById('password')-->
-<!--                    username_input.style.display = "none"-->
-<!--                    password_input.style.display = "none"-->
-<!--                    top_bar.innerHTML = "用户名： " + username + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + "已标注问题数目： " + String(label_num) + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + '<button onclick="open_ws()" id="login" style="width: 10%;">注销</button>' + '<button onclick="start_label()" id="start_label" class="match">开始标注</button>'-->
-<!--                    is_start = true-->
-<!--                }-->
-<!--            }-->
-<!--            xhr.open("POST", "/user", true);-->
-<!--            xhr.setRequestHeader('Content-Type', 'application/json');-->
-<!--            xhr.send(JSON.stringify(-->
-<!--                data-->
-<!--            ));-->
-<!--        }-->
-<!--    }-->
-
-<!--    function update_dialogue(data) {-->
-<!--        console.log(data)-->
-<!--        available = data['available']-->
-<!--        if (!available) {-->
-<!--            alert('所有数据均已标注，感谢你的参与！')-->
-<!--            clear_message_box()-->
-<!--            clear_question_box()-->
-<!--            clear_options()-->
-<!--            label_button = document.getElementById('start_label')-->
-<!--            label_button.innerHTML = "开始标注"-->
-<!--            label_button.style.background = "#cb0000"-->
-<!--            is_label = false-->
-<!--        } else {-->
-<!--            console.log(666)-->
-<!--            dialogue = data['data']-->
-<!--            if (dataset !== data['dataset'] || dataset_index !== data['index']) {-->
-<!--                num_utterance = 0-->
-<!--            }-->
-<!--            dataset = data['dataset']-->
-<!--            dataset_index = data['index']-->
-<!--            dataset_split = data['split']-->
-<!--            message_box = document.getElementById('message_box')-->
-<!--            extend_html = message_box.innerHTML-->
-<!--            for (var i = num_utterance; i < dialogue.length; i++) {-->
-<!--                if (dialogue[i].indexOf("seeker") !== -1) {-->
-<!--                    uttr = dialogue[i].replace("seeker: ", "")-->
-<!--                    extend_html = extend_html + "<div class=\"from-div\"> <img src=\"/static/images/user.jpg\" class=\"face_photo_right\"> <p class=\"from-me\">" + uttr + "</p> </div>"-->
-<!--                } else {-->
-<!--                    uttr = dialogue[i].replace("recommender: ", "")-->
-<!--                    extend_html = extend_html + "<div class=\"from-div\"> <img src=\"/static/images/robot.jpg\" class=\"face_photo_left\"> <p class=\"from-them\">" + uttr + "</p> </div>"-->
-<!--                }-->
-<!--            }-->
-<!--            message_box.innerHTML = extend_html-->
-<!--            num_utterance = dialogue.length-->
-<!--            show_question_description()-->
-<!--            clear_question_box()-->
-<!--            clear_options()-->
-<!--            question_index = 1-->
-<!--            show_question(question_index)-->
-<!--        }-->
-<!--        label_num = data['num_label']-->
-<!--        top_bar.innerHTML = "用户名： " + username + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + "已标注问题数目： " + String(label_num) + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + '<button onclick="open_ws()" id="login" style="width: 10%;">注销</button>' + '<button onclick="start_label()" id="start_label" class="match">开始标注</button>'-->
-<!--    }-->
-
-<!--    function show_question_description() {-->
-<!--        hint = document.getElementById("hint")-->
-<!--        description = document.getElementById("description")-->
-<!--        warn_hint = document.getElementById("warn_hint")-->
-<!--        question_description = document.getElementById("question_description")-->
-
-<!--        extend_html = "<img src='/static/images/q1.png'>"-->
-<!--        question_description.innerHTML = extend_html-->
-<!--        hint.style.display = "none"-->
-<!--        description.style.display = "none"-->
-<!--        warn_hint.style.display = "none"-->
-<!--        question_description.style.display = ""-->
-<!--    }-->
-
-<!--    function show_question(question_index) {-->
-<!--        p_question_name = "question" + String(question_index)-->
-<!--        p_qustion = document.getElementById(p_question_name)-->
-<!--        p_qustion.style.display = ""-->
-<!--        next_option()-->
-<!--    }-->
-
-<!--    function start_label() {-->
-<!--        if (!is_start) {-->
-<!--            alert("请先登陆！")-->
-<!--            return;-->
-<!--        }-->
-<!--        if (is_label) {-->
-<!--            label_button = document.getElementById('start_label')-->
-<!--            label_button.innerHTML = "开始标注"-->
-<!--            label_button.style.background = "#cb0000"-->
-<!--            clear_message_box()-->
-<!--            clear_question_box()-->
-<!--            clear_options()-->
-<!--            restore_homepage()-->
-<!--            is_label = false-->
-<!--        } else {-->
-<!--            data = {-->
-<!--                username: username-->
-<!--            }-->
-<!--            var xhr = new XMLHttpRequest();-->
-<!--            xhr.onreadystatechange = function () {-->
-<!--                if (xhr.readyState === 4) {-->
-<!--                    data = JSON.parse(xhr.response)-->
-<!--                    available = data['available']-->
-<!--                    if (available) {-->
-<!--                        label_button = document.getElementById('start_label')-->
-<!--                        label_button.innerHTML = "退出标注"-->
-<!--                        label_button.style.background = "green"-->
-<!--                        is_label = true-->
-<!--                    }-->
-<!--                    update_dialogue(data)-->
-<!--                }-->
-<!--            }-->
-<!--            xhr.open("POST", "/data", true);-->
-<!--            xhr.setRequestHeader('Content-Type', 'application/json');-->
-<!--            xhr.send(JSON.stringify(data));-->
-<!--        }-->
-<!--    }-->
-
-<!--    function next_option() {-->
-<!--        submit_button = document.getElementById("submit")-->
-<!--        submit_inline = document.getElementById("submit_inline")-->
-<!--        previous_button = document.getElementById("previous_button")-->
-<!--        next_button_sigle = document.getElementById("next_button_sigle")-->
-<!--        next_button = document.getElementById("next_button")-->
-<!--        if (question_index === 1) {-->
-<!--            submit_button.style.display = "none"-->
-<!--            submit_inline.style.display = "none"-->
-<!--            previous_button.style.display = "none"-->
-<!--            next_button.style.display = "none"-->
-<!--            next_button_sigle.style.display = ""-->
-<!--        } else if (question_index === 13) {-->
-<!--            submit_button.style.display = "none"-->
-<!--            submit_inline.style.display = ""-->
-<!--            previous_button.style.display = ""-->
-<!--            next_button.style.display = "none"-->
-<!--            next_button_sigle.style.display = "none"-->
-<!--        } else {-->
-<!--            submit_button.style.display = "none"-->
-<!--            submit_inline.style.display = "none"-->
-<!--            previous_button.style.display = ""-->
-<!--            next_button.style.display = ""-->
-<!--            next_button_sigle.style.display = "none"-->
-<!--        }-->
-<!--    }-->
-
-<!--    function finish_label() {-->
-<!--        submit_button = document.getElementById("submit")-->
-<!--        submit_inline = document.getElementById("submit_inline")-->
-<!--        previous_button = document.getElementById("previous_button")-->
-<!--        next_button_sigle = document.getElementById("next_button_sigle")-->
-<!--        next_button = document.getElementById("next_button")-->
-<!--        submit_inline.style.display = "none"-->
-<!--        previous_button.style.display = "none"-->
-<!--        next_button_sigle.style.display = "none"-->
-<!--        next_button.style.display = "none"-->
-<!--        submit_button.style.display = ""-->
-<!--    }-->
-
-<!--    function next_question() {-->
-<!--        question_name = "q" + String(question_index)-->
-<!--        answer = $("input[name=" + question_name + "]:checked").val();-->
-<!--        if (answer === undefined) {-->
-<!--            alert("请选择选项！")-->
-<!--        } else {-->
-<!--            p_question_name = "question" + String(question_index)-->
-<!--            p_qustion = document.getElementById(p_question_name)-->
-<!--            p_qustion.style.display = "none"-->
-<!--            question_index = question_index + 1-->
-<!--            p_question_name = "question" + String(question_index)-->
-<!--            p_qustion = document.getElementById(p_question_name)-->
-<!--            p_qustion.style.display = ""-->
-<!--            extend_html = "<img src='/static/images/q" + String(question_index) + ".png'>"-->
-<!--            question_description.innerHTML = extend_html-->
-<!--            next_option()-->
-<!--        }-->
-<!--    }-->
-
-<!--    function clear_options() {-->
-<!--        for (var i = 1; i <= 13; i++) {-->
-<!--            question_name = "q" + String(i)-->
-<!--            var input_value = document.getElementsByName(question_name)-->
-<!--            for (var j = 0; j < input_value.length; j++) {-->
-<!--                input_value[j].checked = false-->
-<!--            }-->
-<!--        }-->
-<!--    }-->
-
-<!--    function clear_question_box() {-->
-<!--        submit_button = document.getElementById("submit")-->
-<!--        submit_inline = document.getElementById("submit_inline")-->
-<!--        previous_button = document.getElementById("previous_button")-->
-<!--        next_button_sigle = document.getElementById("next_button_sigle")-->
-<!--        next_button = document.getElementById("next_button")-->
-<!--        submit_button.style.display = "none"-->
-<!--        submit_inline.style.display = "none"-->
-<!--        previous_button.style.display = "none"-->
-<!--        next_button.style.display = "none"-->
-<!--        next_button_sigle.style.display = "none"-->
-<!--        for (var i = 1; i <= 13; i++) {-->
-<!--            question_name = "question" + String(i)-->
-<!--            question = document.getElementById(question_name)-->
-<!--            question.style.display = "none"-->
-<!--        }-->
-<!--    }-->
-
-<!--    function clear_message_box() {-->
-<!--        num_utterance = 0-->
-<!--        extend_html = ""-->
-<!--        message_box = document.getElementById('message_box')-->
-<!--        message_box.innerHTML = extend_html-->
-<!--    }-->
-
-<!--    function restore_homepage() {-->
-<!--        hint = document.getElementById("hint")-->
-<!--        description = document.getElementById("description")-->
-<!--        warn_hint = document.getElementById("warn_hint")-->
-<!--        question_description = document.getElementById("question_description")-->
-
-<!--        question_description.innerHTML = ""-->
-<!--        hint.style.display = ""-->
-<!--        description.style.display = ""-->
-<!--        warn_hint.style.display = ""-->
-<!--        question_description.style.display = "none"-->
-<!--    }-->
-
-<!--    function previous_question() {-->
-<!--        p_question_name = "question" + String(question_index)-->
-<!--        p_qustion = document.getElementById(p_question_name)-->
-<!--        p_qustion.style.display = "none"-->
-<!--        question_index = question_index - 1-->
-<!--        p_question_name = "question" + String(question_index)-->
-<!--        p_qustion = document.getElementById(p_question_name)-->
-<!--        p_qustion.style.display = ""-->
-<!--        extend_html = "<img src='/static/images/q" + String(question_index) + ".png'>"-->
-<!--        question_description.innerHTML = extend_html-->
-<!--        next_option()-->
-<!--    }-->
-
-<!--    function submit_label() {-->
-<!--        var dic = {}; //定义一个字典-->
-<!--        for (var i = 1; i <= 13; i++) {-->
-<!--            question_name = "q" + String(i)-->
-<!--            var input_value = document.getElementsByName(question_name)-->
-<!--            var is_checked = false-->
-<!--            for (var j = 0; j < input_value.length; j++) {-->
-<!--                if (input_value[j].checked === true) {-->
-<!--                    is_checked = true-->
-<!--                    break-->
-<!--                }-->
-<!--            }-->
-<!--            if (is_checked) {-->
-<!--                value = $("input[name=" + question_name + "]:checked").val();-->
-<!--                dic[question_name] = value-->
-<!--            }-->
-<!--        }-->
-<!--        data = {-->
-<!--            username: username,-->
-<!--            label: dic,-->
-<!--            dataset: dataset,-->
-<!--            index: dataset_index,-->
-<!--            split: dataset_split,-->
-<!--        }-->
-<!--        var xhr = new XMLHttpRequest();-->
-<!--        xhr.onreadystatechange = function () {-->
-<!--            if (xhr.readyState === 4) {-->
-<!--                data = JSON.parse(xhr.response)-->
-<!--                update_dialogue(data)-->
-<!--            }-->
-<!--        }-->
-<!--        xhr.open("POST", "/label", true);-->
-<!--        xhr.setRequestHeader('Content-Type', 'application/json');-->
-<!--        xhr.send(JSON.stringify(data));-->
-<!--    }-->
-
-<!--</script>-->
-
-
-
-<!--        <div class="question" style="display: none" id="question1">-->
-<!--            <h4>1. 在这句话中，recommender是否推荐了前文中未出现的电影?</h4>-->
-<!--            <input type="radio" name="q1" id="q11" value="1" onclick="next_option()"><label for="q11">是</label><br>-->
-<!--            <input type="radio" name="q1" id="q12" value="2" onclick="finish_label()"><label for="q12">否</label><br>-->
-<!--        </div>-->
-<!--        <div class="question" style="display: none" id="question2">-->
-<!--            <h4>2. 在这句话中，recommender是否提供了推荐电影的解释?</h4>-->
-<!--            <input type="radio" name="q2" id="q21" value="1" onclick="next_option()"><label for="q21">是</label><br>-->
-<!--            <input type="radio" name="q2" id="q22" value="2" onclick="finish_label()"><label for="q22">否</label><br>-->
-<!--        </div>-->
-<!--        <div class="question" style="display: none" id="question3">-->
-<!--            <h4>3. 看了解释后，你是否清楚recommender为什么给你推荐这个电影</h4>-->
-<!--            <input type="radio" name="q3" id="q31" value="1"><label for="q31">1分：我不知道推荐原因</label><br>-->
-<!--            <input type="radio" name="q3" id="q32" value="2"><label for="q32">2分：我需要从上下文等额外信息中推理才能确定推荐原因</label><br>-->
-<!--            <input type="radio" name="q3" id="q33" value="3"><label for="q33">3分：我只看解释就能确定推荐原因 </label><br>-->
-<!--        </div>-->
-<!--        <div class="question" style="display: none" id="question4">-->
-<!--            <h4>4. 看了解释后，你是否清楚recommender是基于你的什么喜好给你推荐这个电影的</h4>-->
-<!--            <input type="radio" name="q4" value="1" id="q41"><label for="q41">1分：我不知道基于的喜好</label><br>-->
-<!--            <input type="radio" name="q4" value="2" id="q42"><label for="q42">2分：我需要从上下文等额外信息中推理才能确定基于的喜好</label><br>-->
-<!--            <input type="radio" name="q4" value="3" id="q43"><label for="q43">3分：我只看解释就能确定基于的喜好</label><br>-->
-<!--        </div>-->
-<!--        <div class="question" style="display: none" id="question5">-->
-<!--            <h4>5. 看了解释后，你是否认为解释与前文信息不一致或存在逻辑问题</h4>-->
-<!--            <input type="radio" name="q5" value="1" id="q51"><label for="q51">1分：我认为解释与前文信息不一致</label><br>-->
-<!--            <input type="radio" name="q5" value="2" id="q52"><label for="q52">2分：我认为解释与前文信息一致但存在逻辑问题</label><br>-->
-<!--            <input type="radio" name="q5" value="3" id="q53"><label for="q53">3分：我认为解释与前文信息一致且不存在逻辑问题</label><br>-->
-<!--        </div>-->
-<!--        <div class="question" style="display: none" id="question6">-->
-<!--            <h4>6. 看了解释后，你是否认为解释是合乎语境的</h4>-->
-<!--            <input type="radio" name="q6" value="1" id="q61"><label for="q61">1分：我认为解释与前文不连贯，是不合乎语境的</label><br>-->
-<!--            <input type="radio" name="q6" value="2" id="q62"><label for="q62">2分：我认为解释与前文某些部分不连贯，但整体还是合乎语境的</label><br>-->
-<!--            <input type="radio" name="q6" value="3" id="q63"><label for="q63">3分：我认为解释与前文非常连贯，是合乎语境的</label><br>-->
-<!--        </div>-->
-<!--        <div class="question" style="display: none" id="question7">-->
-<!--            <h4>7. 看了解释后，你是否信任recommender给你的推荐</h4>-->
-<!--            <input type="radio" name="q7" value="1" id="q71"><label for="q71">1分：我不太信任recommender给我的推荐</label><br>-->
-<!--            <input type="radio" name="q7" value="2" id="q72"><label for="q72">2分：我比较信任recommender给我的推荐 </label><br>-->
-<!--            <input type="radio" name="q7" value="3" id="q73"><label for="q73">3分：我十分信任recommender给我的推荐</label><br>-->
-<!--        </div>-->
-<!--        <div class="question" style="display: none" id="question8">-->
-<!--            <h4>8. 看了解释后，你是否想要尝试推荐的电影</h4>-->
-<!--            <input type="radio" name="q8" value="1" id="q81"><label for="q81">1分：我对推荐的电影没有感觉</label><br>-->
-<!--            <input type="radio" name="q8" value="2" id="q82"><label for="q82">2分：我对推荐的电影有点感兴趣</label><br>-->
-<!--            <input type="radio" name="q8" value="3" id="q83"><label for="q83">3分：我对推荐的电影很感兴趣，想要尝试</label><br>-->
-<!--        </div>-->
-<!--        <div class="question" style="display: none" id="question9">-->
-<!--            <h4>9. 看了解释后，你是否能很快地确定自己对推荐的电影感不感兴趣</h4>-->
-<!--            <input type="radio" name="q9" value="1" id="q91"><label for="q91">1分：我难以确定自己对推荐的电影感不感兴趣</label><br>-->
-<!--            <input type="radio" name="q9" value="2" id="q92"><label for="q92">2分：我需要思考一会才能确定自己对推荐的电影感不感兴趣</label><br>-->
-<!--            <input type="radio" name="q9" value="3" id="q93"><label for="q93">3分：我能够快速地确定自己对推荐的电影感不感兴趣</label><br>-->
-<!--        </div>-->
-<!--        <div class="question" style="display: none" id="question10">-->
-<!--            <h4>10. 相比没有解释，你是否认为解释是让你满意的</h4>-->
-<!--            <input type="radio" name="q10" value="1" id="q101"><label for="q101">1分：我认为解释没有提升我获取推荐的体验，不是很满意</label><br>-->
-<!--            <input type="radio" name="q10" value="2" id="q102"><label-->
-<!--                for="q102">2分：我认为解释能一定程度上提升我获取推荐的体验，比较满意</label><br>-->
-<!--            <input type="radio" name="q10" value="3" id="q103"><label for="q103">3分：我认为解释能较大提升我获取推荐的体验，很满意</label><br>-->
-<!--        </div>-->
-<!--        <div class="question" style="display: none" id="question11">-->
-<!--            <h4>11. 在看了推荐电影的相关信息后，你是否认为解释适合当前所推荐的电影</h4>-->
-<!--            <input type="radio" name="q11" value="1" id="q111"><label for="q111">1分：我认为解释与推荐电影信息不一致</label><br>-->
-<!--            <input type="radio" name="q11" value="2" id="q112"><label for="q112">2分：我认为解释与推荐电影信息一致但过于泛泛</label><br>-->
-<!--            <input type="radio" name="q11" value="3" id="q113"><label for="q113">3分：我认为解释与推荐电影信息一致且具有代表性</label><br>-->
-<!--        </div>-->
-<!--        <div class="question" style="display: none" id="question12">-->
-<!--            <h4>12. 比起只看解释，在看了推荐电影的相关信息后，自己对推荐电影的喜好变化大吗</h4>-->
-<!--            <input type="radio" name="q12" value="1" id="q121"><label for="q121">1分：变化很大，我开始对推荐电影感兴趣/不感兴趣了</label><br>-->
-<!--            <input type="radio" name="q12" value="2" id="q122"><label-->
-<!--                for="q122">2分：有一些变化，没有之前对推荐电影那么感兴趣/不感兴趣了</label><br>-->
-<!--            <input type="radio" name="q12" value="3" id="q123"><label for="q123">3分：没有太大变化，我依然对推荐电影感兴趣/不感兴趣</label><br>-->
-<!--        </div>-->
-<!--        <div class="question" style="display: none" id="question13">-->
-<!--            <h4>13. 你对于解释的整体评价是</h4>-->
-<!--            <input type="radio" name="q13" value="1" id="q131"><label for="q131">1分</label>-->
-<!--            <input type="radio" name="q13" value="2" id="q132"><label for="q132">2分</label>-->
-<!--            <input type="radio" name="q13" value="3" id="q133"><label for="q133">3分</label>-->
-<!--            <input type="radio" name="q13" value="4" id="q134"><label for="q134">4分</label>-->
-<!--            <input type="radio" name="q13" value="5" id="q135"><label for="q135">5分</label><br>-->
-<!--        </div>-->
-
 </body>

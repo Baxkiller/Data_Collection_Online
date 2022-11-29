@@ -16,7 +16,7 @@ function submitScore(uid,score,idx) {
             return 1;
         },
         error: function(msg){
-            console.log("error");
+            console.log(msg);
             return 0;
         }
     });
@@ -62,7 +62,7 @@ function submit_label() {
 
     if(flag){
         let uid=document.cookie;
-        console.log(res);
+        // console.log(res);
         submitScore(uid,res,index);
 
         dataLoad(1);

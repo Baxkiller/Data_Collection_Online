@@ -12,8 +12,8 @@ function showComputer(sentence) {
 
 // 得到的数据格式形如["",""]
 function showDialog(sentences) {
-    let extend_dialog=""
-    for(let i=0;i<sentences.length;i++)
+    let extend_dialog="<div class='context-dialog dialog'>"
+    for(let i=0;i<sentences.length-1;i++)
     {   // 第一句保证由人来讲
         if(i%2===0){
             extend_dialog=extend_dialog+showUser(sentences[i])
@@ -21,12 +21,14 @@ function showDialog(sentences) {
             extend_dialog=extend_dialog+showComputer(sentences[i])
         }
     }
+    extend_dialog=extend_dialog+"</div>"
+    extend_dialog=extend_dialog+showUser(sentences[sentences.length-1])
     return extend_dialog
 }
 
 function showReferOutput(reference,output) {
-    let extend_dialog=showComputer(reference)
-    extend_dialog=extend_dialog+showComputer(output)
+    let extend_dialog=showComputer(output)
+    extend_dialog=extend_dialog+"<div class='output-dialog dialog'>"+showComputer(reference)+"</div>"
     return extend_dialog
 }
 
@@ -43,8 +45,13 @@ function show_question(question_index)
 {
     if(question_index > 0 && question_index <5)
     {
-        question=document.getElementById("question"+question_index)
+        let question=document.getElementById("question"+question_index)
+        let question_hint=document.getElementById("hint_q"+question_index)
+        let table=document.getElementById("table_q"+question_index)
+
         question.style.display=""
+        question_hint.style.display=""
+        table.style.display=""
         buttonStateChange(question_index)
     }
 }
@@ -53,7 +60,12 @@ function hide_question(question_index) {
     if(question_index >0 && question_index < 5)
     {
         let question=document.getElementById("question"+question_index)
+        let question_hint=document.getElementById("hint_q"+question_index)
+        let table=document.getElementById("table_q"+question_index)
+
+        question_hint.style.display="none"
         question.style.display="none"
+        table.style.display="none"
     }
 }
 

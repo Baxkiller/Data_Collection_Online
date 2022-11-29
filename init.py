@@ -263,6 +263,26 @@ def checkSignIn():
             return json.dumps({"result": "YES"})
 
 
+@app.route('/table_q1.html')
+def renderTable1():
+    return render_template('table_q1.html')
+
+
+@app.route('/table_q2.html')
+def renderTable2():
+    return render_template('table_q2.html')
+
+
+@app.route('/table_q3.html')
+def renderTable3():
+    return render_template('table_q3.html')
+
+
+@app.route('/table_q4.html')
+def renderTable4():
+    return render_template('table_q4.html')
+
+
 @app.route('/labelPage.html')
 def renderLabelPage():
     return render_template("labelPage.html")
@@ -305,7 +325,7 @@ def initialize():
         except JSONDecodeError:
             userLabelInfo = dict()
 
-    with open("./static/data/data.json", "r") as f:
+    with open("./static/data/data.json", "r", encoding = 'UTF-8') as f:
         try:
             allDatas = json.load(f)
         except JSONDecodeError:

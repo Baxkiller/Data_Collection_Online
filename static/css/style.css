@@ -18,7 +18,7 @@
     border: 1px solid #e5e5ea;
     border-radius: .25rem;
     font-family: "SanFrancisco";
-    font-size: 0.85rem;
+    font-size: 0.80rem;
     margin: 0 auto .5rem;
     max-width: 100%;
     height: 12%;
@@ -53,7 +53,7 @@
 
 .question input[type="radio"] {
     margin-left: 5rem;
-    margin-top: .6rem;
+    margin-top: 2rem;
 }
 
 .submit {
@@ -111,7 +111,22 @@
 
 .from-div {
     position: relative;
-    margin-top: 1rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.dialog{
+    border-radius:20px;
+    display: flex;
+    flex-direction: column
+}
+
+.context-dialog{
+    border-style: solid;
+}
+
+.output-dialog{
+    border-style: dotted;
 }
 
 p.from-me {
@@ -210,8 +225,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    width: 1392px;
-    height: 780px;
+    /*width: 1392px;*/
+    /*height: 780px;*/
     overflow-x: auto;
     overflow-y: auto;
 }
@@ -253,6 +268,10 @@ ol li:before {
     color: #3370FF;
 }
 
+.description ul{
+    margin: .2rem .3rem;
+}
+
 ul {
     list-style: none;
     counter-reset: count;
@@ -261,7 +280,7 @@ ul {
 }
 
 ul li {
-    margin: .5em 0;
+    margin: .3em 0;
     line-height: 1.5;
 }
 
@@ -297,16 +316,23 @@ ul li:before {
 
 .description {
     border-color: #B1C8FD;
-    background-color: #E1EAFF;
-    height: 59rem;
-    /*height: fit-content;*/
+    /*background-color: #E1EAFF;*/
+    /*height: 59rem;*/
+    height: fit-content;
     /*position: relative;*/
 }
 
-.warn_hint {
+.warn_hint{
     border-color: #F98E8B;
     background-color: #FDE2E2;
-    height: 19rem;
+    /*height: 19rem;*/
+}
+
+.table{
+    background-color: #FDE2E2;
+    width: 100%;
+    display: flex;
+    font-size:.5rem;
 }
 
 .question_description {
@@ -335,7 +361,7 @@ ul li:before {
 
 .instruction_text {
     width: 87%;
-    height: 100%;
+    height: fit-content;
     float: left;
     padding-top: .5rem;
     padding-left: .4rem;
@@ -450,7 +476,7 @@ h1 {
 .question-buttons{
     width: 46.5rem;
     height: 2.5rem;
-    bottom: 0;
+    bottom: 1.5rem;
     position: absolute;
 }
 
