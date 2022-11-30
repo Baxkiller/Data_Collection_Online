@@ -1,10 +1,9 @@
-var timeLimit = 1000 * 59 * 10;
+var timeLimit = 1000 * 59 * 5;
 var myTimer = "初始化Timer";
 
 function setTimer() {
     // console.log("set Timer!");
     myTimer = setTimeout("myTimeOut()", timeLimit);
-
 }
 
 function clearTimer() {

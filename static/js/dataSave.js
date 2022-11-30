@@ -1,25 +1,25 @@
 // 提交分数
 function submitScore(uid,score,idx) {
-    clearTimer()
-    console.log(score)
-    $.ajax({
-        type: "POST",
-        url: "/submitScore",
-        data: {"uid":uid,"score":JSON.stringify(score),"index":idx},
-        dataType:"json",
-        success:function(msg){
-            console.log("success");
-            if(msg.status === 400){
-                alert(msg.msg);
-                reDirected()
+    return new Promise((resolve, reject) => {
+        clearTimer()
+        console.log(score)
+        $.ajax({
+            type: "POST",
+            url: "/submitScore",
+            data: {"uid": uid, "score": JSON.stringify(score), "index": idx},
+            dataType: "json",
+            success: function (msg) {
+                console.log("success");
+                if (msg.status === 400) {
+                    alert(msg.msg);
+                    reDirected()
+                }
+            },
+            error: function (msg) {
+                console.log(msg);
             }
-            return 1;
-        },
-        error: function(msg){
-            console.log(msg);
-            return 0;
-        }
-    });
+        });
+    })
 }
 
 // 请求提交数据
@@ -35,8 +35,7 @@ function submitRequest() {
         return;
     }
 
-    submitScore(userName,score,index);
-    dataLoad(1);
+    submitScore(userName,score,index).then(dataLoad)
     setTimer()
 }
 
@@ -62,9 +61,8 @@ function submit_label() {
 
     if(flag){
         let uid=document.cookie;
-        // console.log(res);
+        
         submitScore(uid,res,index);
-
         dataLoad(1);
         setTimer();
 

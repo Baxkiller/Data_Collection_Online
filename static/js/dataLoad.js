@@ -22,7 +22,7 @@ function update(d,i,cnt,qIdx) {
 // 每次数据请求,但是需要提前给定用户名
 // 返回的数据是data+当前data的数据下标,自动显示并更新index
 // mode代表用户登录后申请/提交后申请
-function dataLoad(mode) {
+function dataLoad(mode=1) {
 
     let uid = document.cookie;
     $.ajax({

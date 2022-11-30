@@ -196,14 +196,16 @@ def requestData():
     #     return json.dumps({'d':tryData[dataIdx],})
 
     # 数据分配
-    data = userLabelInfo.get(uid)
-    if mode == 0 and data['labeling'] != -1:  # 用户从登录页进入并分配数据,且上次分配数据尚未被分配走
+    if mode == 0 and userLabelInfo[uid]['labeling'] != -1:  # 用户从登录页进入并分配数据,且上次分配数据尚未被分配走
         userTimeStamp[uid]['time'] = timeStamp()
-        userTimeStamp[uid]['index'] = data['labeling']
-        data_index = data['labeling']  # 上次标注的数据
+        userTimeStamp[uid]['index'] = userLabelInfo[uid]['labeling']
+        data_index = userLabelInfo[uid]['labeling']  # 上次标注的数据
     else:  # mode=1持续请求/mode=0 && data['labeling'] ==-1已经被抢走
         data_index = randDataIndex(uid)
-        userLabelInfo[uid]['labeling'] = data_index
+        # 只有连续请求会出现同一组数据,为了避免这个问题,这里再次请求随机数据
+        if getTrueIdx(userLabelInfo[uid]['labeling']) == getTrueIdx(data_index):
+            data_index = randDataIndex(uid)
+            userLabelInfo[uid]['labeling'] = data_index
         try:
             availableDataIndex.remove(data_index)  # 将本次分配的数据从表格中删除
         except ValueError:
@@ -250,11 +252,26 @@ def submitScore():
         return jsonify({'status': 400, 'msg': 'USER NOT FOUND :('})
 
     save_data(uid, score, getTrueIdx(index))
-    userLabelInfo[uid]['labeled'].append(index)
-    saveULI()
+    have_same_tidx = False
 
-    print("USER {} DATA:{}(true:{}) SCORE:{}".format(uid, index, getTrueIdx(index), score))
+    # 防止提交重复数据,如果提交了重复数据,这里不计入
+    for i in userLabelInfo[uid]['labeled']:
+        if getTrueIdx(i) == getTrueIdx(index):
+            have_same_tidx = True
+            break
+
+    # 不计入
+    if not have_same_tidx:
+        userLabelInfo[uid]['labeled'].append(index)
+        saveULI()
+        print("USER {} DATA:{}(true:{}) SCORE:{}".format(uid, index, getTrueIdx(index), score))
+    else: # 放回可用位置
+        availableDataIndex.append(index)
+        print("Error 111 :( {}  {} ".format(uid,index))
+
     return ""
+
+
 
 
 @app.route('/checkSignIn', methods = ['POST', 'GET'])
