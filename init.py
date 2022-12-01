@@ -40,10 +40,12 @@ def freeData(uid, idx, mode):
     if userLabelInfo[uid]['labeling'] != idx:
         print("{} Error! Free data {} but labeling {}".format(uid, idx, userLabelInfo[uid]["labeling"]))
         if idx in userLabelInfo[uid]['labeled']:
+            userTimeStamp[uid]['index'] = userLabelInfo[uid]['labeling']
             return
         else:
             if idx not in availableDataIndex:
                 availableDataIndex.append(idx)
+            userTimeStamp[uid]["index"] = -userLabelInfo[uid]['labeling']
         return
 
     userLabelInfo[uid]['labeling'] = -1
