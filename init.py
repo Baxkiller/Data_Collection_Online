@@ -38,7 +38,12 @@ def freeData(uid, idx, mode):
         return
 
     if userLabelInfo[uid]['labeling'] != idx:
-        print("{} Error! Free data index not right!".format(uid))
+        print("{} Error! Free data {} but labeling {}".format(uid, idx, userLabelInfo[uid]["labeling"]))
+        if idx in userLabelInfo[uid]['labeled']:
+            return
+        else:
+            if idx not in availableDataIndex:
+                availableDataIndex.append(idx)
         return
 
     userLabelInfo[uid]['labeling'] = -1
@@ -205,7 +210,8 @@ def requestData():
         # 只有连续请求会出现同一组数据,为了避免这个问题,这里再次请求随机数据
         if getTrueIdx(userLabelInfo[uid]['labeling']) == getTrueIdx(data_index):
             data_index = randDataIndex(uid)
-            userLabelInfo[uid]['labeling'] = data_index
+
+        userLabelInfo[uid]['labeling'] = data_index
         try:
             availableDataIndex.remove(data_index)  # 将本次分配的数据从表格中删除
         except ValueError:
@@ -265,13 +271,11 @@ def submitScore():
         userLabelInfo[uid]['labeled'].append(index)
         saveULI()
         print("USER {} DATA:{}(true:{}) SCORE:{}".format(uid, index, getTrueIdx(index), score))
-    else: # 放回可用位置
+    else:  # 放回可用位置
         availableDataIndex.append(index)
-        print("Error 111 :( {}  {} ".format(uid,index))
+        print("Error 111 :( {}  {} ".format(uid, index))
 
     return ""
-
-
 
 
 @app.route('/checkSignIn', methods = ['POST', 'GET'])
