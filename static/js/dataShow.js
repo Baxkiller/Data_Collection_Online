@@ -20,9 +20,9 @@ function showOutput(sentence,mode) {
     }
 }
 
-function showReference(sentence,mode) {
+function showReference(sentence,mode,score=3) {
     if(mode === 0){
-        return "<div class=\"from-div\"> <img src=\"/static/img/robot2.png\" class=\"face_photo_right\"> <p class=\"from-me\">" + sentence + "</p> </div>"
+        return "<div class=\"from-div\"> <p style='font-weight: bold;color: red'>参考评分:"+score+"</p> <img src=\"/static/img/robot2.png\" class=\"face_photo_right\"> <p class=\"from-me\">" + sentence + "</p> </div>"
     } else {
         return "<div class=\"from-div\"><p style='font-weight: bold;color: red'>参考评分:3</p> <img src=\"/static/img/robot2.png\" class=\"face_photo_right\"> <p class=\"from-me\">" + sentence + "</p> </div>"
     }
@@ -45,16 +45,16 @@ function showDialog(sentences) {
 }
 
 // 0代表正常输出,1代表含有红色字体
-function showReferOutput(reference,output,mode) {
+function showReferOutput(reference,output,mode,score=3) {
     let extend_dialog=showOutput(output,mode)
-    extend_dialog=extend_dialog+"<div class='output-dialog dialog'>"+showReference(reference,mode)+"</div>"
+    extend_dialog=extend_dialog+"<div class='output-dialog dialog'>"+showReference(reference,mode,score)+"</div>"
     return extend_dialog
 }
 
 
 function displayData(data) {
     let tmp_dialog=showDialog(data["context"])
-    tmp_dialog=tmp_dialog+showReferOutput(data["reference"],data["output"],0)
+    tmp_dialog=tmp_dialog+showReferOutput(data["reference"],data["output"],0,data["score"][0].toFixed(1))
     let message_box=document.getElementById("message_box")
     message_box.innerHTML=tmp_dialog
 }
@@ -73,7 +73,6 @@ function show_question(question_index)
         } else{
             document.getElementById("reference_score").innerText="分数:3"
         }
-
 
         question.style.display=""
         question_hint.style.display=""

@@ -1,339 +1,721 @@
 [
   {
     "context": [
-      "Im a big fan of Thomas Covenant novels. What do you think?",
-      "I can't say I've read any of his book. I know it has about 10 fantasy novels to it. But, I haven't ready any of the chronicles of thomas Covenant books.",
-      "Tell me more about his 10 fantasy novels.",
-      "Well, the first of the trilogy would be \".The Chronicles of Thomas covenant, the Unbeliever\". That's where he first began.",
-      "Huh. I dont know much about any of them. What was it about?",
-      "Well, Thomas covenant was a cynical and bitter writer, he was shunned because he had leprosy. But, in this alternate world, he would become the hero of The Land.",
-      "Very interesting. What exactly is Leprosy and did it affect his writing in any way?",
-      "Well, this was in the book, and the 6 novels between 1977 and 83, he was in a constant battle with Lord Foul, who wanted to hurt and demolish his enemy, \"The Creator\".",
-      "I think I would enjoy reading those novels."
+      "Oh yeah you're right when they the aired the final family Guy episode.",
+      "Tv is a mass medium for advertisement, entertainment, and news. Is there anything else you enjoy?",
+      "Yes it is indeed. I enjoy the Internet. It's addicting and can cause measurable changes in the brain."
     ],
-    "output": "i think lord foul's bane is a great fantasy novel. it's a great read.",
-    "reference": "Oh, I'm sure, it's full of action, adventure and fantasy. It was set in \"the Illearth War\", and has missions to contact Giants.",
+    "annotations": {
+      "appropriateness": [
+        5,
+        5,
+        4
+      ],
+      "content": [
+        4,
+        4,
+        4
+      ],
+      "grammar": [
+        5,
+        5,
+        5
+      ],
+      "relevance": [
+        5,
+        4,
+        5
+      ]
+    },
+    "reference": "Interesting, the internet seems like a more objective space than television.",
+    "output": "It is hard to get away from the internet. Even Mt Everest has service!",
     "score": [
-      3,
+      4.583333333333333,
       0
     ]
   },
   {
     "context": [
-      "Hi there, I'm a parent to 3 beautiful children. It's more difficult than people think. Are you a parent? ",
-      "Yes, I have two wonderful children myself. I try to be a good parent, but it can be difficult to know if the decisions you make are the right ones, can't it?",
-      "Definitely! Especially with social media the way it is nowadays. Everyone seems to have a different opinion or likes to criticize every single decision we make. ",
-      "I totally agree. Most people just don't realize that being a parent goes beyond the biological aspects of it, and there is much more to raising a child than that. There are always critics!",
-      "Exactly, and the older children get the more they are exposed to the real world before I'm actually ready for them to see it. My daughter was asking for an Iphone at 5 years old. Cell phones weren't even around when I was that age. ",
-      "Me either! Not to mention that beyond the social media, there is even the government and society that tries to add their two sense to your parenting decisions.",
-      "I just can't believe the news headlines sometimes. I remember one that shocked me. It was child services trying to take a ladies two children away because they walked to the park in their own neighborhood alone. My siblings and I used to spend the entire day at the park by ourselves when were that age. ",
-      "We did too! We went outside. I feel sorry for children without parents, living in foster care, that's very sad.",
-      "It's horrible. The numbers just keep rising. Becoming a foster parent is very high on my list. I just hurt for those children so much. "
+      "Yes it is, so that much mean that he was thinking about this movie for 11 years?",
+      "That is impressive. That makes a great actor.",
+      "Yes it does, are you a fan of comic books, if you are, how many books do you have?"
     ],
-    "output": "i agree. it's sad that the government is placing children in foster care.",
-    "reference": "Well it helps to have family to help too",
+    "annotations": {
+      "appropriateness": [
+        4,
+        2,
+        4,
+        2
+      ],
+      "content": [
+        4,
+        4,
+        4
+      ],
+      "grammar": [
+        4,
+        4,
+        4
+      ],
+      "relevance": [
+        3,
+        3,
+        3
+      ]
+    },
+    "reference": "Yeah, Leo is great. I hear he was in that sitcom called Growing Pains but I didn't catch it. What's Eating Gilbert Grape was a good one he was in, too.",
+    "output": "I am not. But appears that their is a lot of money in the industry.",
     "score": [
-      3,
+      3.4615384615384617,
       0
     ]
   },
   {
     "context": [
-      "I train horses for a living",
-      "That is neat I have heard the Historically, horses were trained for warfare.",
-      "Oh yes and sport. Where in history were horses trained for warfare",
-      "I have heard from other trainer that there is tremendous controversy over various methods of horse training. Is this true?",
-      "Oh yes some people think it is some sort of animal abuse",
-      "That is terrible , but basic animal training concepts apply to all forms of training.",
-      "Oh yes and they seem to enjoy it too. After all. Nothing good comes easy"
+      "Well apparently there is a president in Zimbabwe called president banana",
+      "They could do a musical number. I think that many fans would follow.",
+      "See I like that idea haha. Maybe they could make a lot of money so that Trump could be back into the top three richest presidents of all time"
     ],
-    "output": "yes, i agree, most horse training is geared toward making horses useful for a variety of recreational and sporting equestrian pursuits.",
-    "reference": "I think it is so cool that horses are trained to be manageable by humans for everyday care as well as for equestrian activities.",
+    "annotations": {
+      "appropriateness": [
+        4,
+        3,
+        3
+      ],
+      "content": [
+        3,
+        3,
+        2
+      ],
+      "grammar": [
+        4,
+        4,
+        3
+      ],
+      "relevance": [
+        3,
+        3,
+        3
+      ]
+    },
+    "reference": "I could do that! I could buy the ticket to his rallies and they could make me rich!",
+    "output": "He should have all three slots realistically. He is popular enough for 1st 2nd and 3rd place, like in his beauty contests.",
     "score": [
-      3,
+      3.1666666666666665,
       0
     ]
   },
   {
     "context": [
-      "hello have you heard about the band Metalica",
-      "Yes I have, they are a heavy metal band from Los Angeles, California formed by Lars ulrich, and James Hetfield.",
-      "they started there in 1981 I I don't think they ever stopped being the best",
-      "My favorite is Kill 'em all that they released in 1982 under the independent record label Megaforce Records.",
-      "I think my favrit will always be nothing else matter I can still remember listening to it with my brother when I was very little"
+      "Oh I definitely didn't watch that! Everyone knows Babe Ruth though and he was once America's most popular golfer!",
+      "Wow. Didn't know that. Antarctica has a disc golf course",
+      "Oh that would be a cold course! A golf course in Dubai requires 4 million gallons of water!"
     ],
-    "output": "i remember listening to the album master of puppets in 1986. it was one of the most influential thrash metal albums.",
-    "reference": "Ride the Lightning was their second studio album, they released it in 1984",
+    "annotations": {
+      "appropriateness": [
+        1,
+        1,
+        2
+      ],
+      "content": [
+        2,
+        2,
+        2
+      ],
+      "grammar": [
+        2,
+        4,
+        4
+      ],
+      "relevance": [
+        1,
+        1,
+        2
+      ]
+    },
+    "reference": "Waymo... I don't think I've heard about that one... is there a difference between those two ? Of course they compete... huge money are involved ;)",
+    "output": "That is a lot of water. The US have more golf courses than the world combined",
     "score": [
-      3,
+      2.0,
       0
     ]
   },
   {
     "context": [
-      "Can you give me more information about a divorce?",
-      "Sure! Divorce is essentially the termination of a marriage between two people.",
-      "How does one get a divorce?",
-      "Typically you want to talk to lawyer but it really varies considerably around the world.",
-      "How long have people been getting divorced?",
-      "I'm not sure, but the reasons can vary from sexual incompatibility to lack of independence. ",
-      "Do you have any statistics about divorce?"
+      "Yes, the talent is there, on the coaching staff too. Though I have heard accusations for cheating.",
+      "Yes and while I am not familiar enough to know the details, which team hasn't been accused as such",
+      "I really don't know. I figure that the cost of getting caught cheating would be pretty high. Didn't they have to pay a fine or something?"
     ],
-    "output": "i'm not sure, but divorce laws vary considerably around the world, but in most countries divorce requires the sanction of a court or other authority in a",
-    "reference": "Not exactly, but one thing that people seem to confuse divorce with is annulment, which declares the marriage null and void.",
+    "annotations": {
+      "appropriateness": [
+        4,
+        4,
+        4
+      ],
+      "content": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "grammar": [
+        4,
+        4,
+        4
+      ],
+      "relevance": [
+        3,
+        3,
+        4
+      ]
+    },
+    "reference": "I'm not sure, but I do know that the coaches have to be very strict about what they are doing.",
+    "output": "That I'm not sure if the cheating accusations were validated.",
     "score": [
-      3,
+      3.8461538461538463,
       0
     ]
   },
   {
     "context": [
-      "I've always been interested in American literature.  I find the culture and writing styles very different from other countries.  Are you knowledgeable in American literature?",
-      "I know that it began in America as part of the broader tradition of English literature.  It is greatly influenced by English Literature.",
-      "For example, it's influenced by Shakespeare and various writers from his time?  If so, what is the difference between American literature and English literature?",
-      "I believe it was very similar until the late 18th and early 19th centuries when the nation's first novels were published.  These writings were more unique for American Literature.",
-      "What were the novels called that were published?  I would be interested to read them to see what difference between the two.",
-      "An early example from 1791 is William Hill Brown's \"The Power of Sympathy\" which is a love story between siblings that fall in love not knowing they are related.  Pretty controversial, right???",
-      "Sounds weirdly incestuous.  What other books have been written to shape the American literature?",
-      "The newer literary figures that produced uniquely American Literature are Washington Irving and Edgar Allan Poe.",
-      "What works have they completed?"
+      "I've watched Australian rules football and Rugby before although they aren't on tv much",
+      "They call it football codes. There is also a Gaelic football",
+      "Interesting. I mainly watch the NFL even though the games only have an average of 11 minutes of gameplay for each game"
     ],
-    "output": "william hill brown's \"the power of sympathy\" was published in 1791.",
-    "reference": "Edgar Allen Poe produced \u201cThe Fall of the House of Usher,\u201d \u201cThe Masque of the Red Death,\u201d and \u201cLigeia\u201d.  Those would be a great start.",
+    "annotations": {
+      "appropriateness": [
+        4,
+        3,
+        3,
+        4
+      ],
+      "content": [
+        4,
+        4,
+        4
+      ],
+      "grammar": [
+        4,
+        3,
+        3,
+        4
+      ],
+      "relevance": [
+        4,
+        4,
+        4
+      ]
+    },
+    "reference": "I think that is a lot of commercials and commercials. I wonder if they will ever play the game or if they have tracking chips in the shoulder pads and footballs to track the players",
+    "output": "That is crazy, but I am sure you enjoy the whole thing. The game stops all the time. But personally , I like it like that",
     "score": [
-      3,
+      3.7142857142857144,
       0
     ]
   },
   {
     "context": [
-      "I bought Overwatch but I haven't played much of it.",
-      "Hello, I love Overwatch, a team-based multiplayer. Do you?",
-      "It's been pretty fun so far, but I love the idea of it and all the characters.",
-      "Me too, selecting from a roster of over 20 characters is so exciting. I love Trinity though.",
-      "I don't know what that character is since I haven't played in over a year."
+      "Hi, how are you?",
+      "I'm doing good, how about yourself?",
+      "I am well, thanks! Do you watch the olympics?"
     ],
-    "output": "i'm not sure, but i know that overwatch is a team based multiplayer online first person shooter video game.",
-    "reference": "Why not? Did you not enjoy the process to secure and defend control points?",
+    "annotations": {
+      "appropriateness": [
+        5,
+        5,
+        5
+      ],
+      "content": [
+        5,
+        5,
+        3
+      ],
+      "grammar": [
+        5,
+        5,
+        5
+      ],
+      "relevance": [
+        5,
+        4,
+        5
+      ]
+    },
+    "reference": "I don't watch the Olympic games, but I do watch the World Cup every 4 years.",
+    "output": "I do! Did you hear that Julia Mancuso retired? She was such a great skier!",
     "score": [
-      3,
+      4.75,
       0
     ]
   },
   {
     "context": [
-      "Are you a fan of EuroBasket? I am not, but I like the NBA and hear of Luka Donkic.",
-      "I have just now found out about this international basketball competition!",
-      "Have you heard of Real Madrid?",
-      "yes! European futbol is something I love to watch! Especially from spain!",
-      "I really do love their futbol team with Ronaldo. Their EuroBasket team is also good.",
-      "Yea! Ronaldo is one of the greatest players of all time, but he just got popped for tax evasion! ",
-      "Really? What is tax evasion?",
-      "Tax evasion is essentially where you don't pay the taxes that you should, often by sliding numbers around.",
-      "That sounds dangerous. Is Ronaldo in any legal trouble?"
+      "No! Wow, that's awesome! Very smart and kind of them. I love animals more than a lot of people lol!",
+      "It is a great thing they did! i wish the U.S. would do that!",
+      "I do too, we have so many animals going extinct it would probably help a lot. They deserve to thrive and be safe too."
     ],
-    "output": "he is not in any legal trouble, but he is a popular player.",
-    "reference": "I believe he is, but ronaldo is so famous i think he kinda just paid it and got out. I saw it on the news in the USA. he was in his peak in the 90s",
+    "annotations": {
+      "appropriateness": [
+        4,
+        5,
+        5,
+        4
+      ],
+      "content": [
+        4,
+        4,
+        4
+      ],
+      "grammar": [
+        4,
+        4,
+        4
+      ],
+      "relevance": [
+        4,
+        5,
+        5,
+        4
+      ]
+    },
+    "reference": "They certainly do, they are incredible creatures! I wish they were treated better.",
+    "output": "They do indeed. I like that they have their own scientific kingdom called Animalia.",
     "score": [
-      3,
+      4.285714285714286,
       0
     ]
   },
   {
     "context": [
-      "I've lately been listening to a lot of 70s and disco music, I really enjoy it. Do you like disco?",
-      "Disco is interesting.  Its popularity peaked when I was a young child so I never really learned to appreciate it",
-      "Yes, I was born in the late 70s myself, but even as a teenager I really liked it. It makes me want to dance!",
-      "The bump and the hustle were definitely very popular in the disco era!",
-      "They sure were. I always think of John Travolta in that movie, where he did his disco dance!"
+      "Are you religious?",
+      "yes. fairly so",
+      "Did you know that Thomas Jefferson had created his own version of the bible so he could remove the supernatural parts. Thats wild."
     ],
-    "output": "yes, he was nominated for the academy award for best actor in \"saturday night fever\"",
-    "reference": "Yes Saturday Night Fever was a very popular movie in 1977!  I loved it",
+    "annotations": {
+      "appropriateness": [
+        3,
+        5,
+        5
+      ],
+      "content": [
+        4,
+        4,
+        3
+      ],
+      "grammar": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "relevance": [
+        4,
+        5,
+        5
+      ]
+    },
+    "reference": "<unk> s>Its a bit weird. I think he was a religious person.",
+    "output": "no. i didnt. that is wild",
     "score": [
-      3,
+      4.153846153846154,
       0
     ]
   },
   {
     "context": [
-      "Blue is such a beautiful color",
-      "it is! It makes me feel so relaxed. It lies between violet and green",
-      "green is my favorite color",
-      "i like green as well. Have you ever heard about color psychology? it's a study of hues as a determinant of human behavior",
-      "i've heard about it but don't know much. wanna share ?"
+      "I love the NFL! I try to follow all 32 teams the best I can.",
+      "Nice. I did not know the game season is 17 weeks. That is a long time and lots of games",
+      "Yes. It seems to go fast. Each team plays a 16 game schedule."
     ],
-    "output": "well, factors such as gender, age, and culture can influence how an individual perceives color.",
-    "reference": "sure! Color influences perceptions that are not obvious such as the taste of food",
+    "annotations": {
+      "appropriateness": [
+        5,
+        3,
+        3,
+        5
+      ],
+      "content": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "grammar": [
+        5,
+        5,
+        5
+      ],
+      "relevance": [
+        4,
+        5,
+        5
+      ]
+    },
+    "reference": "That's a lot of games! Do you have a favorite team? I like the Seattle Seahawks.",
+    "output": "Yeah it does seem that for sure. Interesting that bowlers used to make more than football players in the 60s",
     "score": [
-      3,
+      4.357142857142857,
       0
     ]
   },
   {
     "context": [
-      "I love to dance but not sure if I am any good at it",
-      "Not to brag, often I peform in art form by selected sequences of human movement. That' my way of saying I'm a awesome dancer!",
-      "Oh good then you know about this, can you explain to me what choreography is?",
-      "Maybe so friend, maybe so... is it by it's repertoire of movements, or by it's historical period or place or origin or am I off. I can dance pretty great with sick beats, hopefully my knowledge isn't off ",
-      "Ok do you know what the most popular forms of dance are?",
-      "A couple guessed here. 1. I would say, any dance that I do. Or modern, classical Indian dance and Chinese? I may get it right the second time if I'm off. I am thinking now that I said that... I'm off",
-      "Good info, thanks. I have wondered what Salsa dancing is? I heard people at work talk about it"
+      "Yeah, kissing is kind of a weird concept though when you think about it. There is a contest where writers try to come up with the worst possible opening sentence to a novel. I wonder what it is.",
+      "Hmm, coming up with the worse opening line in a novel actually sounds quite challenging",
+      "Yeah, I'm betting some of them are pretty funny."
     ],
-    "output": "it's a form of dance that originated in puerto rican bomba and plena, cuban son, cha-cha-cha, m",
-    "reference": "Macarena is a favorite of mine... no one knows that one. And yes! Salsa is fly, its a popuar form of social dance that originated in the Caribbean. I can Salsa ALL day long",
+    "annotations": {
+      "appropriateness": [
+        4,
+        4,
+        4
+      ],
+      "content": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "grammar": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "relevance": [
+        4,
+        4,
+        4
+      ]
+    },
+    "reference": "I know what you mean. Some of the best writers I've ever heard of were Stephen King and J.K. Rowling.",
+    "output": "Well I have to go, nice chatting with you",
     "score": [
-      3,
+      4.285714285714286,
       0
     ]
   },
   {
     "context": [
-      "I just moved to LA from Tokyo. Both are big cities, but LA is really pretty!",
-      "It is, Tokyo though is the best, Ive lived here for all my life and im also a local guide, Is there anything you'd like to know about it?",
-      "Woah neat! I only lived there for a year or so, so I didn't get to see many tourist sites. Do you have any recommendations if I ever go back?",
-      "I recommend visiting the greater Tokyo Area as is the most populated metropolitan area and there is plenty of sights to see and things to do. ",
-      "Awesome! Any specific sites I should check out? My friend told me I should check out Asakusa. ",
-      "Ah yes Asakusa, thats a great place to get some rice, They are great because they pay their servants a fair wage and I support fair wages in Japan. ",
-      "Interesting. Is Asakusa famous for its rice or something?"
+      "I love the NFL! I try to follow all 32 teams the best I can.",
+      "Nice. I did not know the game season is 17 weeks. That is a long time and lots of games",
+      "Yes. It seems to go fast. Each team plays a 16 game schedule."
     ],
-    "output": "i think it is because it is the seat of the emperor of japan and the japanese government.",
-    "reference": "Well not only is it a temple but there is some very great restaurants at that location that I know of that serve to the public. ",
+    "annotations": {
+      "appropriateness": [
+        1,
+        1,
+        3,
+        3
+      ],
+      "content": [
+        1,
+        1,
+        2
+      ],
+      "grammar": [
+        3,
+        3,
+        3
+      ],
+      "relevance": [
+        1,
+        1,
+        3
+      ]
+    },
+    "reference": "They are really <unk> and they are really <unk>",
+    "output": "Yeah it does seem that for sure. Interesting that bowlers used to make more than football players in the 60s",
     "score": [
-      3,
+      2.0,
       0
     ]
   },
   {
     "context": [
-      "I have long studied in the Veterinary physician field in order to help animals.",
-      "Nice, being a veterinary physician would be a really rewarding job.",
-      "I agree, do you know any tips that might help me?",
-      "Well vets practice veterinary medicine and treat diseases for animals.",
-      "I see, is it for all animals or mostly dogs and cats?"
+      "I wonder if that is supposed to have some effect on the players",
+      "I am not sure. In the 60s bowlers used to make more than NFL players",
+      "Yeah I guess it was a more popular game back then. Their coaches are the highest paid people"
     ],
-    "output": "it covers all animal species, both domesticated and wild, with a wide range of conditions which can affect different species.",
-    "reference": "All animals really, they even treat disorders and injuries too.",
+    "annotations": {
+      "appropriateness": [
+        4,
+        3,
+        4,
+        3
+      ],
+      "content": [
+        3,
+        4,
+        4
+      ],
+      "grammar": [
+        4,
+        2,
+        2,
+        4
+      ],
+      "relevance": [
+        4,
+        4,
+        4
+      ]
+    },
+    "reference": "Yeah I sure do. Do you know how the highest score in football is?",
+    "output": "Yeah no surprise there. Do you know what the highest score in college football is?",
     "score": [
-      3,
+      3.5,
       0
     ]
   },
   {
     "context": [
-      "Hi, I am worried about my family getting cancer.  Do you know someone who has or had cancer?",
-      "Yes, I know several people who have had cancer. There are over 100 different types of cancers that can affect people. It is very scary indeed.",
-      "Wow, that is a lot. What are the easier cancers to treat?",
-      "I think one of the best things we can do for our children to help prevent HPV cancer is to make sure they get the vaccine. It can protect them in up to 9 types of HPV cancer. ",
-      "How prevalent do you think HPV is in children?",
-      "It's not a childhood cancer, but they can get the vaccine early (age 12 maybe) to prevent HPV which is an infection that can cause cancer. So it's a cancer that happens later in life but can be prevented early on",
-      "Oh, okay. What are some ways to prevent cancers in general if possible?",
-      "I think generally, eat healthy, exercise, avoid drinking too much alcohol and not smoking are a good place to start",
-      "What is the most common type of cancer treatment?"
+      "Brady has to come crashing down eventually, with Belichick.",
+      "Yeah I would say that run is about over. It was a good one though. They dominated for a long time.",
+      "They were fun to watch before they were always expected to win"
     ],
-    "output": "i am not sure, but i do know that two in five people will have cancer at some point in their lifetime",
-    "reference": "It depends on the type of cancer, but some treatments could be surgery or chemotherapy, possibly radiation. It all depends on the stage of the cancer.",
+    "annotations": {
+      "appropriateness": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "content": [
+        2,
+        3,
+        3
+      ],
+      "grammar": [
+        4,
+        3,
+        3
+      ],
+      "relevance": [
+        3,
+        2,
+        3
+      ]
+    },
+    "reference": "Yeah, I think that is pretty good.",
+    "output": "It just gets old hearing at the beginning of the season because they lost a couple game that they are done, and then they end up in the super bowl. Im just sick of it.",
     "score": [
-      3,
+      2.769230769230769,
       0
     ]
   },
   {
     "context": [
-      "Trucks seem like a useful vehicle to have",
-      "Yes a truck is a great motor vehicle for transporting cargo. Do you like them?",
-      "I'm not a huge fan but I could use one when I move soon. What's the most popular truck brand?",
-      "The American brand Dodge has a line of cars, and trucks that are popular!",
-      "Interesting. In what part of the country are trucks more common? They seem stereotypically southern",
-      "I'm not sure! But I do know that medium sized trucks with gasoline engines are popular in the US, Canada, and even Mexico! ",
-      "Are they popular in other areas of the world like Europe or Asia?",
-      "Similarly! In the European Union vehicles in this size are known as large good vehicles.",
-      "Awesome. How fast can a truck be driven?"
+      "well they stuck to it it seems. Did you know U of Iowa painted the visitor locker room pink?",
+      "I think that has something to do with the breast cancer awareness movement or something.",
+      "I am not sure actually. I hope that is the reason. Did you know bowlers made more money than football players in the 60s?"
     ],
-    "output": "commercial trucks can be very large and powerful, and may be configured to mount specialized equipment, such as in the case of fire trucks and concrete mixers",
-    "reference": "It depends! trucks vary in size power and configuration! ",
+    "annotations": {
+      "appropriateness": [
+        4,
+        5,
+        5
+      ],
+      "content": [
+        5,
+        2,
+        5,
+        2
+      ],
+      "grammar": [
+        5,
+        5,
+        4
+      ],
+      "relevance": [
+        5,
+        5,
+        5
+      ]
+    },
+    "reference": "I did not know that, but I do know that bowling is one of the most popular recreational activities in the world.",
+    "output": "Bowling is a sport of kings. Bowlers deserve more money for their elegance and charm.",
     "score": [
-      3,
+      4.384615384615385,
       0
     ]
   },
   {
     "context": [
-      "I think animal shelters are the best places to adopt animals",
-      "Indeed and I fully support no kill shelters, I love how that at least 90% of the animals going into the shelter are expected to be saved or adopted. It really warms my heart. ",
-      "Oh that is so lovely. I got both my kittens from shelters.",
-      "Aww thats great, Ive seen some shelters that even have sick tropical animals believe it or not. Like Parrots and monkeys. ",
-      "Wow. I didn't know that. Any other cool info I should know?"
+      "Yeah I guess it was a more popular game back then. Their coaches are the highest paid people",
+      "Yeah no surprise there. Do you know what the highest score in college football is?",
+      "Hmmm no I do not, what is it. Did you hear about that giant stadium in Texas?"
     ],
-    "output": "well in the us there is no government-run organization that provides oversight or regulation of the various shelters on a national basis.",
-    "reference": "Well I know something thats sad is that many states dont even regulate shelters within their own jurisdiction, which means poor care to the animals there, I just wish we had more regulation to have better care for animals. ",
+    "annotations": {
+      "appropriateness": [
+        5,
+        5,
+        3
+      ],
+      "content": [
+        2,
+        2,
+        3
+      ],
+      "grammar": [
+        3,
+        3,
+        3
+      ],
+      "relevance": [
+        4,
+        3,
+        3
+      ]
+    },
+    "reference": "Yes it is 222-0 but it is crazy",
+    "output": "The highest score is 222-0, Georgia Tech versus Cumberland, and I do not know abut that stadium",
     "score": [
-      3,
+      3.25,
       0
     ]
   },
   {
     "context": [
-      "My relationship with my Stepfather was always cold.",
-      "my parents have stayed married so i still have my biological father as my dad",
-      "You were lucky then, me not so much.",
-      "i'm sorry to hear that, i find it interesting that in fiction like hamlet the stepfather is always evil",
-      "I do not know a lot about Hamlet.What else do you know about him?",
-      "i read it a long time ago, all i know is that is shakespeare's longest play",
-      "Really?? I tough it was Romeo and Juliet."
+      "Hello, How are you? Do you like football?",
+      "Football? Yes, it is a great game! The world loves the football!",
+      "Yes, especially the US, the NFL. were you meaning the soccer game?"
     ],
-    "output": "yes, it was one of his most popular plays during his lifetime and along with hamlet",
-    "reference": "romeo and juliet is actually shakespeare's most popular play and one of the most frequent;y performed",
+    "annotations": {
+      "appropriateness": [
+        1,
+        2,
+        1
+      ],
+      "content": [
+        2,
+        5,
+        5
+      ],
+      "grammar": [
+        4,
+        5,
+        5
+      ],
+      "relevance": [
+        1,
+        1,
+        2
+      ]
+    },
+    "reference": "Interesting. Maybe the information isn't relayed in real time. It would be neat if there lights surrounding the end zone and when the chip broke the end zone the lights would flash or would be cheesy.",
+    "output": "The soccer? Yes, I was meaning the soccer. But there is the American one, the football, I mean. It has very little gameplay. An average NFL game only has 11 minutes of live gameplay.",
     "score": [
-      3,
+      2.8333333333333335,
       0
     ]
   },
   {
     "context": [
-      "Ive been suffering from a mental disorder recently but I really dont understand it too much, do you have any insight on this? ",
-      "I understand how you might be concerned, mental disorders is a mental or behavioral pattern that causes distress or impairment of personal functioning.",
-      "It does impair me quite a lot actually. What type of therapy can I get for my mental disorder? ",
-      "Well, you should start by getting it diagnosed by a mental health professional",
-      "I will do that thank you, What types of therapy do they usually do for mental disorders?",
-      "Various mental health professionals can provide treatment after diagnosis",
-      "Oh so I would have to see more than one therapist? that sounds exhausting, What causes mental disorders? is it bad? "
+      "Yes that is true and I am glad they came up with that line because it makes watching the game much easier",
+      "Definitely. Can you believe the former Patriots running back never fumbled the football his entire career?",
+      "That is so amazing. Do you know what the highest score in college football is?"
     ],
-    "output": "the causes of mental disorders are generally complex and vary depending on the particular disorder and the individual.",
-    "reference": "Well the causes of mental disorders are often unclear",
+    "annotations": {
+      "appropriateness": [
+        3,
+        3,
+        2
+      ],
+      "content": [
+        3,
+        3,
+        2,
+        2
+      ],
+      "grammar": [
+        5,
+        5,
+        5
+      ],
+      "relevance": [
+        3,
+        3,
+        3
+      ]
+    },
+    "reference": "Yes that is a high score in college football.",
+    "output": "Yeah, it was 222 during a college game in 1916.",
     "score": [
-      3,
+      3.230769230769231,
       0
     ]
   },
   {
     "context": [
-      "I am so grateful for animal shelters - the no-kill ones. Those poor wee creatures - how could anyone abandon them?!",
-      "They usually take all kinds, stray, lost, abandoned or surrendered and sometimes sick or wounded wildlife.  Our local shelter is a no-kill one.",
-      "We have one here in our county, too. Haven't been able to visit as I have a temporary disability, but used to go to one where I lived in CA. It was very well run. Is your shelter large?",
-      "Ours is a pretty good size, my girls have volunteered there quite a bit and they will even have some sick tropical animals from time to time.",
-      "That is so wonderful. My neighbors just adopted an adorable dog from our place. She seems to be a lab-Dalmatian mix.",
-      "I'm glad to live in a state that has the Georgia Animal Protection Act - it was in response to inhumane treatment of animals at a pet chain store here in Atlanta.",
-      "Good for Georgia. I wish North Carolina would do the same. Anyone caught abusing an animal should go to jail, imho. Now I want to go to the shelter!"
+      "I guess the football players chose the wrong sport then. They could have just gone bowling and make money. They could wear their helmet bowling too.",
+      "Well things have changed now so that definitely is not the case. But engineers still make more than football players",
+      "Engineers makes more than football players, but not for playing football. Engineers are good at engineering."
     ],
-    "output": "i'm glad that the us has no government-run organization that provides oversight of the various shelters on a national basis.",
-    "reference": "I'm really glad they don't call them pounds any more - we've adopted all of our dogs from a shelter or a rescue.  I'll never buy another animal",
+    "annotations": {
+      "appropriateness": [
+        3,
+        3,
+        4,
+        4
+      ],
+      "content": [
+        4,
+        4,
+        4
+      ],
+      "grammar": [
+        4,
+        4,
+        4
+      ],
+      "relevance": [
+        4,
+        4,
+        4
+      ]
+    },
+    "reference": "I don't think it's fair. I don't think people should be held accountable for things they said years ago. Life was different years ago and people not so easily offended. You?",
+    "output": "Yup for sure. Did you know women can play too if they qualify?",
     "score": [
-      3,
+      3.8461538461538463,
       0
     ]
   },
   {
     "context": [
-      "Pit bulls are great dogs, but quite often they are misunderstood. ",
-      "I have always wondered where the name pit bull came from as a name of a breed of dog.",
-      "Pit bulls are a descendant of bulldogs! Maybe that's where the \"bull\" comes from. What do you think?",
-      "Pit Bulls were originally developed as fighting dogs, so i'm sure that is how they received their reputation.",
-      "They do sometimes serve as search and rescue and police dogs, so they do have a purpose. I have friends that own them and they are wonderful pets if trained correctly."
+      "That's such a nice gesture. For the longest time he was the voice of college football. Did you go to Michigan?",
+      "I did not just a big fan. My favorite player of all time attended there so It was how I became a fan",
+      "Who is your favorite player of all time?"
     ],
-    "output": "i agree, they are great for hunting and driving livestock. they are also great for police work.",
-    "reference": "I'm not certain that i would own one as a pet, but they have been used in the modern era as farm dogs to drive cattle or other livestock.",
+    "annotations": {
+      "appropriateness": [
+        4,
+        4,
+        5,
+        5
+      ],
+      "content": [
+        3,
+        4,
+        3
+      ],
+      "grammar": [
+        5,
+        4,
+        5,
+        4
+      ],
+      "relevance": [
+        4,
+        5,
+        5
+      ]
+    },
+    "reference": "My favorite player is Bobby knight",
+    "output": "Charles Woodson. Keith Jackson was also announcing that game when he cemented his Heisman against Ohio St",
     "score": [
-      3,
+      4.285714285714286,
       0
     ]
   }

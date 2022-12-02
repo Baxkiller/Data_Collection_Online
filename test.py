@@ -7,12 +7,10 @@
 import json
 import numpy as np
 
-with open("./static/data/data.json", "r") as f:
+with open("./static/data/dstc10_topical_clean_eval_labeling.json", "r") as f:
     data = json.load(f)
 
-arr = list(range(len(data)))
 np.random.shuffle(data)
-test_data = data[0:20]
-
-with open("./static/data/data.json","w") as f:
-    json.dump(test_data,f)
+tmp=len(data[0:20])
+with open("./static/data/data.json", "w") as f:
+    json.dump(data[0:20], f)
