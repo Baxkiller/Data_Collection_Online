@@ -23,6 +23,7 @@ availableDataIndex = list()
 userTimeStamp = dict()  # 每个用户有一个时间戳
 allUsers = dict()
 tryData = dict()
+submitTime = dict()
 
 num_times = 0  # 设定一条数据可以被几个人标记
 timeLimit = 0  # 设定十分钟的时间,超过此事件释放资源
@@ -48,10 +49,13 @@ def freeData(uid, idx, mode):
             userTimeStamp[uid]["index"] = -userLabelInfo[uid]['labeling']
         return
 
+    # 修改时间戳和当前标注内下标
     userLabelInfo[uid]['labeling'] = -1
     availableDataIndex.append(idx)
     userTimeStamp[uid]['time'] = 0
     userTimeStamp[uid]['index'] = -1
+    # 更新记录时间
+    update_submitTime(uid, idx, "del")
 
     print("USER {} free DATA {}".format(uid, idx))
     # 修改即保存是个好习惯
@@ -81,6 +85,8 @@ def saveADI():
 def saveUTS():
     with open("./static/userData/timeStamps.json", "w") as f:
         json.dump(userTimeStamp, f)
+    with open("./static/userData/submitTime.json", "w") as f:
+        json.dump(submitTime, f)
 
 
 # 时间戳以服务器系统时间为准
@@ -173,6 +179,30 @@ def save_data(uid, score, idx):
     return
 
 
+def update_submitTime(uid, idx, type):
+    idx = str(idx)
+    if submitTime.get(uid) is None:
+        submitTime[uid] = dict()
+    if type == "start":
+        submitTime[uid][idx] = dict()
+        submitTime[uid][idx][type] = time.time()
+    elif type == "del":
+        try:
+            del submitTime[uid][idx]
+        except KeyError:
+            pass
+        print(submitTime)
+    else:
+        submitTime[uid][idx][type] = time.time()
+
+
+def save_submitTime(uid, idx):
+    interval_time = int(submitTime[uid][idx]["end"] - submitTime[uid][idx]["start"])
+    submitTime[uid][idx] = interval_time
+    with open("./static/userData/submitTime.json", "w") as f:
+        json.dump(submitTime, f)
+
+
 def getTryData():
     return random.randint(0, len(tryData) - 1)
 
@@ -225,6 +255,7 @@ def requestData():
     else:
         userTimeStamp[uid]['time'] = 0
     userTimeStamp[uid]['index'] = data_index
+    update_submitTime(uid, data_index, "start")
 
     saveUTS()
     saveADI()
@@ -260,6 +291,8 @@ def submitScore():
         return jsonify({'status': 400, 'msg': 'USER NOT FOUND :('})
 
     save_data(uid, score, getTrueIdx(index))
+    update_submitTime(uid, index, "end")
+    save_submitTime(uid, index)
     have_same_tidx = False
 
     # 防止提交重复数据,如果提交了重复数据,这里不计入
@@ -349,6 +382,7 @@ def initialize():
     global checkExpiredTime
     global allUsers
     global tryData
+    global submitTime
 
     with open("./static/userData/setting.json", "r") as f:
         try:
@@ -390,6 +424,12 @@ def initialize():
 
     with open("./static/userData/login.json", "r") as f:
         allUsers = json.load(f)
+
+    with open("./static/userData/submitTime.json", "r") as f:
+        try:
+            submitTime = json.load(f)
+        except JSONDecodeError:
+            submitTime = dict()
 
     print("Data initializing Over!")
 

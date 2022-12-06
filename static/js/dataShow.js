@@ -1,4 +1,4 @@
-refer_score=[3,4,3,3]
+sample_score=[0,4,3,4,3]
 
 // 显示人说的话
 // 生成内容是innerHTML的内容
@@ -16,7 +16,7 @@ function showOutput(sentence,mode) {
     if(mode === 0){
         return "<div class=\"from-div\"> <img src=\"/static/img/robot1.png\" class=\"face_photo_right\"> <p class=\"from-me\">" + sentence + "</p> </div>"
     }else {
-        return "<div class=\"from-div\"><p id='reference_score' style='font-weight: bold;color: red'>评分:3</p> <img src=\"/static/img/robot1.png\" class=\"face_photo_right\"> <p class=\"from-me\">" + sentence + "</p> </div>"
+        return "<div class=\"from-div\"><p id='reference_score' style='font-weight: bold;color: red'>评分:4</p> <img src=\"/static/img/robot1.png\" class=\"face_photo_right\"> <p class=\"from-me\">" + sentence + "</p> </div>"
     }
 }
 
@@ -44,7 +44,7 @@ function showDialog(sentences) {
     return extend_dialog
 }
 
-// 0代表正常输出,1代表含有红色字体
+// 0代表正常输出,1代表样例sample输出
 function showReferOutput(reference,output,mode,score=3) {
     let extend_dialog=showOutput(output,mode)
     extend_dialog=extend_dialog+"<div class='output-dialog dialog'>"+showReference(reference,mode,score)+"</div>"
@@ -68,11 +68,13 @@ function show_question(question_index)
         let question_hint=document.getElementById("hint_q"+question_index)
         let table=document.getElementById("table_q"+question_index)
 
-        if(question_index === 2) {
-            document.getElementById("reference_score").innerText="分数:4"
-        } else{
-            document.getElementById("reference_score").innerText="分数:3"
-        }
+        // if(question_index === 2) {
+        //     document.getElementById("reference_score").innerText="分数:3"
+        // } else{
+        //     document.getElementById("reference_score").innerText="分数:3"
+        // }
+        document.getElementById("reference_score").innerText="分数:"+sample_score[question_index]
+
 
         question.style.display=""
         question_hint.style.display=""
