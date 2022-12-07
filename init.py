@@ -191,14 +191,18 @@ def update_submitTime(uid, idx, type):
             del submitTime[uid][idx]
         except KeyError:
             pass
-        print(submitTime)
     else:
         submitTime[uid][idx][type] = time.time()
 
 
 def save_submitTime(uid, idx):
-    interval_time = int(submitTime[uid][idx]["end"] - submitTime[uid][idx]["start"])
-    submitTime[uid][idx] = interval_time
+    idx = str(idx)
+    try:
+        interval_time = int(submitTime.get(uid).get(idx).get("end") - submitTime[uid][idx]["start"])
+        submitTime[uid][idx] = interval_time
+    except KeyError:
+        interval_time = -1
+        submitTime[uid][idx] = interval_time
     with open("./static/userData/submitTime.json", "w") as f:
         json.dump(submitTime, f)
 

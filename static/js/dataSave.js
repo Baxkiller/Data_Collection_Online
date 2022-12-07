@@ -2,21 +2,20 @@
 function submitScore(uid,score,idx) {
     return new Promise((resolve, reject) => {
         clearTimer()
-        console.log(score)
         $.ajax({
             type: "POST",
             url: "/submitScore",
             data: {"uid": uid, "score": JSON.stringify(score), "index": idx},
             dataType: "json",
             success: function (msg) {
-                console.log("success");
+//                console.log("success");
                 if (msg.status === 400) {
                     alert(msg.msg);
                     reDirected()
                 }
             },
             error: function (msg) {
-                console.log(msg);
+//                console.log(msg);
             }
         });
     })
