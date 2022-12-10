@@ -1,4 +1,4 @@
-var timeLimit = 1000 * 59 * 5;
+var timeLimit = 990 * 60 * 10;
 var myTimer = "初始化Timer";
 
 function setTimer() {
@@ -36,24 +36,4 @@ function reDirected() {
         window.history.forward(1);
     });
 
-}
-
-// 请求释放数据,有可能已经被其他用户造成的过期检查释放过了,后端进行判断
-function freeData() {
-    // let uid=document.cookie;
-    // let idx=index;
-    // $.ajax({
-    //     type: "POST",
-    //     url: "/requestFree",
-    //     data: {"uid":uid,"index":idx},
-    //     dataType:"json",
-    //     success:function(msg){
-    //         console.log("success");
-    //         return 1;
-    //     },
-    //     error: function(msg){
-    //         console.log("error");
-    //         return 0;
-    //     }
-    // });
 }

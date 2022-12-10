@@ -1,43 +1,30 @@
 // 提交分数
 function submitScore(uid,score,idx) {
-    return new Promise((resolve, reject) => {
         clearTimer()
         $.ajax({
             type: "POST",
             url: "/submitScore",
             data: {"uid": uid, "score": JSON.stringify(score), "index": idx},
             dataType: "json",
+            sync:false,
             success: function (msg) {
-//                console.log("success");
                 if (msg.status === 400) {
                     alert(msg.msg);
                     reDirected()
                 }
+                else if(msg.status===200){
+                    dataLoad()
+                }
             },
-            error: function (msg) {
-//                console.log(msg);
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                console.log(XMLHttpRequest.status);
+                // 状态
+                console.log(XMLHttpRequest.readyState);
+                // 错误信息
+                console.log(textStatus);
             }
         });
-    })
 }
-
-// 请求提交数据
-// 包括提交分数,重新请求数据
-// 设定时间计时器
-function submitRequest() {
-    let score=document.getElementById('score').value;
-    let userName=document.cookie;
-    document.getElementById('score').value="";
-
-    if( score === "") {
-        alert("请输入当前评分后再提交");
-        return;
-    }
-
-    submitScore(userName,score,index).then(dataLoad)
-    setTimer()
-}
-
 
 // 检查用户给定的选项是否合理
 function submit_label() {
@@ -60,10 +47,7 @@ function submit_label() {
 
     if(flag){
         let uid=document.cookie;
-        
         submitScore(uid,res,index);
-        dataLoad(1);
-        setTimer();
 
     } else {
         hide_question(questionID);

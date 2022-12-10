@@ -1,95 +1,202 @@
 [
   {
     "context": [
-      "Oh yeah you're right when they the aired the final family Guy episode.",
-      "Tv is a mass medium for advertisement, entertainment, and news. Is there anything else you enjoy?",
-      "Yes it is indeed. I enjoy the Internet. It's addicting and can cause measurable changes in the brain."
+      "Yes it is indeed. I enjoy the Internet. It's addicting and can cause measurable changes in the brain.",
+      "It is hard to get away from the internet. Even Mt Everest has service!",
+      "Yes that is so hard to believe! When buying a product or service online, only 7% of people read the full terms."
     ],
     "annotations": {
       "appropriateness": [
-        5,
-        5,
-        4
+        1,
+        1,
+        1
       ],
       "content": [
-        4,
-        4,
+        3,
+        3,
         4
       ],
       "grammar": [
-        5,
-        5,
-        5
+        4,
+        4,
+        4
       ],
       "relevance": [
-        5,
-        4,
-        5
+        1,
+        1,
+        1
       ]
     },
-    "reference": "Interesting, the internet seems like a more objective space than television.",
-    "output": "It is hard to get away from the internet. Even Mt Everest has service!",
+    "reference": "Agreed! I wonder if the same rule would apply if they had female football players. After all, there's no rules forbidding females from playing as long as they meet the eligibility requirements.",
+    "output": "Did you hear about the lady who read the terms this past week and won 10,000. It might be worth doing",
     "score": [
-      4.583333333333333,
+      2.3333333333333335,
       0
     ]
   },
   {
     "context": [
-      "Yes it is, so that much mean that he was thinking about this movie for 11 years?",
-      "That is impressive. That makes a great actor.",
-      "Yes it does, are you a fan of comic books, if you are, how many books do you have?"
+      "Yeah I guess the career of a football player does not last that long so they do not have much time to make money",
+      "True, I did not think about that, do you know how we are able to learn about interesting statistics like ball speed. ball rotation and players performance?",
+      "Yeah that is actually pretty cool, they are using tracking chips on the shoulder pads of the players now."
     ],
     "annotations": {
       "appropriateness": [
+        3,
+        3,
+        4
+      ],
+      "content": [
+        3,
+        3,
+        3
+      ],
+      "grammar": [
+        4,
+        5,
+        5
+      ],
+      "relevance": [
+        4,
+        5,
+        4,
+        5
+      ]
+    },
+    "reference": "I'm not sure how they do that, but I do know that the game is played on a rectangular field with a goal at each end.",
+    "output": "I find that pretty interesting!! Did you know when was the highest score in a football match ever?",
+    "score": [
+      3.923076923076923,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Me too. But I'm not sure what frequency it is. Kind of has me worried now!",
+      "well maybe we will find out at some point. did you know we can grow a rib in 2-3 months",
+      "No, that is shocking. How do they know that?"
+    ],
+    "annotations": {
+      "appropriateness": [
+        4,
+        4,
+        4
+      ],
+      "content": [
+        3,
+        3,
+        3
+      ],
+      "grammar": [
+        4,
+        4,
+        5,
+        5
+      ],
+      "relevance": [
+        4,
+        4,
+        4
+      ]
+    },
+    "reference": "I did not know that, but I do know that it is the most commonly eaten meat in the world.",
+    "output": "They must have done some study, good for us though. nice chat",
+    "score": [
+      3.923076923076923,
+      0
+    ]
+  },
+  {
+    "context": [
+      "From personal experience, I can confirm that football is religion in the south.",
+      "You having southern experience, did you know the New Orleans cheerleaders are forbidden from eating at a restaurant that a player is in? That's crazy, almost as crazy as the Rams robbing the Saints from being in the Super Bowl.",
+      "Yes, and if the cheerleaders are eating and the players come in the restaurant, the cheerleaders have to leave."
+    ],
+    "annotations": {
+      "appropriateness": [
+        4,
+        5,
+        5
+      ],
+      "content": [
         4,
         2,
-        4,
         2
       ],
-      "content": [
-        4,
-        4,
-        4
-      ],
       "grammar": [
+        5,
         4,
-        4,
-        4
+        5
       ],
       "relevance": [
-        3,
-        3,
-        3
+        5,
+        5,
+        5
       ]
     },
-    "reference": "Yeah, Leo is great. I hear he was in that sitcom called Growing Pains but I didn't catch it. What's Eating Gilbert Grape was a good one he was in, too.",
-    "output": "I am not. But appears that their is a lot of money in the industry.",
+    "reference": "Wow. They should all just leave. It's not fair",
+    "output": "They are saying that an engineer has higher earnings over a lifetime of an NFL player, but I find that really hard to believe . The league minimum in 2019 is 495k.",
     "score": [
-      3.4615384615384617,
+      4.25,
       0
     ]
   },
   {
     "context": [
-      "Well apparently there is a president in Zimbabwe called president banana",
-      "They could do a musical number. I think that many fans would follow.",
-      "See I like that idea haha. Maybe they could make a lot of money so that Trump could be back into the top three richest presidents of all time"
+      "Oh that is so nice and convenient and free",
+      "Yeah it is. DO you know why Michael Caine became an actor?",
+      "I have no idea, how? DId tou know Patrick Stewart teaches masters classes in drama in the UK?"
     ],
     "annotations": {
       "appropriateness": [
         4,
-        3,
-        3
+        5,
+        5
       ],
       "content": [
         3,
+        4,
+        4
+      ],
+      "grammar": [
         3,
+        3,
+        4
+      ],
+      "relevance": [
+        4,
+        4,
+        5,
+        5
+      ]
+    },
+    "reference": "Yes and he was chasing the pretty girls in drama class",
+    "output": "Nice. Caine became an actor because all the pretty girls were in drama class",
+    "score": [
+      4.076923076923077,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Matt Patricia is a male lol, he is a rocket scientist and also a coach in the NFL",
+      "Wow, I feel a little embarrassed for not knowing that, first chance I get I will read upon him.",
+      "Patricia its a girls name so don't worry its an honest mistake, he must be a really smart guy though being a rocket scientist and all"
+    ],
+    "annotations": {
+      "appropriateness": [
+        3,
+        2,
         2
+      ],
+      "content": [
+        4,
+        4,
+        4
       ],
       "grammar": [
         4,
-        4,
+        3,
         3
       ],
       "relevance": [
@@ -98,8 +205,8 @@
         3
       ]
     },
-    "reference": "I could do that! I could buy the ticket to his rallies and they could make me rich!",
-    "output": "He should have all three slots realistically. He is popular enough for 1st 2nd and 3rd place, like in his beauty contests.",
+    "reference": "I think that is a good thing to do. I wonder if he has a rule that he has to be a rocket scientist",
+    "output": "I thought it was a woman at first, did you know that only 11 minutes of live playtime in a nfl game?",
     "score": [
       3.1666666666666665,
       0
@@ -107,49 +214,14 @@
   },
   {
     "context": [
-      "Oh I definitely didn't watch that! Everyone knows Babe Ruth though and he was once America's most popular golfer!",
-      "Wow. Didn't know that. Antarctica has a disc golf course",
-      "Oh that would be a cold course! A golf course in Dubai requires 4 million gallons of water!"
-    ],
-    "annotations": {
-      "appropriateness": [
-        1,
-        1,
-        2
-      ],
-      "content": [
-        2,
-        2,
-        2
-      ],
-      "grammar": [
-        2,
-        4,
-        4
-      ],
-      "relevance": [
-        1,
-        1,
-        2
-      ]
-    },
-    "reference": "Waymo... I don't think I've heard about that one... is there a difference between those two ? Of course they compete... huge money are involved ;)",
-    "output": "That is a lot of water. The US have more golf courses than the world combined",
-    "score": [
-      2.0,
-      0
-    ]
-  },
-  {
-    "context": [
-      "Yes, the talent is there, on the coaching staff too. Though I have heard accusations for cheating.",
-      "Yes and while I am not familiar enough to know the details, which team hasn't been accused as such",
-      "I really don't know. I figure that the cost of getting caught cheating would be pretty high. Didn't they have to pay a fine or something?"
+      "Hi there, do you watch the NFL games?",
+      "The NFL? The National Football League? I've heard of it. Is that still around?",
+      "Yeah of course it is a big deal nowadays. Much bigger than in the 60 when Bowling was a bigger sport"
     ],
     "annotations": {
       "appropriateness": [
         4,
-        4,
+        3,
         4
       ],
       "content": [
@@ -161,63 +233,28 @@
       "grammar": [
         4,
         4,
-        4
+        5,
+        5
       ],
       "relevance": [
-        3,
-        3,
-        4
-      ]
-    },
-    "reference": "I'm not sure, but I do know that the coaches have to be very strict about what they are doing.",
-    "output": "That I'm not sure if the cheating accusations were validated.",
-    "score": [
-      3.8461538461538463,
-      0
-    ]
-  },
-  {
-    "context": [
-      "I've watched Australian rules football and Rugby before although they aren't on tv much",
-      "They call it football codes. There is also a Gaelic football",
-      "Interesting. I mainly watch the NFL even though the games only have an average of 11 minutes of gameplay for each game"
-    ],
-    "annotations": {
-      "appropriateness": [
         4,
-        3,
-        3,
-        4
-      ],
-      "content": [
-        4,
-        4,
-        4
-      ],
-      "grammar": [
-        4,
-        3,
-        3,
-        4
-      ],
-      "relevance": [
         4,
         4,
         4
       ]
     },
-    "reference": "I think that is a lot of commercials and commercials. I wonder if they will ever play the game or if they have tracking chips in the shoulder pads and footballs to track the players",
-    "output": "That is crazy, but I am sure you enjoy the whole thing. The game stops all the time. But personally , I like it like that",
+    "reference": "Yes, the NFL is still around. It is the world's most popular professional football league.",
+    "output": "Bowling was a big sport because people did it so much. On the weekends they would bowl for social purposes. Many people found spouses and lost children that way.",
     "score": [
-      3.7142857142857144,
+      4.066666666666666,
       0
     ]
   },
   {
     "context": [
-      "Hi, how are you?",
-      "I'm doing good, how about yourself?",
-      "I am well, thanks! Do you watch the olympics?"
+      "Yes that was for the indian releases because they were afraid to insult them",
+      "Yeah. Do you like fiction work?",
+      "I do. Do you know who wrote the oldest example of a cyborg?"
     ],
     "annotations": {
       "appropriateness": [
@@ -226,315 +263,24 @@
         5
       ],
       "content": [
-        5,
-        5,
+        3,
+        4,
         3
       ],
       "grammar": [
         5,
-        5,
+        4,
         5
       ],
       "relevance": [
         5,
         4,
-        5
-      ]
-    },
-    "reference": "I don't watch the Olympic games, but I do watch the World Cup every 4 years.",
-    "output": "I do! Did you hear that Julia Mancuso retired? She was such a great skier!",
-    "score": [
-      4.75,
-      0
-    ]
-  },
-  {
-    "context": [
-      "No! Wow, that's awesome! Very smart and kind of them. I love animals more than a lot of people lol!",
-      "It is a great thing they did! i wish the U.S. would do that!",
-      "I do too, we have so many animals going extinct it would probably help a lot. They deserve to thrive and be safe too."
-    ],
-    "annotations": {
-      "appropriateness": [
-        4,
-        5,
-        5,
-        4
-      ],
-      "content": [
-        4,
-        4,
-        4
-      ],
-      "grammar": [
-        4,
-        4,
-        4
-      ],
-      "relevance": [
-        4,
-        5,
         5,
         4
       ]
     },
-    "reference": "They certainly do, they are incredible creatures! I wish they were treated better.",
-    "output": "They do indeed. I like that they have their own scientific kingdom called Animalia.",
-    "score": [
-      4.285714285714286,
-      0
-    ]
-  },
-  {
-    "context": [
-      "Are you religious?",
-      "yes. fairly so",
-      "Did you know that Thomas Jefferson had created his own version of the bible so he could remove the supernatural parts. Thats wild."
-    ],
-    "annotations": {
-      "appropriateness": [
-        3,
-        5,
-        5
-      ],
-      "content": [
-        4,
-        4,
-        3
-      ],
-      "grammar": [
-        4,
-        4,
-        4,
-        4
-      ],
-      "relevance": [
-        4,
-        5,
-        5
-      ]
-    },
-    "reference": "<unk> s>Its a bit weird. I think he was a religious person.",
-    "output": "no. i didnt. that is wild",
-    "score": [
-      4.153846153846154,
-      0
-    ]
-  },
-  {
-    "context": [
-      "I love the NFL! I try to follow all 32 teams the best I can.",
-      "Nice. I did not know the game season is 17 weeks. That is a long time and lots of games",
-      "Yes. It seems to go fast. Each team plays a 16 game schedule."
-    ],
-    "annotations": {
-      "appropriateness": [
-        5,
-        3,
-        3,
-        5
-      ],
-      "content": [
-        4,
-        4,
-        4,
-        4
-      ],
-      "grammar": [
-        5,
-        5,
-        5
-      ],
-      "relevance": [
-        4,
-        5,
-        5
-      ]
-    },
-    "reference": "That's a lot of games! Do you have a favorite team? I like the Seattle Seahawks.",
-    "output": "Yeah it does seem that for sure. Interesting that bowlers used to make more than football players in the 60s",
-    "score": [
-      4.357142857142857,
-      0
-    ]
-  },
-  {
-    "context": [
-      "Yeah, kissing is kind of a weird concept though when you think about it. There is a contest where writers try to come up with the worst possible opening sentence to a novel. I wonder what it is.",
-      "Hmm, coming up with the worse opening line in a novel actually sounds quite challenging",
-      "Yeah, I'm betting some of them are pretty funny."
-    ],
-    "annotations": {
-      "appropriateness": [
-        4,
-        4,
-        4
-      ],
-      "content": [
-        4,
-        4,
-        4,
-        4
-      ],
-      "grammar": [
-        5,
-        5,
-        5,
-        5
-      ],
-      "relevance": [
-        4,
-        4,
-        4
-      ]
-    },
-    "reference": "I know what you mean. Some of the best writers I've ever heard of were Stephen King and J.K. Rowling.",
-    "output": "Well I have to go, nice chatting with you",
-    "score": [
-      4.285714285714286,
-      0
-    ]
-  },
-  {
-    "context": [
-      "I love the NFL! I try to follow all 32 teams the best I can.",
-      "Nice. I did not know the game season is 17 weeks. That is a long time and lots of games",
-      "Yes. It seems to go fast. Each team plays a 16 game schedule."
-    ],
-    "annotations": {
-      "appropriateness": [
-        1,
-        1,
-        3,
-        3
-      ],
-      "content": [
-        1,
-        1,
-        2
-      ],
-      "grammar": [
-        3,
-        3,
-        3
-      ],
-      "relevance": [
-        1,
-        1,
-        3
-      ]
-    },
-    "reference": "They are really <unk> and they are really <unk>",
-    "output": "Yeah it does seem that for sure. Interesting that bowlers used to make more than football players in the 60s",
-    "score": [
-      2.0,
-      0
-    ]
-  },
-  {
-    "context": [
-      "I wonder if that is supposed to have some effect on the players",
-      "I am not sure. In the 60s bowlers used to make more than NFL players",
-      "Yeah I guess it was a more popular game back then. Their coaches are the highest paid people"
-    ],
-    "annotations": {
-      "appropriateness": [
-        4,
-        3,
-        4,
-        3
-      ],
-      "content": [
-        3,
-        4,
-        4
-      ],
-      "grammar": [
-        4,
-        2,
-        2,
-        4
-      ],
-      "relevance": [
-        4,
-        4,
-        4
-      ]
-    },
-    "reference": "Yeah I sure do. Do you know how the highest score in football is?",
-    "output": "Yeah no surprise there. Do you know what the highest score in college football is?",
-    "score": [
-      3.5,
-      0
-    ]
-  },
-  {
-    "context": [
-      "Brady has to come crashing down eventually, with Belichick.",
-      "Yeah I would say that run is about over. It was a good one though. They dominated for a long time.",
-      "They were fun to watch before they were always expected to win"
-    ],
-    "annotations": {
-      "appropriateness": [
-        3,
-        2,
-        3,
-        2
-      ],
-      "content": [
-        2,
-        3,
-        3
-      ],
-      "grammar": [
-        4,
-        3,
-        3
-      ],
-      "relevance": [
-        3,
-        2,
-        3
-      ]
-    },
-    "reference": "Yeah, I think that is pretty good.",
-    "output": "It just gets old hearing at the beginning of the season because they lost a couple game that they are done, and then they end up in the super bowl. Im just sick of it.",
-    "score": [
-      2.769230769230769,
-      0
-    ]
-  },
-  {
-    "context": [
-      "well they stuck to it it seems. Did you know U of Iowa painted the visitor locker room pink?",
-      "I think that has something to do with the breast cancer awareness movement or something.",
-      "I am not sure actually. I hope that is the reason. Did you know bowlers made more money than football players in the 60s?"
-    ],
-    "annotations": {
-      "appropriateness": [
-        4,
-        5,
-        5
-      ],
-      "content": [
-        5,
-        2,
-        5,
-        2
-      ],
-      "grammar": [
-        5,
-        5,
-        4
-      ],
-      "relevance": [
-        5,
-        5,
-        5
-      ]
-    },
-    "reference": "I did not know that, but I do know that bowling is one of the most popular recreational activities in the world.",
-    "output": "Bowling is a sport of kings. Bowlers deserve more money for their elegance and charm.",
+    "reference": "I'm not sure who wrote it, but I do know that it was published in 1929.",
+    "output": "Yeah that was Edgar Allen Poe, what a guy",
     "score": [
       4.384615384615385,
       0
@@ -542,34 +288,178 @@
   },
   {
     "context": [
-      "Yeah I guess it was a more popular game back then. Their coaches are the highest paid people",
-      "Yeah no surprise there. Do you know what the highest score in college football is?",
-      "Hmmm no I do not, what is it. Did you hear about that giant stadium in Texas?"
+      "Yeah and after words maybe on a subconscious level. You know the highest scoring game of all time?",
+      "Yeah it was 222-0. What a blow out!",
+      "Yeah Georgia Tech was not playing around. I would have hated to be on the bus ride home to Cumberland."
     ],
     "annotations": {
       "appropriateness": [
-        5,
-        5,
+        2,
+        2,
         3
       ],
       "content": [
-        2,
-        2,
-        3
+        3,
+        4,
+        4
       ],
       "grammar": [
+        3,
         3,
         3,
         3
       ],
       "relevance": [
-        4,
+        3,
         3,
         3
       ]
     },
-    "reference": "Yes it is 222-0 but it is crazy",
-    "output": "The highest score is 222-0, Georgia Tech versus Cumberland, and I do not know abut that stadium",
+    "reference": "HAHAHA! Now that is hilarious! What an awesome thing to do! lol",
+    "output": "Agreed, or have my name associated with that team. That must have been a rough game for the,.",
+    "score": [
+      3.0,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Well the NFL tracks everything. They even have chips in shoulder pads and footballs for tracking so I am pretty sure they are accurate.",
+      "I think its great that tech is being integrated into the game, cool stats indeed they should make devices to control the brain damage injuries",
+      "You would think that an average NFL player who will make less than an average engineer over his lifetime would want to help their own health. The NFL is violent."
+    ],
+    "annotations": {
+      "appropriateness": [
+        3,
+        4,
+        4
+      ],
+      "content": [
+        2,
+        2,
+        4
+      ],
+      "grammar": [
+        5,
+        4,
+        5,
+        4
+      ],
+      "relevance": [
+        2,
+        2,
+        4,
+        4
+      ]
+    },
+    "reference": "Well, I do not have the exact number but there were at least two.",
+    "output": "It is a violent sport, I love it still, there's no rule against a female playing.",
+    "score": [
+      3.5,
+      0
+    ]
+  },
+  {
+    "context": [
+      "17 weeks if im not mistaken. then the playoffs",
+      "Yes you are right. Do you know the highest score ever in a football game?",
+      "Wow not sure i would imagine it's pretty high. Was it a college or professional game?"
+    ],
+    "annotations": {
+      "appropriateness": [
+        4,
+        3,
+        3
+      ],
+      "content": [
+        3,
+        3,
+        3
+      ],
+      "grammar": [
+        4,
+        4,
+        5,
+        5
+      ],
+      "relevance": [
+        4,
+        4,
+        4
+      ]
+    },
+    "reference": "I think it was a college game, but I'm not 100% sure. I do know that the team that scores the most points at the end of the game wins.",
+    "output": "222-0. It happened in 1916 when Georgia tech defeated Cumberland.",
+    "score": [
+      3.769230769230769,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Yeah I think I have read that before, that is impressive. I heard she was really good in that movie as well.",
+      "It's funny that she did not know she was auditioning for wonder woman. She thought she was trying out for cat woman",
+      "That is pretty funny, do you know what year the original wonder women made an appearance?"
+    ],
+    "annotations": {
+      "appropriateness": [
+        3,
+        1,
+        1
+      ],
+      "content": [
+        2,
+        1,
+        1
+      ],
+      "grammar": [
+        2,
+        3,
+        3
+      ],
+      "relevance": [
+        1,
+        2,
+        1
+      ]
+    },
+    "reference": "They probably did. Did you know that the circular huddle was created by a deaf quarterback?",
+    "output": "It's been a long time! I believe it was 1941.",
+    "score": [
+      1.75,
+      0
+    ]
+  },
+  {
+    "context": [
+      "it does i only know that the super bowl is in the first week of February.",
+      "They only rest one of the 17 weeks of the season.",
+      "Yes it's called a bye week. apparently the patriots fans have their own creed called in bill we trust."
+    ],
+    "annotations": {
+      "appropriateness": [
+        3,
+        3,
+        3
+      ],
+      "content": [
+        1,
+        1,
+        2
+      ],
+      "grammar": [
+        5,
+        5,
+        5
+      ],
+      "relevance": [
+        3,
+        4,
+        4
+      ]
+    },
+    "reference": "Hahaha, I will say that one more time.",
+    "output": "That is impressive, also you had asked about Aaron Rodgers, he became the highest paid player",
     "score": [
       3.25,
       0
@@ -577,61 +467,352 @@
   },
   {
     "context": [
-      "Hello, How are you? Do you like football?",
-      "Football? Yes, it is a great game! The world loves the football!",
-      "Yes, especially the US, the NFL. were you meaning the soccer game?"
+      "I'm originally from England so soccer is my thing, yes, a little rugby too. I've tried watching football on TV but it seems to go on forever, and is mostly replays of what has happened already.",
+      "Yeah the average NFL game has 11 minutes of live gameplay, what do you think they could do to improve it ?",
+      "Less commercials. I think it is mainly a cultural thing. If I grew up here my opinion might be different."
     ],
     "annotations": {
       "appropriateness": [
-        1,
-        2,
-        1
+        4,
+        3,
+        4
       ],
       "content": [
-        2,
-        5,
-        5
+        4,
+        3,
+        4
       ],
       "grammar": [
         4,
-        5,
-        5
+        4,
+        4
       ],
       "relevance": [
-        1,
-        1,
-        2
+        4,
+        3,
+        4
       ]
     },
-    "reference": "Interesting. Maybe the information isn't relayed in real time. It would be neat if there lights surrounding the end zone and when the chip broke the end zone the lights would flash or would be cheesy.",
-    "output": "The soccer? Yes, I was meaning the soccer. But there is the American one, the football, I mean. It has very little gameplay. An average NFL game only has 11 minutes of live gameplay.",
+    "reference": "I think it is a good thing to watch the game and watch the game and watch the game and watch the game and watch the game and watch the game",
+    "output": "They are a little old fashioned in the NFL, cheerleaders are not even allowed to be in the same restaurant with a football player.",
     "score": [
-      2.8333333333333335,
+      3.75,
       0
     ]
   },
   {
     "context": [
-      "Yes that is true and I am glad they came up with that line because it makes watching the game much easier",
-      "Definitely. Can you believe the former Patriots running back never fumbled the football his entire career?",
-      "That is so amazing. Do you know what the highest score in college football is?"
+      "Yes it was basically the big form of entertainment! I bet some presidents even tuned in. The three wealthiest presidents were JFK, Washington, and Jefferson.",
+      "With inflation I can see how Washington or Jefferson might have more worth than President Trump. But JFK surprises me",
+      "Yes JFK is a bit surprising. I bet the president of Indonesia made a lot from his pop albums!"
+    ],
+    "annotations": {
+      "appropriateness": [
+        4,
+        3,
+        3,
+        4
+      ],
+      "content": [
+        4,
+        4,
+        4
+      ],
+      "grammar": [
+        4,
+        4,
+        4
+      ],
+      "relevance": [
+        5,
+        4,
+        5
+      ]
+    },
+    "reference": "Oh wow. I bet he did!",
+    "output": "I wonder if he had time to actualy run the country. Recording 3 albums is a long process",
+    "score": [
+      4.0,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Yes, have you seen Iron Man, if yes did you like it?",
+      "Yes. Even after ten years it holds up quite well!",
+      "That's true, I even like the actor in Iron Man as much as the movie itself. He is one of my favorite actor."
     ],
     "annotations": {
       "appropriateness": [
         3,
         3,
-        2
+        4
+      ],
+      "content": [
+        4,
+        3,
+        3
+      ],
+      "grammar": [
+        4,
+        5,
+        5,
+        4
+      ],
+      "relevance": [
+        4,
+        5,
+        5
+      ]
+    },
+    "reference": "I haven't seen it, but I've heard a lot about it. It's the highest grossing superhero film of all time, right?",
+    "output": "Do you know the name of the company that published Iron Man comics?",
+    "score": [
+      4.0,
+      0
+    ]
+  },
+  {
+    "context": [
+      "I know that it has sold over 5 billion copies. Amazing record there",
+      "Yes and that is exactly why it is known as one of the most influential books in the world",
+      "Yup. Did you know Jefferson created his own version of the Bible?"
+    ],
+    "annotations": {
+      "appropriateness": [
+        5,
+        4,
+        4,
+        5
       ],
       "content": [
         3,
+        4,
+        4
+      ],
+      "grammar": [
+        4,
         3,
-        2,
-        2
+        3
+      ],
+      "relevance": [
+        5,
+        4,
+        4,
+        5
+      ]
+    },
+    "reference": "I didn't know that",
+    "output": "Yes, he went as far as to use a razor to cut out the supernatural parts off of it",
+    "score": [
+      4.071428571428571,
+      0
+    ]
+  },
+  {
+    "context": [
+      "It was really good. A different type of marvel movie which was great",
+      "I like the comedy ones. i am not really into explosions and fight scenes. they get old.",
+      "That is a good point, seeing it once was good enough to like. It was so nice chatting with you!"
+    ],
+    "annotations": {
+      "appropriateness": [
+        5,
+        5,
+        5
+      ],
+      "content": [
+        3,
+        4,
+        4
       ],
       "grammar": [
         5,
         5,
+        5,
         5
+      ],
+      "relevance": [
+        5,
+        5,
+        5
+      ]
+    },
+    "reference": "It was nice chatting with you as well. Have a great day!",
+    "output": "Yeah, i enjoyed chatting! Have a good day!",
+    "score": [
+      4.6923076923076925,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Hi, how are you?",
+      "Good, and you? I haven't seen any superhero movies in a long time, but I think I saw a brief portion of Iron Man once on a TV that was going at my job.",
+      "Really! I feel like all the movies coming out now, like 25% are super hero movies. Do you not enjoy them?"
+    ],
+    "annotations": {
+      "appropriateness": [
+        4,
+        4,
+        4
+      ],
+      "content": [
+        4,
+        3,
+        3,
+        4
+      ],
+      "grammar": [
+        3,
+        3,
+        3
+      ],
+      "relevance": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    "reference": "I do not like them. I don't like them. I just like them.",
+    "output": "I probably would, I just never think to watch them. I watched the first two or three installments of the Frank Miller Batman franchise.",
+    "score": [
+      3.642857142857143,
+      0
+    ]
+  },
+  {
+    "context": [
+      "I'm doing well! Are you a fan of football?",
+      "Yes I love football. Do you have sirius radio?",
+      "I did for a little bit but not anymore? Do you?"
+    ],
+    "annotations": {
+      "appropriateness": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "content": [
+        4,
+        4,
+        4
+      ],
+      "grammar": [
+        4,
+        4,
+        4
+      ],
+      "relevance": [
+        3,
+        4,
+        4,
+        3
+      ]
+    },
+    "reference": "Yes, I have a few years ago.",
+    "output": "Yes I did for a years but not anymore. Did you know there is no written rule about women being in the NFL.",
+    "score": [
+      3.857142857142857,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Yes. The Saints cheerleaders cannot even eat in the same restaurant as the players.",
+      "I guess it is to keep the players from getting distracted or from bad press about teams.",
+      "I'm sure. Even if the cheerleader is already there, if a player walks into the restaurant the cheerleader has to leave."
+    ],
+    "annotations": {
+      "appropriateness": [
+        3,
+        3,
+        3
+      ],
+      "content": [
+        1,
+        1,
+        3
+      ],
+      "grammar": [
+        5,
+        4,
+        5
+      ],
+      "relevance": [
+        4,
+        4,
+        4
+      ]
+    },
+    "reference": "I think that's one of the reasons for this rule.",
+    "output": "That's pretty strict.",
+    "score": [
+      3.3333333333333335,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Wow cool. Did you know that superbowl is very small compared to soccer events?",
+      "Wow, I guess since so many people around the works like the sport",
+      "Yeah true. Did you know Greenland cannot join FIFA?"
+    ],
+    "annotations": {
+      "appropriateness": [
+        5,
+        4,
+        4,
+        5
+      ],
+      "content": [
+        4,
+        4,
+        4
+      ],
+      "grammar": [
+        5,
+        4,
+        4,
+        5
+      ],
+      "relevance": [
+        5,
+        5,
+        4
+      ]
+    },
+    "reference": "Oh no! Well, I know that can happen. But why can't they join FIFA?",
+    "output": "Really, why is that?",
+    "score": [
+      4.428571428571429,
+      0
+    ]
+  },
+  {
+    "context": [
+      "That is crazy! You could buy an xbox for a whole lot less! Did you know that South Korea has laws on how late at night kids can play video games?",
+      "no! How late? do you know?",
+      "I do. They can't play past midnight."
+    ],
+    "annotations": {
+      "appropriateness": [
+        3,
+        3,
+        4
+      ],
+      "content": [
+        3,
+        4,
+        4,
+        3
+      ],
+      "grammar": [
+        4,
+        4,
+        4
       ],
       "relevance": [
         3,
@@ -639,10 +820,10 @@
         3
       ]
     },
-    "reference": "Yes that is a high score in college football.",
-    "output": "Yeah, it was 222 during a college game in 1916.",
+    "reference": "Might as well stay up late and play!",
+    "output": "Wow! Do you know what happens if they play after midnight? Are they like Gremlins?",
     "score": [
-      3.230769230769231,
+      3.4615384615384617,
       0
     ]
   },
@@ -684,26 +865,206 @@
   },
   {
     "context": [
-      "That's such a nice gesture. For the longest time he was the voice of college football. Did you go to Michigan?",
-      "I did not just a big fan. My favorite player of all time attended there so It was how I became a fan",
-      "Who is your favorite player of all time?"
+      "I guess that is not a lot considering how long they have been around",
+      "That is true actually. Do you know the programming language Python?",
+      "I have heard of it, is that somehow related to comedy"
     ],
     "annotations": {
       "appropriateness": [
-        4,
-        4,
-        5,
-        5
+        3,
+        3,
+        3
       ],
       "content": [
-        3,
         4,
+        4,
+        4
+      ],
+      "grammar": [
+        5,
+        5,
+        4
+      ],
+      "relevance": [
+        4,
+        4,
+        4
+      ]
+    },
+    "reference": "I don't know much about it, but I do know that it was created by a man named Peter Gene Hernandez.",
+    "output": "yes, the name comes from a British comedy group, monty python",
+    "score": [
+      3.9166666666666665,
+      0
+    ]
+  },
+  {
+    "context": [
+      "What kind of book is it?",
+      "I suppose it depends on who you ask. I believe that he believes it's spiritual but a critic called it cult like and creepy.",
+      "What do you think though?"
+    ],
+    "annotations": {
+      "appropriateness": [
+        2,
+        1,
+        5,
+        4
+      ],
+      "content": [
+        2,
+        2,
         3
       ],
       "grammar": [
         5,
-        4,
         5,
+        5
+      ],
+      "relevance": [
+        2,
+        2,
+        2
+      ]
+    },
+    "reference": "I think it is a good character to be honest.",
+    "output": "I have not read it so I truly can't make that judgement. Off topic, did you know that ESPN won an Emmy for creating the yellow line that represents the first down?",
+    "score": [
+      3.076923076923077,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Yeah exactly. Have you ever been to that football stadium in Texas that can seat 18 000 people?",
+      "No I never been to Texas yet but that's pretty crazy",
+      "Yeah it is right? And it cost $60 million and on top of all , it is just a high school stadium"
+    ],
+    "annotations": {
+      "appropriateness": [
+        3,
+        3,
+        3
+      ],
+      "content": [
+        4,
+        4,
+        3,
+        3
+      ],
+      "grammar": [
+        3,
+        4,
+        3
+      ],
+      "relevance": [
+        3,
+        4,
+        4
+      ]
+    },
+    "reference": "Wow that is a lot of money. Do you know who the highest paid state employee is",
+    "output": "They do love football in Texas, too bad they don't care as much about education, an average engineer makes more in a lifetime than the average NFL player",
+    "score": [
+      3.3846153846153846,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Nice I liked it too. did you know it was founded in 1889 as a playing card company",
+      "Yeah, I did not know it was that old. Did you",
+      "Yeah I did not know but apparently it has been that long"
+    ],
+    "annotations": {
+      "appropriateness": [
+        2,
+        4,
+        2,
+        4
+      ],
+      "content": [
+        2,
+        4,
+        4
+      ],
+      "grammar": [
+        4,
+        4,
+        3,
+        3
+      ],
+      "relevance": [
+        4,
+        4,
+        3
+      ]
+    },
+    "reference": "Oh yeah",
+    "output": "Cool, I found out Nintendo produced a knockoff lego when they were a toy company.",
+    "score": [
+      3.357142857142857,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Yeah that makes sense. Because I haven't heard of that rule with any other team. What about the rule for female players? Apparently there is no rule against it, which is interesting",
+      "I guess they never imagined that women would want or be able to play. Other sports might not have such a rule either.",
+      "Yeah that makes sense. I don't think that women can play basketball or anything like that, at least in the NBA, but maybe I'm wrong? Do you have a favorite quarterback by the way?"
+    ],
+    "annotations": {
+      "appropriateness": [
+        3,
+        4,
+        4,
+        3
+      ],
+      "content": [
+        4,
+        4,
+        4
+      ],
+      "grammar": [
+        3,
+        3,
+        4,
+        4
+      ],
+      "relevance": [
+        3,
+        3,
+        4,
+        4
+      ]
+    },
+    "reference": "I don't follow the NFL but I do like the <unk> I think the NFL has a lot of interesting facts about the NFL.",
+    "output": "There is a WNBA, but the money is not as good. I don't have a favorite QB, but I did like Joe Montana and Steve Young.",
+    "score": [
+      3.6,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Yeah exactly. Did you know ESPN won and Emmy once?",
+      "It was for the superimposed yellow line and I think they deserved it",
+      "Yup. DO you know much about the Bible?"
+    ],
+    "annotations": {
+      "appropriateness": [
+        3,
+        5,
+        5
+      ],
+      "content": [
+        4,
+        4,
+        3
+      ],
+      "grammar": [
+        4,
+        4,
         4
       ],
       "relevance": [
@@ -712,10 +1073,731 @@
         5
       ]
     },
-    "reference": "My favorite player is Bobby knight",
-    "output": "Charles Woodson. Keith Jackson was also announcing that game when he cemented his Heisman against Ohio St",
+    "reference": "a little bit but nothing that major",
+    "output": "I know what Jefferson created his own version of it without the supernatural parts",
+    "score": [
+      4.166666666666667,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Absolutely - there is a reason the lifetime earnings of an engineer is higher than that of a nfl player - their career is a lot longer.",
+      "It's funny to think that back in the 1960s, bowlers were paid more. I can't imagine sitting around and watching bowling being more exciting, but bowling alleys were popular.",
+      "Yeah I do love bowling though its been a while since I did it. There are more female bowlers though - even though it is allowed for women to play in the NFL, there aren't any."
+    ],
+    "annotations": {
+      "appropriateness": [
+        3,
+        1,
+        1
+      ],
+      "content": [
+        3,
+        2,
+        2
+      ],
+      "grammar": [
+        4,
+        4,
+        4
+      ],
+      "relevance": [
+        3,
+        2,
+        2
+      ]
+    },
+    "reference": "I'm not sure if there are any female bowlers in the NFL - they are just women.",
+    "output": "I wonder if women will meet the 'standard', if they did apply. I mean, New Orleans even makes cheerleaders leave a restaurant if football players are there, sexism at its finest.",
+    "score": [
+      2.5833333333333335,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Yeah and they have to leave mid meal. That rule is sexist and has to go",
+      "Agreed on that. Do you know much about the Bible?",
+      "I know that is it one of the most influential books and has sold over 5 billion copies"
+    ],
+    "annotations": {
+      "appropriateness": [
+        3,
+        3,
+        4
+      ],
+      "content": [
+        3,
+        3,
+        4,
+        4
+      ],
+      "grammar": [
+        5,
+        5,
+        5
+      ],
+      "relevance": [
+        4,
+        4,
+        4
+      ]
+    },
+    "reference": "I know a little bit about it. I know it's a collection of sacred texts.",
+    "output": "Yeah exactly and it was part of the education system until late, like 1963",
+    "score": [
+      3.923076923076923,
+      0
+    ]
+  },
+  {
+    "context": [
+      "There are a lot who play on high school teams, so if they meet the requirements, why not?",
+      "Yeah, but the average earning potential salary of an engineer is higher",
+      "lol Bowlers in the 60's made more than football players. THAT is hilarious."
+    ],
+    "annotations": {
+      "appropriateness": [
+        3,
+        5,
+        5,
+        3
+      ],
+      "content": [
+        4,
+        4,
+        3
+      ],
+      "grammar": [
+        5,
+        5,
+        5
+      ],
+      "relevance": [
+        4,
+        5,
+        5,
+        4
+      ]
+    },
+    "reference": "That's true, but I don't think I could make that much money as a high school football player.",
+    "output": "And the NFL puts tracking chips in the players' equipment to track their every move. What woman would want a room full of men telling them that they watched their every mis-step, and they have proof that they were out of place? No thank you. Tracking the location of a ball, ok. Tracking the women on the field seems like stalking...",
     "score": [
       4.285714285714286,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Fun! We should be just about done with this hit!",
+      "yeah, this was a fun one!",
+      "I thought so too! Nice talking with you!"
+    ],
+    "annotations": {
+      "appropriateness": [
+        3,
+        3,
+        3
+      ],
+      "content": [
+        3,
+        3,
+        3
+      ],
+      "grammar": [
+        3,
+        5,
+        5,
+        3
+      ],
+      "relevance": [
+        3,
+        3,
+        2
+      ]
+    },
+    "reference": "well, this could be considered a b-sides collection.",
+    "output": "same here",
+    "score": [
+      3.230769230769231,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Yeah exactly. Have you ever been to that football stadium in Texas that can seat 18 000 people?",
+      "No I never been to Texas yet but that's pretty crazy",
+      "Yeah it is right? And it cost $60 million and on top of all , it is just a high school stadium"
+    ],
+    "annotations": {
+      "appropriateness": [
+        4,
+        4,
+        4
+      ],
+      "content": [
+        4,
+        3,
+        3,
+        4
+      ],
+      "grammar": [
+        4,
+        4,
+        4
+      ],
+      "relevance": [
+        3,
+        3,
+        3
+      ]
+    },
+    "reference": "How much do you like to play at the <unk>",
+    "output": "They do love football in Texas, too bad they don't care as much about education, an average engineer makes more in a lifetime than the average NFL player",
+    "score": [
+      3.6153846153846154,
+      0
+    ]
+  },
+  {
+    "context": [
+      "I would certainly take the engineer career path in that case. It would certainly be much easier on your body.",
+      "Yes, can you believe that in the 60s top pro bowlers made twice as much as footballs players? Talk about a job that's easy on you body!",
+      "That would be much easier on your body. I can't imagine that paying more. Times have changed. Were you also aware that 14 of the world's 25 largest stadiums are American college football team stadiums?"
+    ],
+    "annotations": {
+      "appropriateness": [
+        4,
+        4,
+        4
+      ],
+      "content": [
+        4,
+        3,
+        4
+      ],
+      "grammar": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "relevance": [
+        3,
+        5,
+        5,
+        3
+      ]
+    },
+    "reference": "I did not know that, but I do know that the NFL is the most popular professional sports league in the world.",
+    "output": "That's crazy! Although I went to college at Florida, so I'm actually pretty familiar with huge stadiums. Did you know that the highest scoring football game was a college matchup when Georgia Tech beat Cumberland 222-0 in 1916?",
+    "score": [
+      4.214285714285714,
+      0
+    ]
+  },
+  {
+    "context": [
+      "That's right. Did you know that presidents have different functions depending on the type of government?",
+      "Yes I remember learning that I think. Its been good talking to you.",
+      "It's been good talking to you as well."
+    ],
+    "annotations": {
+      "appropriateness": [
+        4,
+        5,
+        5
+      ],
+      "content": [
+        4,
+        3,
+        4
+      ],
+      "grammar": [
+        3,
+        3,
+        5,
+        5
+      ],
+      "relevance": [
+        4,
+        5,
+        5
+      ]
+    },
+    "reference": "Take care and Godspeed!",
+    "output": "Have a good day",
+    "score": [
+      4.230769230769231,
+      0
+    ]
+  },
+  {
+    "context": [
+      "No I didn't know that! Doesn't seem like that makes any sense to me haha. Did you know that our rules for elections changed in 1805?",
+      "I agree. No I did not. How did they change?",
+      "Originally the runner-up would become vice president. So in our last election we would had vice president Hillary Clinton and president Trump. Talk about a lot of drama haha"
+    ],
+    "annotations": {
+      "appropriateness": [
+        5,
+        2,
+        1,
+        4
+      ],
+      "content": [
+        2,
+        2,
+        3
+      ],
+      "grammar": [
+        5,
+        5,
+        5
+      ],
+      "relevance": [
+        4,
+        4,
+        3
+      ]
+    },
+    "reference": "I'm not sure how they changed it, but I do know that the first president of the United States was John F. Kennedy.",
+    "output": "Wow! That would have been crazy. We are much too partisan for that now. Maybe it would force us to work together more. Off topic but do you watch a lot of TV?",
+    "score": [
+      3.4615384615384617,
+      0
+    ]
+  },
+  {
+    "context": [
+      "I find it unlikely. What is his new book about?",
+      "its basically his strategy for how he became successful, I think its worth a read, can't believe hes 40 and is tied for the superbowl record",
+      "That is pretty amazing. Are you a fan of football?"
+    ],
+    "annotations": {
+      "appropriateness": [
+        3,
+        2,
+        2
+      ],
+      "content": [
+        3,
+        2,
+        2
+      ],
+      "grammar": [
+        2,
+        2,
+        2
+      ],
+      "relevance": [
+        5,
+        5,
+        5
+      ]
+    },
+    "reference": "I am a fan of football. I like the Patriots and the Patriots and the Patriots",
+    "output": "ya I think football is ok, I like the big games but don't follow a team or anything, you?",
+    "score": [
+      2.9166666666666665,
+      0
+    ]
+  },
+  {
+    "context": [
+      "222-0. I dont even see how that is possible. That one team must have been really bad.",
+      "Perhaps a combination of the winning team being just that good and the losing team being so bad",
+      "Ive seen some blow outs, but never by that much."
+    ],
+    "annotations": {
+      "appropriateness": [
+        3,
+        3,
+        3
+      ],
+      "content": [
+        2,
+        3,
+        3,
+        2
+      ],
+      "grammar": [
+        3,
+        4,
+        4
+      ],
+      "relevance": [
+        5,
+        5,
+        5
+      ]
+    },
+    "reference": "That is a good thing. I have never seen that kind of blow outs.",
+    "output": "Did you every play fantasy football?",
+    "score": [
+      3.4615384615384617,
+      0
+    ]
+  },
+  {
+    "context": [
+      "We always watch the Superbowl, will have a couple people over but nothing big. I am rooting for the Patriots though!",
+      "haha me too, do you like Michael Caine? I guess he only got into acting to chase cute girls haha",
+      "Haha, that's funny! He made the right choice to get into drama! I like Jim Carrey in Drama films but he won't do drama anymore. Love his comedy too though."
+    ],
+    "annotations": {
+      "appropriateness": [
+        2,
+        2,
+        3
+      ],
+      "content": [
+        3,
+        4,
+        4
+      ],
+      "grammar": [
+        3,
+        3,
+        4,
+        4
+      ],
+      "relevance": [
+        2,
+        4,
+        2
+      ]
+    },
+    "reference": "I think he is a good actor, but I think he is a good actor but I think he is a good actor",
+    "output": "ya he did, I should have followed in his footsteps, and I guess Jon Hamm taught the girl from the office, Erin, when he was a teacher, definitely didn't know that",
+    "score": [
+      3.076923076923077,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Absolutely - there is a reason the lifetime earnings of an engineer is higher than that of a nfl player - their career is a lot longer.",
+      "It's funny to think that back in the 1960s, bowlers were paid more. I can't imagine sitting around and watching bowling being more exciting, but bowling alleys were popular.",
+      "Yeah I do love bowling though its been a while since I did it. There are more female bowlers though - even though it is allowed for women to play in the NFL, there aren't any."
+    ],
+    "annotations": {
+      "appropriateness": [
+        3,
+        3,
+        3
+      ],
+      "content": [
+        4,
+        4,
+        2,
+        2
+      ],
+      "grammar": [
+        4,
+        4,
+        4
+      ],
+      "relevance": [
+        5,
+        5,
+        5
+      ]
+    },
+    "reference": "I think that is a good point. I wonder if they have a female player in the NFL",
+    "output": "I wonder if women will meet the 'standard', if they did apply. I mean, New Orleans even makes cheerleaders leave a restaurant if football players are there, sexism at its finest.",
+    "score": [
+      3.6923076923076925,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Yeah only 13 TD passes which is low for a QB, he did have a better season the previous year",
+      "Saquon Barkley should be a good pick for the fantasy draft next season.",
+      "Im not aware of that player in what position does he play?"
+    ],
+    "annotations": {
+      "appropriateness": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "content": [
+        3,
+        3,
+        3
+      ],
+      "grammar": [
+        4,
+        4,
+        2
+      ],
+      "relevance": [
+        4,
+        4,
+        4
+      ]
+    },
+    "reference": "I think he is a good player. He is a great player and he has a great player too.",
+    "output": "He is a running back for the New York Giants.",
+    "score": [
+      3.1538461538461537,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Wow cool. Did you know that superbowl is very small compared to soccer events?",
+      "Wow, I guess since so many people around the works like the sport",
+      "Yeah true. Did you know Greenland cannot join FIFA?"
+    ],
+    "annotations": {
+      "appropriateness": [
+        2,
+        1,
+        1
+      ],
+      "content": [
+        3,
+        2,
+        2
+      ],
+      "grammar": [
+        4,
+        4,
+        4
+      ],
+      "relevance": [
+        3,
+        2,
+        2
+      ]
+    },
+    "reference": "I know. It is a very difficult country to join.",
+    "output": "Really, why is that?",
+    "score": [
+      2.5,
+      0
+    ]
+  },
+  {
+    "context": [
+      "They really did here we are almost 50 years later and it is still going strong!",
+      "That's my childhood! It shocks me to see that the value of the Star Wars franchise is $65 billion!",
+      "And that makes it only the 5th highest grossing media franchise. I wonder what beat it?"
+    ],
+    "annotations": {
+      "appropriateness": [
+        2,
+        4,
+        2
+      ],
+      "content": [
+        3,
+        3,
+        2,
+        2
+      ],
+      "grammar": [
+        4,
+        4,
+        5,
+        5
+      ],
+      "relevance": [
+        5,
+        3,
+        5
+      ]
+    },
+    "reference": "I wonder what beat it?",
+    "output": "Yeah, it makes you wonder? Well, it's been nice chatting with you this morning. I've got to head into work. Hope you enjoy the rest of your day.",
+    "score": [
+      3.5,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Yeah that's for sure. I really thought that players earned alot more money though.",
+      "Maybe the MVP but an engineer will earn more money than the NFL player, I think soccer players are paid better",
+      "Crazy to think that one team scored 222 points in a game once too."
+    ],
+    "annotations": {
+      "appropriateness": [
+        3,
+        3,
+        1,
+        1
+      ],
+      "content": [
+        3,
+        3,
+        5,
+        5
+      ],
+      "grammar": [
+        4,
+        5,
+        5
+      ],
+      "relevance": [
+        3,
+        3,
+        1,
+        1
+      ]
+    },
+    "reference": "Wow that is pretty nuts - Disney World is a huge park! It is funny there is one character named Access who is owned by both Marvel and Dc who's only purpose is to keep the companies universes apart",
+    "output": "Really? what team was that, the other team must have been less skilled",
+    "score": [
+      3.066666666666667,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Yeah exactly. Have you ever been to that football stadium in Texas that can seat 18 000 people?",
+      "No I never been to Texas yet but that's pretty crazy",
+      "Yeah it is right? And it cost $60 million and on top of all , it is just a high school stadium"
+    ],
+    "annotations": {
+      "appropriateness": [
+        3,
+        3,
+        3
+      ],
+      "content": [
+        4,
+        4,
+        4
+      ],
+      "grammar": [
+        4,
+        4,
+        4
+      ],
+      "relevance": [
+        3,
+        3,
+        3
+      ]
+    },
+    "reference": "I guess they are a lot of money for the team. I wonder if they have a pink locker room pink",
+    "output": "They do love football in Texas, too bad they don't care as much about education, an average engineer makes more in a lifetime than the average NFL player",
+    "score": [
+      3.5,
+      0
+    ]
+  },
+  {
+    "context": [
+      "I guess that is not a lot considering how long they have been around",
+      "That is true actually. Do you know the programming language Python?",
+      "I have heard of it, is that somehow related to comedy"
+    ],
+    "annotations": {
+      "appropriateness": [
+        5,
+        5,
+        5
+      ],
+      "content": [
+        5,
+        4,
+        5
+      ],
+      "grammar": [
+        5,
+        3,
+        5
+      ],
+      "relevance": [
+        5,
+        4,
+        5
+      ]
+    },
+    "reference": "The Language is named after a comedy group, Monty Python.",
+    "output": "yes, the name comes from a British comedy group, monty python",
+    "score": [
+      4.666666666666667,
+      0
+    ]
+  },
+  {
+    "context": [
+      "Wow. I never knew that.",
+      "Yah, did you know the other word for telephone is a phone?",
+      "Yes. I knew that one."
+    ],
+    "annotations": {
+      "appropriateness": [
+        4,
+        4,
+        3
+      ],
+      "content": [
+        3,
+        2,
+        3
+      ],
+      "grammar": [
+        4,
+        4,
+        4
+      ],
+      "relevance": [
+        4,
+        3,
+        4
+      ]
+    },
+    "reference": "I wonder if they have a secret room that is visited by celebrities.",
+    "output": "Do you see UNICEF donating a day of clean water to a child in need, all you need to do is not use your phone.",
+    "score": [
+      3.5,
+      0
+    ]
+  },
+  {
+    "context": [
+      "I might look it up and tune in after this chat haha. How do you feel the president of the united states is doing?",
+      "I am surprised that he is not in the top 3 wealthiest presidents.",
+      "After inflation, I am surprised as well. He comes from a business background, so I was expecting him to be able to make much better decisions. It just goes to show you that politics are a much different beast than"
+    ],
+    "annotations": {
+      "appropriateness": [
+        2,
+        4,
+        2,
+        4
+      ],
+      "content": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "grammar": [
+        4,
+        4,
+        5,
+        5
+      ],
+      "relevance": [
+        4,
+        4,
+        4
+      ]
+    },
+    "reference": "Wow. I am really surprised by that number. I am surprised he was elected president.",
+    "output": "I live in the US. Have you heard about the name of the first president of zimbabwe?",
+    "score": [
+      3.3333333333333335,
       0
     ]
   }

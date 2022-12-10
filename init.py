@@ -69,7 +69,6 @@ def exitWithSave():
     saveADI()
     saveUTS()
     print("All the task Finished!")
-    exit(0)
 
 
 def saveULI():
@@ -122,19 +121,22 @@ def randDataIndex(uid):
         return -1
 
     if len(userLabelInfo[uid]['labeled']) == 0:
-        pos = random.randint(0, cnt - 1)
-        return availableDataIndex[pos]
+        trueLabeled = []
     else:
         trueLabeled = []
         for i in userLabelInfo[uid]['labeled']:
             trueLabeled.append(getTrueIdx(i))
-        while True:
-            pos = random.randint(0, cnt - 1)
-            idx = availableDataIndex[pos]
-            if getTrueIdx(idx) in trueLabeled:  # 如果用户之前标注过这个数据
-                continue
-            else:  # 用户没有标注过这条数据
-                return idx
+
+    index = 0
+    while index < len(availableDataIndex):
+        # pos = random.randint(0, cnt - 1)
+        # idx = availableDataIndex[pos]
+        idx = availableDataIndex[index]
+        if getTrueIdx(idx) in trueLabeled:  # 如果用户之前标注过这个数据
+            index = index + 1
+            continue
+        else:  # 用户没有标注过这条数据
+            return idx
 
 
 # 检查是否有过期的资源要被释放,每次释放所有过期的
@@ -314,7 +316,7 @@ def submitScore():
         availableDataIndex.append(index)
         print("Error 111 :( {}  {} ".format(uid, index))
 
-    return ""
+    return jsonify({"status": 200, "msg": "Data submit Success!"})
 
 
 @app.route('/checkSignIn', methods = ['POST', 'GET'])
@@ -359,6 +361,9 @@ def renderTable3():
 def renderTable4():
     return render_template('table_q4.html')
 
+@app.route('/normal_problems.html')
+def renderNormalQuests():
+    return render_template('normal_problems.html')
 
 @app.route('/labelPage.html')
 def renderLabelPage():
@@ -376,7 +381,7 @@ def index():
 
 
 # 初始化将数据预先读入
-def initialize():
+def initialize(debug):
     global userLabelInfo
     global allDatas
     global availableDataIndex
@@ -398,12 +403,6 @@ def initialize():
             print("Fill the setting.json First!")
             exit(0)
 
-    with open("./static/userData/userLabelInfo.json", "r") as f:
-        try:
-            userLabelInfo = json.load(f)
-        except JSONDecodeError:
-            userLabelInfo = dict()
-
     with open("./static/data/data.json", "r", encoding = 'UTF-8') as f:
         try:
             allDatas = json.load(f)
@@ -411,35 +410,46 @@ def initialize():
             print("You should put the data in file `./static/data/data/json`! ")
             exit(0)
 
-    # with open("./static/data/try_label.json", "r") as f:
-    #     tryData = json.load(f)
-
-    with open("./static/userData/toLabelInfo.json", "r") as f:
-        try:
-            availableDataIndex = json.load(f)
-        except JSONDecodeError:
-            availableDataIndex = list(range(len(allDatas) * num_times))
-
-    with open("./static/userData/timeStamps.json", "r") as f:
-        try:
-            userTimeStamp = json.load(f)
-        except JSONDecodeError:
-            userTimeStamp = dict()
-
     with open("./static/userData/login.json", "r") as f:
         allUsers = json.load(f)
 
-    with open("./static/userData/submitTime.json", "r") as f:
-        try:
-            submitTime = json.load(f)
-        except JSONDecodeError:
-            submitTime = dict()
+    if debug:
+        userLabelInfo=dict()
+        availableDataIndex = list(range(len(allDatas) * num_times))
+        userTimeStamp = dict()
+        submitTime = dict()
+
+
+    else:
+        with open("./static/userData/userLabelInfo.json", "r") as f:
+            try:
+                userLabelInfo = json.load(f)
+            except JSONDecodeError:
+                userLabelInfo = dict()
+
+        with open("./static/userData/toLabelInfo.json", "r") as f:
+            try:
+                availableDataIndex = json.load(f)
+            except JSONDecodeError:
+                availableDataIndex = list(range(len(allDatas) * num_times))
+
+        with open("./static/userData/timeStamps.json", "r") as f:
+            try:
+                userTimeStamp = json.load(f)
+            except JSONDecodeError:
+                userTimeStamp = dict()
+
+        with open("./static/userData/submitTime.json", "r") as f:
+            try:
+                submitTime = json.load(f)
+            except JSONDecodeError:
+                submitTime = dict()
 
     print("Data initializing Over!")
 
 
 if __name__ == '__main__':
-    initialize()
+    initialize(False)
 
     scheduler = APScheduler()
     scheduler.add_job(func = checkExpired, id = '1', trigger = 'interval', seconds = checkExpiredTime)
