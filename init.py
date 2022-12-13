@@ -321,14 +321,15 @@ def submitScore():
 
 @app.route('/checkSignIn', methods = ['POST', 'GET'])
 def checkSignIn():
+    global allUsers
     uid = request.form.get('uid')
     pwd = request.form.get('pwd')
     with open('./static/userData/login.json', 'r') as f:
-        data = json.load(f)
-    if data.get(uid) is None:
+        allUsers = json.load(f)
+    if allUsers.get(uid) is None:
         return json.dumps({"result": "NO"})
     else:
-        if data.get(uid) != pwd:
+        if allUsers.get(uid) != pwd:
             return json.dumps({"result": "NO"})
         else:
             print("USER {} trying to sign in...".format(uid))
@@ -361,9 +362,11 @@ def renderTable3():
 def renderTable4():
     return render_template('table_q4.html')
 
+
 @app.route('/normal_problems.html')
 def renderNormalQuests():
     return render_template('normal_problems.html')
+
 
 @app.route('/labelPage.html')
 def renderLabelPage():
@@ -414,36 +417,48 @@ def initialize(debug):
         allUsers = json.load(f)
 
     if debug:
-        userLabelInfo=dict()
+        userLabelInfo = dict()
         availableDataIndex = list(range(len(allDatas) * num_times))
         userTimeStamp = dict()
         submitTime = dict()
 
 
     else:
-        with open("./static/userData/userLabelInfo.json", "r") as f:
-            try:
-                userLabelInfo = json.load(f)
-            except JSONDecodeError:
-                userLabelInfo = dict()
+        if os.path.exists("./static/userData/userLabelInfo.json"):
+            with open("./static/userData/userLabelInfo.json", "r") as f:
+                try:
+                    userLabelInfo = json.load(f)
+                except JSONDecodeError:
+                    userLabelInfo = dict()
+        else:
+            userLabelInfo = dict()
 
-        with open("./static/userData/toLabelInfo.json", "r") as f:
-            try:
-                availableDataIndex = json.load(f)
-            except JSONDecodeError:
-                availableDataIndex = list(range(len(allDatas) * num_times))
+        if os.path.exists("./static/userData/toLabelInfo.json"):
+            with open("./static/userData/toLabelInfo.json", "r") as f:
+                try:
+                    availableDataIndex = json.load(f)
+                except JSONDecodeError:
+                    availableDataIndex = list(range(len(allDatas) * num_times))
+        else:
+            availableDataIndex = list(range(len(allDatas) * num_times))
 
-        with open("./static/userData/timeStamps.json", "r") as f:
-            try:
-                userTimeStamp = json.load(f)
-            except JSONDecodeError:
-                userTimeStamp = dict()
+        if os.path.exists("./static/userData/timeStamps.json"):
+            with open("./static/userData/timeStamps.json", "r") as f:
+                try:
+                    userTimeStamp = json.load(f)
+                except JSONDecodeError:
+                    userTimeStamp = dict()
+        else:
+            userTimeStamp = dict()
 
-        with open("./static/userData/submitTime.json", "r") as f:
-            try:
-                submitTime = json.load(f)
-            except JSONDecodeError:
-                submitTime = dict()
+        if os.path.exists("./static/userData/timeStamps.json"):
+            with open("./static/userData/submitTime.json", "r") as f:
+                try:
+                    submitTime = json.load(f)
+                except JSONDecodeError:
+                    submitTime = dict()
+        else:
+            submitTime = dict()
 
     print("Data initializing Over!")
 
