@@ -6,7 +6,7 @@
 # @Description: 数据池中全部是当前未标记的数据
 #               不需要担心数据被同一个人二次标注(?!)
 
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify, render_template, request, current_app
 from json.decoder import JSONDecodeError
 from flask_apscheduler import APScheduler
 
@@ -14,6 +14,9 @@ import json
 import random
 import time
 import os
+
+import logging
+from logging.handlers import TimedRotatingFileHandler
 
 app = Flask(__name__, template_folder = './static/templates')  # 实例化app对象
 
@@ -39,7 +42,11 @@ def freeData(uid, idx, mode):
         return
 
     if userLabelInfo[uid]['labeling'] != idx:
-        print("{} Error! Free data {} but labeling {}".format(uid, idx, userLabelInfo[uid]["labeling"]))
+
+        infos = "{} Error! Free data {} but labeling {}".format(uid, idx, userLabelInfo[uid]["labeling"])
+        current_app.logger.info(infos)
+        print(infos)
+
         if idx in userLabelInfo[uid]['labeled']:
             userTimeStamp[uid]['index'] = userLabelInfo[uid]['labeling']
             return
@@ -57,7 +64,10 @@ def freeData(uid, idx, mode):
     # 更新记录时间
     update_submitTime(uid, idx, "del")
 
-    print("USER {} free DATA {}".format(uid, idx))
+    infos = "USER {} free DATA {}".format(uid, idx)
+    current_app.logger.info(infos)
+    print(infos)
+
     # 修改即保存是个好习惯
     saveULI()
     saveADI()
@@ -267,7 +277,10 @@ def requestData():
     saveADI()
     saveULI()
 
-    print("USER {} get DATA {}".format(uid, data_index))
+    infos = "USER {} get DATA {}".format(uid, data_index)
+    current_app.logger.info(infos)
+    print(infos)
+
     return json.dumps({
         "d": getTrueData(data_index),
         "index": data_index,
@@ -275,14 +288,14 @@ def requestData():
     })
 
 
-# 请示释放当前资源
-@app.route('/requestFree', methods = ['POST'])
-def requestFree():
-    uid = request.form.get('uid')
-    idx = eval(request.form.get('index'))
-    freeData(uid, idx, 1)
-    print("USER {} free(1) DATA {}".format(uid, idx))
-    return ""
+# # 请示释放当前资源
+# @app.route('/requestFree', methods = ['POST'])
+# def requestFree():
+#     uid = request.form.get('uid')
+#     idx = eval(request.form.get('index'))
+#     freeData(uid, idx, 1)
+#     print("USER {} free(1) DATA {}".format(uid, idx))
+#     return ""
 
 
 # 更新userLabelInfo(labeled,labeling)
@@ -311,10 +324,17 @@ def submitScore():
     if not have_same_tidx:
         userLabelInfo[uid]['labeled'].append(index)
         saveULI()
-        print("USER {} DATA:{}(true:{}) SCORE:{}".format(uid, index, getTrueIdx(index), score))
+
+        infos = "USER {} DATA:{}(true:{}) SCORE:{}".format(uid, index, getTrueIdx(index), score)
+        current_app.logger.warning(infos)
+        print(infos)
+
     else:  # 放回可用位置
         availableDataIndex.append(index)
-        print("Error 111 :( {}  {} ".format(uid, index))
+
+        infos = "Error 111 :( {}  {} ".format(uid, index)
+        current_app.logger.info(infos)
+        print(infos)
 
     return jsonify({"status": 200, "msg": "Data submit Success!"})
 
@@ -332,7 +352,10 @@ def checkSignIn():
         if allUsers.get(uid) != pwd:
             return json.dumps({"result": "NO"})
         else:
-            print("USER {} trying to sign in...".format(uid))
+            infos = "USER {} trying to sign in...".format(uid)
+            current_app.logger.info(infos)
+            print(infos)
+
             return json.dumps({"result": "YES"})
 
 
@@ -470,6 +493,15 @@ if __name__ == '__main__':
     scheduler.add_job(func = checkExpired, id = '1', trigger = 'interval', seconds = checkExpiredTime)
     scheduler.init_app(app = app)
     scheduler.start()
+
+    app.logger.setLevel(logging.INFO)
+    formatter = logging.Formatter(
+        "[%(asctime)s][%(filename)s:%(lineno)d][%(levelname)s][%(thread)d] - %(message)s")
+    handler = TimedRotatingFileHandler(
+        "flask.log", when = "D", interval = 1, backupCount = 15,
+        encoding = "UTF-8", delay = False, utc = True)
+    app.logger.addHandler(handler)
+    handler.setFormatter(formatter)
 
     app.run(host = '0.0.0.0',  # 任何ip都可以访问
             port = 7777,  # 端口
