@@ -29,8 +29,10 @@ function showReference(sentence,mode,score=3) {
 }
 
 // 得到的数据格式形如["",""]
-function showDialog(sentences) {
+function showDialog(sentences,emotion) {
     let extend_dialog="<div class='context-dialog dialog'>"
+    let hint_emotion="<div class='hint_emotion'><b style='color: red'>对话上文</b>（用户此时的情绪为：<b id='emotion' style='color: red'>"+emotion+"</b>）</div>"
+    extend_dialog=extend_dialog+hint_emotion
     for(let i=0;i<sentences.length-1;i++)
     {   // 第一句保证由人来讲
         if(i%2===0){
@@ -53,7 +55,7 @@ function showReferOutput(reference,output,mode,score=3) {
 
 
 function displayData(data) {
-    let tmp_dialog=showDialog(data["context"])
+    let tmp_dialog=showDialog(data["context"],data["emotion"])
     tmp_dialog=tmp_dialog+showReferOutput(data["reference"],data["output"],0,data["score"][0].toFixed(1))
     let message_box=document.getElementById("message_box")
     message_box.innerHTML=tmp_dialog
@@ -153,7 +155,7 @@ function show_sample() {
             function (d) {
                 let data=d.d[0]
                 let sample_box=document.getElementById("sample_dialog")
-                let sample_dialog=showDialog(data["context"])
+                let sample_dialog=showDialog(data["context"],"激动，感激")
                 sample_dialog=sample_dialog+showReferOutput(data["reference"],data["output"],1)
                 sample_box.innerHTML=sample_dialog
             }

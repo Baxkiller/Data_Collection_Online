@@ -13,6 +13,14 @@
     /*padding: .5rem 1.5rem;*/
 }
 
+.hint_emotion {
+    position: relative;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
 #message_box{
     padding: .5rem 1.5rem;
     margin: 0 auto .5rem;
