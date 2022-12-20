@@ -1,4 +1,4 @@
-sample_score=[0,4,3,4,3]
+sample_score=[0,3,2,3,3]
 
 // 显示人说的话
 // 生成内容是innerHTML的内容
