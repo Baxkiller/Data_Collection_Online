@@ -14,7 +14,7 @@ function update(d,i,cnt,qIdx) {
     setCnt();
     displayData(d);
 
-    freshQuestion();
+    freshQuestion(d["score"][0].toFixed(1));
     hide_question(preQuestion);
     show_question(qIdx);
 }

@@ -88,52 +88,56 @@
                 &nbsp;
                 <b style="color:red;">蓝色用户给出的回复为参考回复</b>
             </div>
+            <div id="robot_info_sample"></div>
             <div id="sample_dialog" class="imessage"></div>
             <ul>
                 <li>请注意，我们已经明确<bold>蓝色用户</bold>给出的回复分数为3</li>
             </ul>
             <ul id="hint_q1" style="display: none">
                 <li>
-                    评估角度：与最近一次提问的匹配程度
+                    评估角度：整体相关性
                 </li>
+<!--                <li>-->
+<!--                    分数：3分-->
+<!--                </li>-->
                 <li>
-                    分数：3分
-                </li>
-                <li>
-                    解释：上面的对话以用户过生日出去旅游为切入点，最后一句用户表示父母给自己买了很多特产。针对对话上文（尤其是最后一句话），语音助手表示用户此次玩得很开心，符合上文的语境。参考回复则夸赞用户的父母很慷慨，符合“感激”的情绪特点。因此二者都与上文的对话相关，如果参考回复为三分，语音助手的回复也可以为3分。
+                    解释：根据上图可知，语音助手被设定为一名牙医，且在工作时被病人的口水溅了一身，正在和另一个医生抱怨。第一个参考回复与上文完全不相关，因此给1分，第二个参考回复符合“牙医”的身份设定，也体现了被溅了一身口水后的无奈，完全与上文相关，给5分。而语音助手的回复包含了关键词‘学习成为牙医’，与上文相关，给3分。
                 </li>
             </ul>
             <ul id="hint_q2" style="display: none">
                 <li>
-                    评估角度：情绪感知
+                    评估角度：是否体现个性化特点
                 </li>
+<!--                <li>-->
+<!--                    分数：2分-->
+<!--                </li>-->
                 <li>
-                    分数：2分
-                </li>
-                <li>
-                    解释：上面的对话以用户过生日出去旅游为切入点，最后一句用户表示父母给自己买了很多特产。针对对话上文（尤其是最后一句话），语音助手表示用户此次玩得很开心，而参考回复则夸赞用户的父母很慷慨，更符合“感激”的情绪特点。因此如果参考回复为三分，语音助手的回复可以为2分（酌情给3分）。
+                    解释：根据上图可知，语音助手被设定为一名牙医，且在工作时被病人的口水溅了一身，正在和另一个医生抱怨。第一个参考回复体现了“纹身”的特点，但是由于该特点与上文无关，因此给2分。第二个参考回复既体现了牙医的身份，也体现了“讨厌看到病人的唾液”的特点，因此给5分。而语音助手的回复体现了牙医的身份， 且与上文有关，因此给4分。
                 </li>
             </ul>
             <ul id="hint_q3" style="display: none">
                 <li>
                     评估角度：回复是否生动有趣，流畅自然
                 </li>
+<!--                <li>-->
+<!--                    分数：3分-->
+<!--                </li>-->
                 <li>
-                    分数：3分
-                </li>
-                <li>
-                    解释：上面的对话以用户过生日出去旅游为切入点，最后一句用户表示父母给自己买了很多特产。语音助手表示用户此次玩得很开心，而参考回复则夸赞用户的父母很慷慨，两句话都比较流畅、生动，且没有太大差距。因此如果参考回复为三分，语音助手的回复也可以为3分。
+                    解释：第一个参考回复和语音助手的回复达到了流畅自然的标准，但是略显生硬，且不生动，因此均给3分。第二个参考回复不仅流畅，而且还透露出“无奈”的情感，言语生动形象，因此为5分。
                 </li>
             </ul>
             <ul id="hint_q4" style="display: none">
                 <li>
                     评估角度：您的满意度
                 </li>
+<!--                <li>-->
+<!--                    分数：3分-->
+<!--                </li>-->
                 <li>
-                    分数：3分
-                </li>
-                <li>
-                    解释：综合考虑前三个评估的角度，我对于语音助手的回复和参考回复，没有明显的倾向性，都比较满意。因此，如果蓝色用户给出的参考回复对应分数为3，那么语音助手的分数为3 （根据个人满意程度酌情打分。）
+                    解释：综合考虑前三个评估的角度，以及主观感受。给分如下：
+                    第一个参考回复偏离主题，但至少流畅，给2分（如果偏题且有语病则给1分）。
+                    第二个回复完全切题且生动自然，给5分（十分满意）。
+                    语音助手的回复与上文相关但在具体语境中不是特别通顺，给3.5分或4分均可（不算太好，但也能接受）。
                 </li>
             </ul>
         </div>
@@ -166,11 +170,12 @@
             <p style="margin: .1rem">十分钟内未提交结果将自动退出系统。所以请务必在<b>十分钟内点击完成标注按钮，提交评分结果</b>。</p>
         </div>
     </div>
+    <div id="robot_information"></div>
     <div class="imessage" id="message_box">
     </div>
     <div class="question_box" id="question_box">
         <div class="question" style="display: none" id="question1">
-            <h4>1. 与最近一次提问的匹配程度</h4>
+            <h4>1. 整体相关性</h4>
             <input type="radio" name="q1" id="q11" value="1"><label for="q11">1分</label>
             <input type="radio" name="q1" id="q12" value="2"><label for="q12">2分</label>
 <!--            <input type="radio" name="q1" id="q13" value="2.5"><label for="q13">2.5分</label>-->
@@ -181,7 +186,7 @@
             <input type="radio" name="q1" id="q18" value="5"><label for="q18">5分</label>
         </div>
         <div class="question" style="display: none" id="question2">
-            <h4>2. 情绪感知</h4>
+            <h4>2. 是否体现个性化特点</h4>
             <input type="radio" name="q2" id="q21" value="1"><label for="q21">1分</label>
             <input type="radio" name="q2" id="q22" value="2"><label for="q22">2分</label>
 <!--            <input type="radio" name="q2" id="q23" value="2.5"><label for="q23">2.5分</label>-->
@@ -214,6 +219,13 @@
             <input type="radio" name="q4" id="q48" value="5"><label for="q48">5分</label>
         </div>
         <div class="question-buttons">
+            <div class="suggest_score">
+                <label style="height: 2em;top: .5rem;position: relative;">建议分数：</label>
+                <input class="previous_button" type="number" step="0.1" id="suggest_refer_score1" style="width:85px;border-style: none" >
+                <input class="previous_button" type="number" step="0.1" id="suggest_refer_score2" style="width:85px;border-style: none;display: none" >
+                <input class="previous_button" type="number" step="0.1" id="suggest_refer_score3" style="width:85px;border-style: none;display: none" >
+                <input class="previous_button" type="number" step="0.1" id="suggest_refer_score4" style="width:85px;border-style: none;display: none" >
+            </div>
             <input type="button" value="上一题" class="previous_button" id="previous_button" onclick="previous_question()"
                    style="left: 28%;display: none">
             <input type="button" value="完成标注" class="submit" id="submit_inline" onclick="submit_label()"

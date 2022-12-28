@@ -1,10 +1,10 @@
 // 提交分数
-function submitScore(uid,score,idx) {
+function submitScore(uid,score,idx,suggest_score) {
         clearTimer()
         $.ajax({
             type: "POST",
             url: "/submitScore",
-            data: {"uid": uid, "score": JSON.stringify(score), "index": idx},
+            data: {"uid": uid, "score": JSON.stringify(score), "index": idx,"suggest_score":JSON.stringify(suggest_score)},
             dataType: "json",
             sync:false,
             success: function (msg) {
@@ -29,12 +29,15 @@ function submitScore(uid,score,idx) {
 // 检查用户给定的选项是否合理
 function submit_label() {
     let res=[];
+    let suggest_score=[];
     let flag=true;
     let no_answer_question=0;
     for(let i=1;i<5;i++)
     {
         let question_name="q"+i
+        let score_name="suggest_refer_score"+i
         let answer = $("input[name=" + question_name + "]:checked").val();
+        let sug_score=document.getElementById(score_name).value;
         if(answer === undefined){
             alert("请选择第"+i+"个问题的选项后提交")
             flag=false;
@@ -42,13 +45,13 @@ function submit_label() {
             break;
         } else{
             res.push(Number(answer));
+            suggest_score.push(Number(sug_score))
         }
     }
 
     if(flag){
         let uid=document.cookie;
-        submitScore(uid,res,index);
-
+        submitScore(uid,res,index,suggest_score);
     } else {
         hide_question(questionID);
         questionID=no_answer_question

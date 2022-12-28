@@ -12,7 +12,6 @@ function clearTimer() {
 
 // 释放数据,并发出提示,退出登录
 function myTimeOut() {
-    freeData();
     alert("超时啦!将退出网页并重新登录!");
     reDirected();
 }

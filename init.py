@@ -65,7 +65,8 @@ def freeData(uid, idx, mode):
     update_submitTime(uid, idx, "del")
 
     infos = "USER {} free DATA {}".format(uid, idx)
-    current_app.logger.info(infos)
+    with app.app_context():
+        current_app.logger.info(infos)
     print(infos)
 
     # 修改即保存是个好习惯
@@ -174,19 +175,22 @@ def checkUser(uid):
 
 # 只负责单纯地保存数据
 # 根据是否存在这组数据决定是直接创建还是add
-def save_data(uid, score, idx):
+def save_data(uid, score, idx, suggest_score):
     path = "./static/data/" + str(idx) + ".json"
     if os.path.exists(path):
         with open(path, "r") as f:
             tmp = json.load(f)
             tmp['usr'][uid] = score
+            tmp['revise'][uid]=suggest_score
         with open(path, "w") as f:
             json.dump(tmp, f)
     else:
         with open(path, "w") as f:
             tmp = allDatas[idx].copy()
             tmp["usr"] = dict()
+            tmp["revise"] = dict()
             tmp["usr"][uid] = score
+            tmp["revise"][uid] = suggest_score
             json.dump(tmp, f)
     return
 
@@ -305,11 +309,12 @@ def submitScore():
     uid = data.get('uid')
     score = json.loads(data.get('score'))
     index = eval(data.get('index'))
+    suggest_score = json.loads(data.get('suggest_score'))
 
     if checkUser(uid) == -1:
         return jsonify({'status': 400, 'msg': 'USER NOT FOUND :('})
 
-    save_data(uid, score, getTrueIdx(index))
+    save_data(uid, score, getTrueIdx(index), suggest_score)
     update_submitTime(uid, index, "end")
     save_submitTime(uid, index)
     have_same_tidx = False
