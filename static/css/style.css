@@ -74,10 +74,9 @@
 
 .robot_info{
     height: 1rem;
-    padding: 0.2rem 0.5rem;
-    border: dotted;
-    margin: 0.3rem;
-    border-radius: 0.5rem;
+    /*border: dotted;*/
+    margin: 0 0 .5rem 0.4rem;
+    /*border-radius: 0.5rem;*/
 }
 
 .wrap_robot_infos{

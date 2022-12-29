@@ -162,12 +162,13 @@ function freshQuestion(score){
 function showRobotInfo(infos){
     if(infos === undefined)
         return ""
+    infos.sort((a,b)=>a.length-b.length)
     let ret="<div class='wrap_robot_infos'><div class='robot_infos_title'> <b style='color: red'>语音助手性格设定</b></div>"
     ret=ret+"<div class='robot_infos'>"
     for(let i=0;i<infos.length;i++)
     {
         ret=ret+
-            "<div class='robot_info'><span>"+infos[i]+"</span></div>"
+            "<div class='robot_info'><span>"+infos[i]+";</span></div>"
     }
     return ret+"</div></div>"
 }
